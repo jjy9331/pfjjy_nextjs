@@ -306,3 +306,24 @@ button {cursor: none; }
   background: transparent;
   border: 0px;
 }
+
+.hfm_list {
+  /* display: none; */
+  position: fixed;
+  bottom: 10%;
+  right: 1.5vw;
+  text-align: right;
+}
+
+.hfm_list li {
+  font-family: 'Noto Sans KR';
+  font-size: 0.5em;
+  font-weight: 500;
+  padding-bottom: 0.6vh;
+  padding-top: 0.6vh;
+  /* cursor: pointer; */
+}
+
+
+
+

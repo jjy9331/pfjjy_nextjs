@@ -1,6 +1,7 @@
 import { Html, Head, Main, NextScript } from 'next/document'
 import Header from '../pages/header.js'
 import Footer from '../pages/footer.js'
+import Hfm from '../pages/hfm.js'
 
 export default function Document() {
   return (
@@ -10,6 +11,7 @@ export default function Document() {
         <Header></Header>
         <Main />
         <NextScript />
+        <Hfm></Hfm>
         <Footer></Footer>
       </body>
     </Html>
