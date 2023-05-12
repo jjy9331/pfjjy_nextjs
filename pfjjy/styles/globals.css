@@ -327,3 +327,32 @@ button {cursor: none; }
 
 
 
+
+
+/* mediaquery */
+
+
+@media all and (max-aspect-ratio:12/7.64) {  
+  /* body {zoom:0.55} */
+  .pop .inner .sc_al {
+      display: block;
+      visibility: visible;
+      transform: scale(0.8);
+  }
+  .pop .inner .sheet {
+      display: none;
+  }
+  .hfm_list {bottom: 13%;}
+}  
+
+@media all and (min-width:1041px) and  (max-width:1601px) {  
+  /* body {zoom:0.55} */
+  .header {zoom:0.7}
+  .footer {zoom:0.7}
+  
+
+}  /* PC  */
+
+@media(hover: hover) and (pointer: fine) {
+}
+
