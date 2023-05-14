@@ -9,6 +9,30 @@ button {cursor: none; }
 .blind { position:absolute; top:-9999px; }
 
 
+/* cursor */
+
+.cursor {
+  width: 0.5rem;
+  height: 0.5rem;
+  /* border: 2px solid var(--color-texta); */
+  border-radius: 50%;
+  position: fixed;
+  z-index: 1000;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  transition: all 0.3s ease;
+  transition-property: transform;
+  /* transform-origin: 100% 100%; */
+  transform-origin: center;
+  backdrop-filter: invert(1);
+  background-size: cover;
+  z-index: 2000;
+  /* display: none; */
+  cursor: none;
+}
+
+
+
 /* header */
 
 .header { 
