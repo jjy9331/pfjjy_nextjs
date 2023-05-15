@@ -1,5 +1,3 @@
-// import { useEffect, useRef } from "react";
-
 import { useState, useEffect } from "react";
 import classNames from "classnames";
 
@@ -9,7 +7,6 @@ const isMobile = () => {
 };
 
 export default function CustomCursor() {
-
     if (typeof navigator !== "undefined" && isMobile()) return null;
 
     const [position, setPosition] = useState({ x: 0, y: 0 });
@@ -44,11 +41,11 @@ export default function CustomCursor() {
     };
 
     const onMouseDown = () => {
-        setClicked(true);
+        setClicked(false);
     };
 
     const onMouseUp = () => {
-        setClicked(false);
+        setClicked(true);
     };
 
     const onMouseLeave = () => {
@@ -60,14 +57,22 @@ export default function CustomCursor() {
     };
 
     const handleLinkHoverEvents = () => {
-        document.querySelectorAll("a,button,li").forEach((el) => {
-            el.addEventListener("mouseover", () => setLinkHovered(true));
-            el.addEventListener("mouseout", () => setLinkHovered(false));
+        const elements = document.querySelectorAll("a, button, li");
+
+        elements.forEach((el) => {
+            el.addEventListener("mouseover", () => {
+                setClicked(false);
+                setLinkHovered(true);
+            });
+
+            el.addEventListener("mouseout", () => {
+                setLinkHovered(false);
+            });
         });
     };
 
     const cursorClasses = classNames("cursor", {
-        "cursor--clicked": clicked,
+        "cursor--clicked": clicked && !linkHovered,
         "cursor--hidden": hidden,
         "cursor--link-hovered": linkHovered
     });
@@ -77,49 +82,5 @@ export default function CustomCursor() {
             className={cursorClasses}
             style={{ left: `${position.x}px`, top: `${position.y}px` }}
         />
-    )
+    );
 }
-
-
-// export default function CustomCursor() {
-//     const cursorRef = useRef(null)
-    
-
-//     useEffect(() => {
-
-//         if (cursorRef.current == null || cursorRef == null)
-
-//             return;
-
-//                 const cursor =  () => {
-//                     document.addEventListener('mousemove', e => {
-//                         if (cursorRef.current == null)
-//                             return;
-//                         cursorRef.current.setAttribute("style", "top: " + (e.pageY) + "px; left: " + (e.pageX) + "px;")
-//                     })
-//                 }
-
-//                 const cursor_click = () => {
-//                     document.addEventListener('click', () => {
-//                         if (cursorRef.current == null)
-//                             return;
-//                         cursorRef.current.classList.add("click_ani");
-//                         setTimeout(() => {
-//                             if (cursorRef.current == null)
-//                                 return;
-//                             cursorRef.current.classList.remove("click_ani");
-//                         }, 500)
-//                     })
-//                 }
-
-
-//                 cursor();
-//                 cursor_click();
-
-//     }, [])
-
-//     return (
-//     <div className='cursor' ref={cursorRef}>
-//     </div>
-//     )
-// }
