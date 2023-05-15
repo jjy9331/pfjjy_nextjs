@@ -73,14 +73,19 @@ export default function CustomCursor() {
 
     const cursorClasses = classNames("cursor", {
         "cursor--clicked": clicked && !linkHovered,
-        "cursor--hidden": hidden,
+        // "cursor--hidden": hidden,
         "cursor--link-hovered": linkHovered
     });
 
     return (
-        <div
-            className={cursorClasses}
-            style={{ left: `${position.x}px`, top: `${position.y}px` }}
-        />
+        // <div
+        //     className={cursorClasses}
+        //     style={{ left: `${position.x}px`, top: `${position.y}px` }}
+        // />
+        <div>
+            <svg className={cursorClasses} style={{ left: `${position.x}px`,top: `${position.y}px` }}>
+                <circle cx="0" cy="0" r="10"></circle>
+            </svg>
+        </div>
     );
 }

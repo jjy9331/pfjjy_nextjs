@@ -21,16 +21,21 @@ body {
 .cursor {
   width: 0.5rem;
   height: 0.5rem;
-  backdrop-filter: invert(1);
-  -webkit-backdrop-filter: invert(1);
+  /* backdrop-filter: invert(1);
+  -webkit-backdrop-filter: invert(1); */
+  background-color: black;
+  filter: invert(1);
   border-radius: 100%;
   position: fixed;
   transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
   pointer-events: none;
   transition: all 0.3s ease;
   transition-property: background-color, opacity, transform, mix-blend-mode;
   z-index: 9999;
   mix-blend-mode: difference;
+  border: none;
+  outline: none;
 }
 
 .cursor--hidden {
@@ -41,13 +46,12 @@ body {
   transform: translate(-50%, -50%) scale(3.8);
   transform-origin: center;
   cursor: none;
+  backface-visibility: hidden;
 }
 
 .cursor--clicked {
-  /* transform: translate(-50%, -50%) scale(3.8); */
   animation: cursor_click 0.7s backwards ;
-  /* backdrop-filter: invert(1); */
-  /* -webkit-backdrop-filter: invert(1); */
+  backface-visibility: hidden;
 }
 
 @keyframes cursor_click {
