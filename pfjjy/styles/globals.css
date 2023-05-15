@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+
+
 /*Eric mayor reset*/
 
 body,p,h1,h2,h3,h4,h5,h6,ul,li,dl,dt,dd { margin: 0; padding: 0;}
@@ -8,13 +11,45 @@ a { text-decoration:none; color:black; cursor: none; }
 button {cursor: none; }
 .blind { position:absolute; top:-9999px; }
 
+/* html {cursor: none;} */
+body {
+  background: white;
+}
 
 /* cursor */
 
 .cursor {
+  width: 40px;
+  height: 40px;
+  border: 2px solid #fefefe;
+  border-radius: 100%;
+  position: fixed;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  transition: all 150ms ease;
+  transition-property: background-color, opacity, transform, mix-blend-mode;
+  z-index: 9999;
+  mix-blend-mode: difference;
+}
+
+.cursor--hidden {
+  opacity: 0;
+}
+
+.cursor--link-hovered {
+  transform: translate(-50%, -50%) scale(1.25);
+  background-color: #fefefe;
+}
+
+.cursor--clicked {
+  transform: translate(-50%, -50%) scale(0.9);
+  background-color: #fefefe;
+}
+
+/* 
+.cursor {
   width: 0.5rem;
   height: 0.5rem;
-  /* border: 2px solid var(--color-texta); */
   border-radius: 50%;
   position: fixed;
   z-index: 1000;
@@ -22,14 +57,63 @@ button {cursor: none; }
   pointer-events: none;
   transition: all 0.3s ease;
   transition-property: transform;
-  /* transform-origin: 100% 100%; */
   transform-origin: center;
   backdrop-filter: invert(1);
   background-size: cover;
   z-index: 2000;
-  /* display: none; */
   cursor: none;
 }
+
+.pf_cursor {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  position: fixed;
+  z-index: 1000;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  transition-property: transform;
+  transform-origin: center;
+  background-color: rgba(233,233,233,0.8);
+  backdrop-filter: none;
+  background-size: cover;
+  z-index: 2000;
+  cursor: none;
+}
+
+
+
+.click_ani {
+  animation: cursor_click .7s backwards ;
+}
+
+.click_ani_hover {
+  animation: cursor_click .7s forwards ;
+}
+
+
+@keyframes cursor_click {
+  0% { 
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    transform-origin: center; cursor: none;
+  }
+  50% { 
+    width: 2.0rem;
+    height: 2.0rem;
+    border-radius: 50%;
+    transform-origin: center; cursor: none;
+  }
+  100% { 
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    transform-origin: center; cursor: none;
+  }
+} */
+
+
 
 
 
