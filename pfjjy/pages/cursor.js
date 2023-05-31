@@ -26,6 +26,7 @@ export default function CustomCursor() {
 
         return () => {
             removeEventListeners();
+            document.removeEventListener('click', handleClick);
         }
     }, []);
 
