@@ -17,7 +17,17 @@ export default function CustomCursor() {
     useEffect(() => {
         addEventListeners();
         handleLinkHoverEvents();
-        return () => removeEventListeners();
+        
+        const handleClick = (event) => {
+            console.log(event.target.className);
+        };
+
+        document.addEventListener('click', handleClick);
+
+        return () => {
+            removeEventListeners();
+            document.removeEventListener('click', handleClick);
+        }
     }, []);
 
     const addEventListeners = () => {
