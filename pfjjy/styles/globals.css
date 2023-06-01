@@ -257,6 +257,27 @@ body {
 }
 
 
+/* sec1 */
+
+.sd_wrap{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pl_sd {
+  font-family: 'SF Pro';
+  font-size: 2vw;
+  color: black;
+  font-weight: 100;
+  letter-spacing: 0.1vw;
+}
+
+
+
+
 
 /* footer */
 
