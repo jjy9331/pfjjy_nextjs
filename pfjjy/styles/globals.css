@@ -260,6 +260,7 @@ body {
 /* sec1 */
 
 .sd_wrap{
+  /* position: fixed; */
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -269,14 +270,153 @@ body {
 
 .pl_sd {
   font-family: 'SF Pro';
-  font-size: 2vw;
+  font-size: 4vh;
   color: black;
   font-weight: 100;
   letter-spacing: 0.1vw;
 }
 
+.sec1{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.runners { 
+  transform: scale(0.6);
+  margin-bottom: 15vh;
+}
+
+.sec1 .typo1 {
+  position: absolute;
+  margin-top: 28vh;
+  text-align: center;
+}
+
+.sec1 .typo1 .tw_1 { 
+  font-family: 'SF Pro KR';
+  font-size: 4vh;
+  line-height: 1em;
+  margin-top: -14px;
+  color: black;
+  /* padding-top: 14px; */
+  font-weight: 100;
+}
+.sec1 .typo1 .tw_2 {
+  font-family: 'SF Pro KR';
+  font-size: 2.2vh;
+  font-weight: 100;
+  line-height: 1em;
+  /* padding-top: 29px; */
+  padding-top: 3vh;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.sec1 .typo1 .tw_1 .kw1 { line-height: 0;}
+.sec1 .typo1 .tw_1 .kw2 { line-height: 0;}
+.sec1 .typo1 .tw_2 .kw3 { line-height: 0;}
+
+/* sec2 */
+
+.sec2{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.sec2 .typo2{
+  text-align: center;
+  position: relative;
+}
+
+.sec2 .typo2 h3{
+    font-family: 'SF Pro KR';
+    line-height: 1em;
+    margin-top: -14px;
+    font-size: 4vh;
+    color: black;
+    font-weight: 100;
+}
+
+.sec2 .typo2 p {
+  font-family: 'SF Pro KR';
+  font-size: 2.3vh;
+  font-weight: 100;
+  line-height: 1em;
+  padding-top: 6vh;
+  color: rgba(0, 0, 0, 0.5);
+  font-weight: 100;
+}
 
 
+.sec2 .typo2 .d1 { 
+  position: absolute;
+  top: -17%;
+  left: 16.8%;
+  width: 0.7vh;
+  height: 0.7vh;
+  border-radius: 100%;
+  background: black;
+  margin-top: -14px;
+}
+
+.sec2 .typo2 .d2 { 
+  position: absolute;
+  top: -17%;
+  left: 23.4%;
+  width: 0.7vh;
+  height: 0.7vh;
+  border-radius: 100%;
+  background: black;
+  margin-top: -14px;
+}
+
+.sec2 .typo2 .d3 { 
+  position: absolute;
+  top: -17%;
+  right: 21.3%;
+  width: 0.7vh;
+  height: 0.7vh;
+  border-radius: 100%;
+  background: black;
+  margin-top: -14px;
+}
+
+.sec2 .typo2 .d4 { 
+  position: absolute;
+  top: -17%;
+  right: 14.5%;
+  width: 0.7vh;
+  height: 0.7vh;
+  border-radius: 100%;
+  background: black;
+  margin-top: -14px;
+}
+
+.sec2 .typo2 .d5 { 
+  position: absolute;
+  bottom: 34%;
+  left: 32.7%;
+  width: 0.5vh;
+  height: 0.5vh;
+  border-radius: 100%;
+  background: rgba(0,0,0,0.4);
+}
+
+.sec2 .typo2 .d6 { 
+  position: absolute;
+  bottom: 34%;
+  left: 36.15%;
+  width: 0.5vh;
+  height: 0.5vh;
+  border-radius: 100%;
+  background: rgba(0,0,0,0.4);
+}
 
 
 /* footer */

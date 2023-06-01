@@ -1,15 +1,15 @@
 import CustomCursor from '../pages/cursor.js'
 import Header from '../pages/header.js'
 import Footer from '../pages/footer.js'
-import PL_SD from '../pages/pl_sd.js'
+import Item_home from './item_home.js'
 
 export default function Home() {
   return (
     <div>
       <CustomCursor />
       <Header />
+      <Item_home />
       <Footer />
-      <PL_SD />
     </div>
   )
 }
