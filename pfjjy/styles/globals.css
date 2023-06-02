@@ -16,6 +16,14 @@ body {
   background: white;
 }
 
+/* scrollY tracker */
+#sctk {
+    position: fixed;
+    color: orange;
+    left: 3vh;
+    top: 11vh;
+}
+
 /* cursor */
 
 .cursor {
