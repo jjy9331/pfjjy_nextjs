@@ -1,4 +1,30 @@
+import  React, {useRef, useEffect} from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+
 export default function Item_home() {
+    const  sectionRef = useRef(null);
+    const triggerRef = useRef(null);
+
+    gsap.registerPlugin(ScrollTrigger);
+    
+    useEffect(() => {
+        gsap.to(".pl_sd",{
+            opacity:0,
+            duration:2,
+            scrollTrigger: {
+                trigger: ".pl_sd",
+                markers: true,
+                start:"top 25%",
+                end:"top 10%",
+                scrub: true,
+            }
+        })
+        return () => {
+
+        }
+    },[])
+
     return (
         <div>
             <div className="sd_wrap">
