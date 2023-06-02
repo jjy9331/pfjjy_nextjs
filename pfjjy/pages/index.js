@@ -1,8 +1,8 @@
-import CustomCursor from '../pages/cursor.js'
-import Header from '../pages/header.js'
-import Footer from '../pages/footer.js'
-import Item_home from './item_home.js'
-import Sctracker from './sctracker.js'
+import CustomCursor from '../components/cursor.js'
+import Header from '../components/header.js'
+import Footer from '../components/footer.js'
+import Item_home from '../components/item_home.js'
+import Sctracker from '../components/sctracker.js'
 
 export default function Home() {
   return (
