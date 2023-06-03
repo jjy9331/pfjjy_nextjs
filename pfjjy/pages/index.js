@@ -3,7 +3,7 @@ import Header from '../components/header.js'
 import Footer from '../components/footer.js'
 import Item_home from '../components/item_home.js'
 import Sctracker from '../components/sctracker.js'
-
+import Item_introduce from '../components/item_introduce.js'
 
 export default function Home() {
   return (
@@ -12,6 +12,7 @@ export default function Home() {
       <CustomCursor />
       <Header />
       <Item_home />
+      <Item_introduce />
       <Footer />
     </div>
   )
