@@ -36,7 +36,8 @@ export default function Item_home() {
         })
 
         sc1.from(".runners",{
-            x:-1000
+            opacity:0,
+            x:-300
         })
         sc1.from(".sec1",{
             opacity:0,
@@ -49,6 +50,7 @@ export default function Item_home() {
         })
 
         sc1.to(".runners",{
+            opacity:1,
             x:0
         })
 
