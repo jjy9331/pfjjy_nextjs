@@ -4,31 +4,71 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 export default function Item_home() {
     const  sectionRef = useRef(null);
+    const  plsdRef = useRef(null);
     const triggerRef = useRef(null);
 
     gsap.registerPlugin(ScrollTrigger);
     
     useEffect(() => {
+
+
         gsap.to(".pl_sd",{
             opacity:0,
             duration:2,
             scrollTrigger: {
                 trigger: ".pl_sd",
-                markers: true,
+                // markers: true,
                 start:"top 25%",
                 end:"top 10%",
                 scrub: true,
             }
         })
-        return () => {
 
+        const sc1 = gsap.timeline({
+            scrollTrigger: {
+                trigger:".sec1",
+                markers:true,
+                start:"top 80%",
+                end:"top 10%",
+                scrub: true,
+
+            }
+        })
+
+        sc1.from(".runners",{
+            x:-1000
+        })
+        sc1.from(".sec1",{
+            opacity:0,
+            // y:"50%"
+        })
+
+        sc1.to(".sec1",{
+            opacity:1,
+            // y:"50%"
+        })
+
+        sc1.to(".runners",{
+            x:0
+        })
+
+        sc1.to(".sec1",{
+            opacity:0,
+            // y:"50%"
+        })
+
+
+
+
+        return () => {
+            // rnn.scrollTrigger.kill()
         }
     },[])
 
     return (
         <div>
             <div className="sd_wrap">
-                <h2 className="pl_sd">Please, scroll down</h2>
+                <h2 className="pl_sd" ref={plsdRef}>Please, scroll down</h2>
             </div>
             <div className="sec1">
                 <img className="runners" src="/img/main.gif" alt="teamwork visual icon" />
