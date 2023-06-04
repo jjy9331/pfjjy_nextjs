@@ -461,6 +461,60 @@ body {
   align-items: center;
 }
 
+/* portfolio */
+
+.portfolio{
+  /* overflow: hidden; */
+}
+
+.port_wrap{
+  background-color: white;
+  width: 850vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+
+.port_start{
+  background-color: black;
+  width: 150vw;
+  height: 100vh;
+}
+
+.port {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.port img{
+  transform: scale(0.6);
+}
+
+.port_1 {
+  width: 85vw;
+}
+
+.port_pc{
+  width: 60vw;
+}
+
+.port_ph {
+  width: 23vw;
+}
+
+.port_tt {
+  font-family: 'SF Pro KR';
+  font-size: 8vh;
+  line-height: 1em;
+  /* padding-top: 6vh; */
+  color: rgba(0, 0, 0, 0.5);
+  font-weight: 100;
+}
+
 
 /* footer */
 
