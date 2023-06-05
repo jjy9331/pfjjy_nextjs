@@ -33,6 +33,12 @@ export default function Home() {
       }
     })
 
+    
+    // const pf_more = gsap.timeline({scrollTrigger:{trigger:".pf_more",  start:"top 30%", end:"top 10%", scrub: true, markers:true, pin:true, translateX:"750vw"}})
+
+    // pf_more.from(".pf_more",{opacity:1,translateX:"750vw" })
+    // pf_more.to(".pf_more",{opacity:1, y:100})
+    // pf_more.to(".pf_more",{opacity:0})
 
     return() => {
       pin.kill()
@@ -68,17 +74,32 @@ export default function Home() {
                 <img className='port_pc' src="/img/monitor.webp" alt="zerolab" />
               </div>
               <div className='port'>
-                <img className='port_pc' src="/img/monitor.webp" alt="port_3" />
+                <div className='p_wrap'>
+                  <img className='port_pc' src="/img/monitor.webp" alt="mohenic" />
+                  <div className="lottie_ani">
+                    <lottie-interactive  lottie-interactive path="/data/mohenic_ani.json" interaction="morph"></lottie-interactive>
+                  </div>
+                </div>
               </div>
               <div className='port'>
                 <img className='port_ph' src="/img/iphone.webp" alt="port_4" />
               </div>
               <div className='port'>
-                <img className='port_pc' src="/img/monitor.webp" alt="port_5" />
+                <div className='p_wrap'>
+                  <img className='port_pc' src="/img/monitor.webp" alt="volvo" />
+                  <div className='lottie_ani'>
+                    <lottie-interactive  lottie-interactive path="/data/volvo_ani.json" interaction="morph"></lottie-interactive>
+                  </div>
+                </div>
               </div>
               <div className='port'>
-                <img className='port_ph' src="/img/iphone.webp" alt="port_more" />
+                <div className='pf_more'>
+                  <img className='port_ph' src="/img/iphone.webp" alt="port_more" />
+                </div>
               </div>
+          </div>
+          <div>
+            <div className='contact'></div>
           </div>
         </div>
       <Footer />

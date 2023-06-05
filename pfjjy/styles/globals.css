@@ -22,6 +22,7 @@ body {
     color: orange;
     left: 3vh;
     top: 11vh;
+    z-index: 3000;
 }
 
 
@@ -506,6 +507,13 @@ body {
   width: 23vw;
 }
 
+
+.pf_more .port_ph {
+  transform: scale(0.6);
+  width: 23vw;
+}
+
+
 .port_tt {
   font-family: 'SF Pro KR';
   font-size: 8vh;
@@ -515,6 +523,28 @@ body {
   font-weight: 100;
 }
 
+
+.p_wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.lottie_ani {
+  position: absolute;
+  width: 71vh;
+  top: 22.8%;
+}
+
+
+/* contact */
+
+.contact {
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+}
 
 /* footer */
 
