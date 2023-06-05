@@ -443,6 +443,112 @@ body {
   background: rgba(0,0,0,0.4);
 }
 
+.port_4{
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.hss_logo {
+  position: absolute;
+  /* bottom: 38.5%; */
+  /* left: 23%; */
+  width: 14vw;
+  z-index: 5;
+}
+
+.pf4_subp {
+  position: absolute;
+    bottom: 43%;
+    /* left: 36%; */
+    font-family: 'Black Han Sans', sans-serif;
+    font-family: 'Noto Sans KR';
+    /* font-family: 'OTEnjoystoriesBA'; */
+    font-size: 0.7vw;
+    opacity: 35%;
+    z-index: 5;
+    font-weight: 400;
+}
+
+.ypaint_hide1 {
+  position: absolute;
+  /* top: 45%; */
+  /* left: 0%; */
+  width: 10vw;
+  height: 5vh;
+  z-index: 4;
+  background-color: white;
+  cursor: none;
+}
+
+.ypaint_hide2 {
+  position: absolute;
+  bottom: 42%;
+  /* left: 16%; */
+  width: 6vw;
+  height: 4vh;
+  z-index: 4;
+  background-color: white;
+  cursor: none;
+}
+
+.ypaint_hide3 {
+  position: absolute;
+  bottom: 23%;
+  left: 57%;
+  width: 11%;
+  height: 51%;
+  z-index: 4;
+  background-color: white;
+  cursor: none;
+}
+
+.pf4bg {
+  position: absolute;
+    top: 12%;
+    left: 5%;
+    width: 13.5vw;
+    height: 24vw;
+    background-color: white;
+    z-index: 0;
+}
+
+.pf4_ypaint1 {
+  position: absolute;
+  top: 53%;
+  left: 45.1%;
+  width: 10vw;
+  z-index: 2;
+}
+
+.pf4_ypaint2 {
+  position: absolute;
+  bottom: 43.8%;
+  left: 42%;
+  width: 17vw;
+  z-index: 2;
+  transform: scaleY(-1);
+}
+
+.smile {
+  position: absolute;
+    height: 5vh;
+    z-index: 1;
+    cursor: none;
+    /* left: 44%; */
+}
+
+.cls-1{fill:#ffe422;}
+.blind{fill:#ffe422;}
+.cls-2{fill:#000;}
+
+
+
+
+
 /* introduce */
 
 .bkbox {
@@ -489,6 +595,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 
 .port img{
@@ -537,6 +644,96 @@ body {
   top: 22.8%;
 }
 
+.port_2 {
+  position: absolute;
+  top: 23.5%;
+  width: 35vw;
+  height: 20vw;
+  transform: scale(1);
+  z-index: -1;
+  background-color: rgba(240, 174, 0, 1);
+}
+
+.port_2 h3 {
+  position: absolute;
+    top: 17%;
+    right: 7%;
+    /* font-family: 'Black Han Sans', sans-serif; */
+    font-family: 'Open Sans', sans-serif;
+    font-size: 4.3vw;
+    font-weight: bold;
+}
+
+.port_2 h3 span {
+  font-weight: 100;
+}
+
+.port_2 p {
+  position: absolute;
+  top: 27%;
+  right: 8%;
+  /* font-family: 'Black Han Sans', sans-serif; */
+  font-family: 'Noto Sans KR';
+  font-size: 1.3vw;
+  font-weight: 100;
+  opacity: 70%;
+}
+
+.eye_hide1 {
+  position: absolute;
+  bottom: -44%;
+  left: -31%;
+  width: 50vw;
+  height: 9vw;
+  z-index: 4;
+  background-color: white;
+  cursor: none;
+}
+
+.eye_hide2 {
+  position: absolute;
+    bottom: -44%;
+    left: -29%;
+    width: 10vw;
+    height: 38vw;
+    z-index: 4;
+    background-color: white;
+    cursor: none;
+}
+
+
+
+.pf2_eye {
+  position: absolute;
+  bottom: -44%;
+  left: -26%;
+  width: 30%;
+  z-index: 2;
+}
+
+.port_more {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pf_more_img {
+  position: absolute;
+}
+
+.hover_runner {
+  z-index: -2;
+  width: 22vw;
+}
+
+.pfmore_bg {
+  position: absolute;
+  z-index: -1;
+  background: white;
+  width: 12vw;
+  height: 45vh;
+}
 
 /* contact */
 
