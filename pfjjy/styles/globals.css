@@ -271,12 +271,12 @@ body {
 /* sec1 */
 
 .sd_wrap{
-  /* position: fixed; */
-  width: 100vw;
-  height: 100vh;
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100vw;
+  height: 6000px;
 }
 
 .pl_sd {
@@ -286,6 +286,7 @@ body {
   color: black;
   font-weight: 100;
   letter-spacing: 0.1vw;
+  bottom: 50%;
 }
 
 .sec1{
@@ -298,12 +299,14 @@ body {
 }
 
 .runners { 
-  margin-left: -200%;
+  /* margin-left: -200%;  */
   display: none;
-  transform: scale(0.6);
+  /* transform: scale(0.6); */
   /* margin-bottom: 15vh; */
   position: fixed;
-  top: 20%;
+  width: 29vw;
+  left: -35%;
+  bottom: 43%;
 }
 
 .sec1 .typo1 {
@@ -311,7 +314,9 @@ body {
   opacity: 0;
   position: fixed;
   /* position: absolute; */
+  /* left: 38%; */
   top: 60%;
+  /* width: 35vw; */
   /* margin-top: 28vh; */
   text-align: center;
 }
@@ -344,6 +349,7 @@ body {
 .sec2 {
   width: 100vw;
   height: 4000px;
+  display: none;
 }
 
 .sec2_wrap {
@@ -357,7 +363,7 @@ body {
 }
 
 .sec2 .typo2{
-  opacity: 0;
+  /* opacity: 0; */
   text-align: center;
   position: relative;
 }
@@ -555,21 +561,57 @@ body {
 /* introduce */
 
 .bkbox {
-  /* position: fixed;  */
-  /* top: 100%; */
+  z-index: -1;
+  position: fixed;
+  left: 0%;
+  top: 0%;
   width: 100vw;
   height: 100vh;
   background-color: black;
 }
 
-.lottie_intro {
-  display: flex;
+.intro {
   width: 100vw;
-  height: 100vh;
-  background-color: black;
+  height: 2000px;
+  display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+  background-color: black;
 }
+
+.intro_tt {
+  position: fixed;
+  top: 45%;
+  font-family: 'SF Pro KR';
+  font-size: 10vh;
+  line-height: 1em;
+  /* padding-top: 6vh; */
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 100;
+}
+
+
+.intro_sc {
+  width: 100vw;
+  height: 6000px;
+  background-color: black;
+}
+
+.sc_wrap {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 0%;
+}
+
+.intro_rn {
+  width: 100vw;
+}
+
 
 /* portfolio */
 

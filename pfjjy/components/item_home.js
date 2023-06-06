@@ -56,15 +56,18 @@ export default function Item_home() {
         const { current: sec1RN_Element } = sec1RN_Ref;
     
         if (scrollY >= 1000 && scrollY <= 3000) {
-            const marginLeft = `${-200 + ((scrollY - 1000) / 2000) * 200}%`;
-            sec1RN_Element.style.marginLeft = marginLeft;
+            const progress = (scrollY - 1000) / 2000; // Calculate the progress between 0 and 1
+            const leftPosition = -35 + progress * 70; // Calculate the left position between -35% and 35%
+            sec1RN_Element.style.left = `${leftPosition}%`; 
             sec1RN_Element.style.display = "block";
         } else if (scrollY > 3000 && scrollY <= 5000) {
             const opacity = Math.max(1 - (scrollY - 3000) / 2000, 0);
+            sec1RN_Element.style.left = "35%"
             sec1RN_Element.style.opacity = opacity.toString();
             sec1RN_Element.style.display = "block";
         } else {
             sec1RN_Element.style.display = "none";
+            sec1RN_Element.style.left = "35%"
         }
     }, [scrollY]);
 
@@ -100,8 +103,8 @@ export default function Item_home() {
                     <p className="tw_2">일은 <span className="kw3">__</span> 하는 것이라 배웠습니다</p>
                 </div>
             </div>
-            <div className="sec2">
-                <div className="sec2_wrap">
+            <div className="sec2"ref={sec2T_Ref}>
+                <div className="sec2_wrap" >
                     <div className="typo2" ref={sec2T_Ref}>
                         <h3>팀이 단결하면, 프로젝트가 완결된다</h3>
                         <p>일은 같이 하는 것이라 배웠습니다</p>
