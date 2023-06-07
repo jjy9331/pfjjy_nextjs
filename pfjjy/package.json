@@ -19,6 +19,7 @@
     "react-lottie-player": "^1.5.4",
     "react-scroll": "^1.8.9",
     "react-skrollr": "^1.0.4",
-    "skrollr": "^0.6.26"
+    "skrollr": "^0.6.26",
+    "typewriter-effect": "^2.20.1"
   }
 }

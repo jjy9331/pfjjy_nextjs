@@ -612,6 +612,13 @@ body {
   width: 100vw;
 }
 
+.Typewriter {
+  font-family: 'SF Pro KR';
+  position: fixed;
+  color: white;
+  font-size: 3vw;
+}
+
 
 /* portfolio */
 

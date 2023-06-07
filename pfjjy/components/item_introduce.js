@@ -1,12 +1,17 @@
 import React, { useRef, useEffect, useState } from "react";
+import Typewriter from "typewriter-effect";
+
 
 export default function Item_introduce() {
     const [scrollY, setScrollY] = useState(0);
-    const introRef = useRef(null);
-    const bkRef = useRef(null);
     const [currentFrame, setCurrentFrame] = useState(0);
     const [display, setDisplay] = useState("none");
     const [imageFrames, setImageFrames] = useState([]);
+
+    const introRef = useRef(null);
+    const bkRef = useRef(null);
+    const typewriterRef = useRef(null);
+    const rnRef = useRef(null)
 
     const [imageLoaded, setImageLoaded] = useState(Array(94).fill(true));
 
@@ -21,6 +26,8 @@ export default function Item_introduce() {
             window.removeEventListener("scroll", handleScroll);
         };
     }, []);
+
+    // bkbox ani
 
     useEffect(() => {
         const { current: bkElement } = bkRef;
@@ -38,6 +45,8 @@ export default function Item_introduce() {
         }
     }, [scrollY]);
 
+    // intro title ani
+
     useEffect(() => {
         const { current: introElement } = introRef;
 
@@ -48,21 +57,55 @@ export default function Item_introduce() {
         }
     }, [scrollY]);
 
+    // introduce myself
+
     useEffect(() => {
+    const { current: typewriterElement } = typewriterRef;
+
+    if (scrollY > 14405 && scrollY <= 16714) {
+        const typewriter = new Typewriter(typewriterElement, {
+        strings: ["Hello", "World"],
+        autoStart: true,
+        loop: true,
+        });
+    }
+    }, [scrollY]);
+
+    // intro sequence ani
+
+    useEffect(() => {
+        
+    
         const startFrame = 0;
         const endFrame = 93;
         const startScrollY = 12000;
         const endScrollY = 18000;
-
+    
         if (scrollY >= startScrollY && scrollY <= endScrollY) {
-            const progress = (scrollY - startScrollY) / (endScrollY - startScrollY);
-            const frame = Math.round(startFrame + progress * (endFrame - startFrame));
-            setCurrentFrame(frame);
-            setDisplay("block");
+        const progress = (scrollY - startScrollY) / (endScrollY - startScrollY);
+        const frame = Math.round(startFrame + progress * (endFrame - startFrame));
+        setCurrentFrame(frame);
+    
+        setDisplay("block");
         } else {
-            setDisplay("none");
+        setDisplay("none");
         }
-    }, [scrollY, imageLoaded]);
+    }, [scrollY]);
+  
+
+    useEffect(() => {
+        const { current: rnElement } = rnRef;
+        
+        if (scrollY >= 12000 && scrollY <= 12897) {
+            const opacity = 1 - ((scrollY - 12449) / (12897 - 12000));
+            rnElement.style.opacity = opacity.toString();
+        } else if (scrollY > 12897 && scrollY <= 16968) {
+            rnElement.style.opacity = "0.5";
+        } else if (scrollY > 16968) {
+            const opacity = (scrollY - 16968) / (18000 - 16968);
+            rnElement.style.opacity = (opacity + 0.5).toString();
+        }
+    }, [scrollY]);
 
     const handleImageLoad = (index) => {
         setImageLoaded((prevLoaded) => {
@@ -100,19 +143,33 @@ export default function Item_introduce() {
             <div className="intro_sc">
                 <div className="intro_wrap" style={{ display }}>
                     <div className="sc_wrap">
-                        {imageFrames.map((frame, index) => {
-                            if (!imageLoaded[index]) return null;
-                            return (
-                                <img
-                                    key={index}
-                                    className="intro_rn"
-                                    src={frame.src}
-                                    style={{ display: currentFrame === index ? "block" : "none" }}
-                                    alt="Animation Frame"
-                                    onLoad={() => handleImageLoad(index)}
-                                />
-                            );
-                        })}
+                        {/* <h3 ref={typewriterRef}></h3> */}
+                        {scrollY > 12897 && scrollY <= 16968 && (
+                            <Typewriter
+                                options={{
+                                    strings: ["Hello, I'm Ji yong", "I am ready to work", "like a running mate"],
+                                    autoStart: true,
+                                    loop: true,
+                                }}
+                                ref={typewriterRef}
+                            />
+                        )}
+                        <div ref={rnRef}>
+                            
+                            {imageFrames.map((frame, index) => {
+                                if (!imageLoaded[index]) return null;
+                                return (
+                                    <img
+                                        key={index}
+                                        className="intro_rn"
+                                        src={frame.src}
+                                        style={{ display: currentFrame === index ? "block" : "none" }}
+                                        alt="Animation Frame"
+                                        onLoad={() => handleImageLoad(index)}
+                                    />
+                                );
+                            })}
+                        </div>
                     </div>
                 </div>
             </div>
