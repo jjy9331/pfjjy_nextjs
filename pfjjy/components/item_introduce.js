@@ -13,7 +13,7 @@ export default function Item_introduce() {
     const typewriterRef = useRef(null);
     const rnRef = useRef(null)
 
-    const [imageLoaded, setImageLoaded] = useState(Array(94).fill(true));
+    const [imageLoaded, setImageLoaded] = useState(Array(153).fill(true));
 
     useEffect(() => {
         const handleScroll = () => {
@@ -32,7 +32,9 @@ export default function Item_introduce() {
     useEffect(() => {
         const { current: bkElement } = bkRef;
 
-        if (scrollY >= 8000 && scrollY <= 11000) {
+        if (scrollY >= 0 && scrollY <= 8000){
+            bkElement.style.display = "none";
+        } else if (scrollY > 8000 && scrollY <= 11000) {
             const progress = (scrollY - 8000) / 3000;
             const topPosition = 100 - progress * 100;
             bkElement.style.top = `${topPosition}%`;
@@ -50,25 +52,13 @@ export default function Item_introduce() {
     useEffect(() => {
         const { current: introElement } = introRef;
 
-        if (scrollY > 11000 && scrollY <= 12000) {
+        if (scrollY >= 0 && scrollY <= 11000){
+            introElement.style.display = "none";
+        } else if (scrollY > 11000 && scrollY <= 12000) {
             introElement.style.display = "block";
         } else {
             introElement.style.display = "none";
         }
-    }, [scrollY]);
-
-    // introduce myself
-
-    useEffect(() => {
-    const { current: typewriterElement } = typewriterRef;
-
-    if (scrollY > 14405 && scrollY <= 16714) {
-        const typewriter = new Typewriter(typewriterElement, {
-        strings: ["Hello", "World"],
-        autoStart: true,
-        loop: true,
-        });
-    }
     }, [scrollY]);
 
     // intro sequence ani
@@ -77,21 +67,21 @@ export default function Item_introduce() {
         
     
         const startFrame = 0;
-        const endFrame = 93;
+        const endFrame = 153;
         const startScrollY = 12000;
         const endScrollY = 18000;
     
         if (scrollY >= startScrollY && scrollY <= endScrollY) {
-        const progress = (scrollY - startScrollY) / (endScrollY - startScrollY);
-        const frame = Math.round(startFrame + progress * (endFrame - startFrame));
-        setCurrentFrame(frame);
-    
-        setDisplay("block");
+            const progress = (scrollY - startScrollY) / (endScrollY - startScrollY);
+            const frame = Math.round(startFrame + progress * (endFrame - startFrame));
+            setCurrentFrame(frame);
+        
+            setDisplay("block");
         } else {
-        setDisplay("none");
+            setDisplay("none");
         }
     }, [scrollY]);
-  
+
 
     useEffect(() => {
         const { current: rnElement } = rnRef;
@@ -118,7 +108,7 @@ export default function Item_introduce() {
     useEffect(() => {
         const loadImageFrames = async () => {
             const frames = await Promise.all(
-                Array.from({ length: 94 }, async (_, index) => {
+                Array.from({ length: 153 }, async (_, index) => {
                     const response = await fetch(`/introduce_ani/${index.toString().padStart(3, "0")}.png`);
                     const src = URL.createObjectURL(await response.blob());
                     return { src, loaded: true };
@@ -143,19 +133,7 @@ export default function Item_introduce() {
             <div className="intro_sc">
                 <div className="intro_wrap" style={{ display }}>
                     <div className="sc_wrap">
-                        {/* <h3 ref={typewriterRef}></h3> */}
-                        {scrollY > 12897 && scrollY <= 16968 && (
-                            <Typewriter
-                                options={{
-                                    strings: ["Hello, I'm Ji yong", "I am ready to work", "like a running mate"],
-                                    autoStart: true,
-                                    loop: true,
-                                }}
-                                ref={typewriterRef}
-                            />
-                        )}
                         <div ref={rnRef}>
-                            
                             {imageFrames.map((frame, index) => {
                                 if (!imageLoaded[index]) return null;
                                 return (

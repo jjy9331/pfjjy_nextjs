@@ -561,6 +561,7 @@ body {
 /* introduce */
 
 .bkbox {
+  display: none;
   z-index: -1;
   position: fixed;
   left: 0%;
@@ -581,6 +582,7 @@ body {
 }
 
 .intro_tt {
+  display: none;
   position: fixed;
   top: 45%;
   font-family: 'SF Pro KR';
@@ -609,7 +611,7 @@ body {
 }
 
 .intro_rn {
-  width: 100vw;
+  width: 20vw;
 }
 
 .Typewriter {
