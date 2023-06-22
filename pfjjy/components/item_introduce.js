@@ -1,5 +1,4 @@
 import React, { useRef, useEffect, useState } from "react";
-import Typewriter from "typewriter-effect";
 
 
 export default function Item_introduce() {
@@ -9,9 +8,10 @@ export default function Item_introduce() {
     const [imageFrames, setImageFrames] = useState([]);
 
     const introRef = useRef(null);
-    const bkRef = useRef(null);
-    const typewriterRef = useRef(null);
-    const rnRef = useRef(null)
+    const bkRef = useRef(null); 
+    const rnRef = useRef(null);
+    const sub1Ref = useRef(null);
+    const sub2Ref = useRef(null);
 
     const [imageLoaded, setImageLoaded] = useState(Array(153).fill(true));
 
@@ -61,7 +61,7 @@ export default function Item_introduce() {
         }
     }, [scrollY]);
 
-    // intro sequence ani
+    // intro sequence ani_display_section
 
     useEffect(() => {
         
@@ -87,16 +87,20 @@ export default function Item_introduce() {
     useEffect(() => {
         const { current: rnElement } = rnRef;
         
-        if (scrollY >= 12000 && scrollY <= 12897) {
-            const opacity = 1 - ((scrollY - 12449) / (12897 - 12000));
+        if (scrollY > 0 && scrollY <= 12885){
+            rnElement.style.opacity = "1";
+        } else if (scrollY > 12885 && scrollY <= 13078) {
+            const opacity = 1 - ((scrollY - 12449) / (13078 - 12000));
             rnElement.style.opacity = opacity.toString();
-        } else if (scrollY > 12897 && scrollY <= 16968) {
+        } else if (scrollY > 13078 && scrollY <= 16744) {
             rnElement.style.opacity = "0.5";
-        } else if (scrollY > 16968) {
-            const opacity = (scrollY - 16968) / (18000 - 16968);
+        } else if (scrollY > 16744) {
+            const opacity = (scrollY - 16744) / (16824 - 16744);
             rnElement.style.opacity = (opacity + 0.5).toString();
         }
     }, [scrollY]);
+
+    // intro_seq_ani_moving_position
 
     useEffect(() => {
         const { current: rnElement } = rnRef;
@@ -120,6 +124,36 @@ export default function Item_introduce() {
         }
     }, [scrollY]);
 
+    // sub1 
+
+    useEffect(()=>{
+        const { current: sub1Element } = sub1Ref;
+
+        if( scrollY >= 0 && scrollY <= 13100){
+            sub1Element.style.display = "none";
+        } else if ( scrollY >= 13101 && scrollY <= 14040 ){
+            sub1Element.style.display = "block";
+        } else {
+            sub1Element.style.display = "none";
+        }
+
+    },[scrollY])
+
+    // sub2 
+
+    useEffect(()=>{
+        const { current: sub2Element } = sub2Ref;
+
+        if( scrollY >= 0 && scrollY <= 14484){
+            sub2Element.style.display = "none";
+        } else if ( scrollY > 14484 && scrollY <= 16684 ){
+            sub2Element.style.display = "block";
+        } else {
+            sub2Element.style.display = "none";
+        }
+
+    },[scrollY])
+
     const handleImageLoad = (index) => {
         setImageLoaded((prevLoaded) => {
             const loaded = [...prevLoaded];
@@ -127,6 +161,8 @@ export default function Item_introduce() {
             return loaded;
         });
     };
+
+    // intro_seq_webworker
 
     useEffect(() => {
         const loadImageFrames = async () => {
@@ -173,6 +209,12 @@ export default function Item_introduce() {
                         </div>
                     </div>
                 </div>
+            </div>
+            <div  className="sub1_wrap">
+                <h4 ref={sub1Ref} className="intro_sub1">안녕하세요</h4>
+            </div>
+            <div className="sub2_wrap">
+            <h4 ref={sub2Ref} className="intro_sub2">당사와 달릴 준비가 된 정지용입니다</h4>
             </div>
         </div>
     )
