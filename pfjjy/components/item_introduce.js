@@ -82,6 +82,7 @@ export default function Item_introduce() {
         }
     }, [scrollY]);
 
+    // introduce_seq_opacity
 
     useEffect(() => {
         const { current: rnElement } = rnRef;
@@ -94,6 +95,28 @@ export default function Item_introduce() {
         } else if (scrollY > 16968) {
             const opacity = (scrollY - 16968) / (18000 - 16968);
             rnElement.style.opacity = (opacity + 0.5).toString();
+        }
+    }, [scrollY]);
+
+    useEffect(() => {
+        const { current: rnElement } = rnRef;
+
+        if (scrollY >= 12000 && scrollY <= 13122){
+            const progress = (scrollY - 12000) / 1122;
+            const rightPosition = -13 + progress * 57 ;
+            rnElement.style.right = `${rightPosition}%`; 
+        } else if ( scrollY > 13122 && scrollY <= 13947) {
+            rnElement.style.right = "44%"; 
+        } else if ( scrollY > 13947 && scrollY <= 14440 ) {
+            const progress = (scrollY - 13947) / 493;
+            const centerPosition = 44 - progress * 4 ;
+            rnElement.style.right = `${centerPosition}%`; 
+        }  else if ( scrollY > 14440 && scrollY <= 16640 ) {
+            rnElement.style.right = "40%"; 
+        }  else if ( scrollY > 16640 && scrollY <= 18000 ) {
+            const progress = (scrollY - 16640) / 1360;
+            const Run = 40 + progress * 80 ;
+            rnElement.style.right = `${Run}%`; 
         }
     }, [scrollY]);
 
@@ -133,7 +156,7 @@ export default function Item_introduce() {
             <div className="intro_sc">
                 <div className="intro_wrap" style={{ display }}>
                     <div className="sc_wrap">
-                        <div ref={rnRef}>
+                        <div className="intro_rnn_wrap" ref={rnRef}>
                             {imageFrames.map((frame, index) => {
                                 if (!imageLoaded[index]) return null;
                                 return (

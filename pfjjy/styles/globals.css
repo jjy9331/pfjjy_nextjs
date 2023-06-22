@@ -603,11 +603,21 @@ body {
 .sc_wrap {
   width: 100vw;
   height: 100vh;
-  display: flex;
+  /* display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
   position: fixed;
   bottom: 0%;
+}
+
+.intro_rnn_wrap {
+  opacity: 0.90524;
+  position: absolute;
+  /* top: 24%; */
+  /* width: 320px; */
+  height: 100%;
+  display: flex;
+  align-items: center;
 }
 
 .intro_rn {
