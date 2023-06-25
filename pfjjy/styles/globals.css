@@ -640,6 +640,7 @@ body {
 }
 
 .intro_sub1 {
+  display: none;
   color: white;
   font-size: 3vw;
   font-family: 'SF Pro KR';
@@ -657,6 +658,7 @@ body {
 }
 
 .intro_sub2 {
+  display: none;
   color: white;
   font-size: 23px;
   font-family: 'SF Pro KR';
@@ -671,6 +673,10 @@ body {
 
 .portfolio{
   /* overflow: hidden; */
+  position: fixed;
+  bottom: 0%;
+  left: 100%;
+  display: none;
 }
 
 .port_wrap{

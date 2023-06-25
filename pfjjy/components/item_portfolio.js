@@ -1,10 +1,38 @@
+import React, { useRef, useEffect, useState } from "react";
+
 export default function Item_portfolio() {
+    const [scrollY, setScrollY] = useState(0);
+    const portRef = useRef(null);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            setScrollY(window.scrollY);
+        };
+
+        window.addEventListener("scroll", handleScroll);
+
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
+    }, []);
+
+    useEffect(()=>{
+        const { current: portElement } = portRef;
+
+        if(scrollY > 0 && scrollY <= 17010){
+            portElement.style.display = "none";
+        } else if (scrollY > 17010 && scrollY <= 19236){
+            const progress = (scrollY - 17010) / 2226;
+            const leftPosition = 100 + (-progress * 700);
+            portElement.style.left = `${leftPosition}%`; 
+            portElement.style.display = "block";
+        }
+    },[scrollY])
+
     return (
         <div>
-            <div className='portfolio'>
+            <div ref={portRef} className='portfolio'>
                 <div className='port_wrap'>
-                    <div className='port_start'>
-                    </div>
                     <div className='port'>
                         <h3 className='port_tt'>포트폴리오</h3>
                     </div>
@@ -32,14 +60,14 @@ export default function Item_portfolio() {
                     <div className='port'>
                         <img className='port_ph' src="/img/iphone.webp" alt="happysocks" />
                         <div className='port_4'>
-                            <img src="/img/hss_log.svg" alt="happy_socks_logo" class="hss_logo" loading="lazy" />
-                            <p class="pf4_subp">모바일 리디자인</p>
-                            <div class="ypaint_hide1"></div>
-                            <div class="ypaint_hide2"></div>
-                            <div class="ypaint_hide3"></div>
-                            <div class="pf4bg"></div>
-                            <img src="/img/ypaint.webp" alt="mouseover_pf4_ypaint_ani_source" class="pf4_ypaint1" loading="lazy" />
-                            <img src="/img/ypaint.webp" alt="mouseover_pf4_ypaint_ani_source" class="pf4_ypaint2" loading="lazy" />
+                            <img src="/img/hss_log.svg" alt="happy_socks_logo" className="hss_logo" loading="lazy" />
+                            <p className="pf4_subp">모바일 리디자인</p>
+                            <div className="ypaint_hide1"></div>
+                            <div className="ypaint_hide2"></div>
+                            <div className="ypaint_hide3"></div>
+                            <div className="pf4bg"></div>
+                            <img src="/img/ypaint.webp" alt="mouseover_pf4_ypaint_ani_source" className="pf4_ypaint1" loading="lazy" />
+                            <img src="/img/ypaint.webp" alt="mouseover_pf4_ypaint_ani_source" className="pf4_ypaint2" loading="lazy" />
                             <svg className="smile"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 31.62 31.62" preserveAspectRatio="none">
                                     <circle className="cls-1" cx="15.81" cy="15.81" r="15.81"/>
                                     <g id="smile2">
