@@ -673,19 +673,26 @@ body {
 
 .portfolio{
   /* overflow: hidden; */
-  position: fixed;
-  bottom: 0%;
-  left: 100%;
+  position: relative;
+  /* display: flex; */
+  height: 20000px;
+  background: black;
+}
+
+.port_wrap1{
   display: none;
 }
 
-.port_wrap{
+.port_wrap2{
   background-color: white;
   width: 850vw;
   height: 100vh;
   display: flex;
-  flex-direction: row;
-  position: relative;
+  position: fixed;
+  bottom: 0%;
+  /* flex-direction: row; */
+  /* position: relative; */
+  align-items: center;
 }
 
 .port_start{
