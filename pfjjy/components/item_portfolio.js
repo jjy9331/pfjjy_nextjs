@@ -4,6 +4,7 @@ export default function Item_portfolio() {
     const [scrollY, setScrollY] = useState(0);
     const portRef = useRef(null);
     const hzportRef = useRef(null);
+    const portpmRef = useRef(null);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -21,8 +22,10 @@ export default function Item_portfolio() {
         const { current: hzportElement } = hzportRef;
         if(scrollY >= 0 && scrollY <= 17010){
             hzportElement.style.display = "none";
-        } else if (scrollY > 17010 && scrollY <= 39236){
+        } else if (scrollY > 17010 && scrollY <= 35328){
             hzportElement.style.display = "block";
+        } else {
+            hzportElement.style.display = "none";
         }
 
     },[scrollY])
@@ -71,12 +74,34 @@ export default function Item_portfolio() {
         } else if (scrollY > 31328 && scrollY <= 32328) {
             progress = (scrollY - 31328) / (32328 - 31328);
             leftPosition = -500 - progress * 100;
+        } else if (scrollY > 32328 && scrollY <= 33328) {
+            progress = 0;
+            leftPosition = -600;
         } else {
             progress = 0;
             leftPosition = -600;
         } 
         
         portElement.style.left = `${leftPosition}%`;
+
+    },[scrollY])
+
+    useEffect(()=>{
+
+        let progress, bottomPosition;
+
+        const { current: portpmElement } = portpmRef;
+        if(scrollY >= 0 && scrollY <= 33328){
+            bottomPosition = 0
+        } else if(scrollY > 33328 && scrollY <= 34328){
+            progress = (scrollY - 33328) / (34328 - 33328);
+            bottomPosition = 0 - progress * 100;
+        } else {
+            progress = 0;
+            bottomPosition = -100;
+        }
+
+        portpmElement.style.bottom = `${bottomPosition}%`;
 
     },[scrollY])
 
@@ -136,7 +161,7 @@ export default function Item_portfolio() {
                             </div>
                             </div>
                         </div>
-                        <div className='port'>
+                        <div className='port' ref={portpmRef}>
                             <div className='pf_more'>
                             <img className='port_ph' src="/img/iphone.webp" alt="port_more" />
                             </div>
