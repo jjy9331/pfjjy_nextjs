@@ -1,15 +1,21 @@
-import CustomCursor from '../pages/cursor.js'
-import Header from '../pages/header.js'
-import Footer from '../pages/footer.js'
-import PL_SD from '../pages/pl_sd.js'
+import CustomCursor from '../components/cursor.js'
+import Header from '../components/header.js'
+import Footer from '../components/footer.js'
+import Item_home from '../components/item_home.js'
+import Sctracker from '../components/sctracker.js'
+import Item_introduce from '../components/item_introduce.js'
+import Item_portfolio from '@/components/item_portfolio.js'
 
 export default function Home() {
   return (
     <div>
+      <Sctracker />
       <CustomCursor />
       <Header />
+      <Item_home />
+      <Item_introduce />
+      <Item_portfolio />
       <Footer />
-      <PL_SD />
     </div>
   )
 }
