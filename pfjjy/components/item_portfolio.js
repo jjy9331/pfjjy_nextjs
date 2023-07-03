@@ -20,9 +20,9 @@ export default function Item_portfolio() {
 
     useEffect(()=>{
         const { current: hzportElement } = hzportRef;
-        if(scrollY >= 0 && scrollY <= 17010){
+        if(scrollY >= 0 && scrollY <= 16736){
             hzportElement.style.display = "none";
-        } else if (scrollY > 17010 && scrollY <= 35328){
+        } else if (scrollY > 16736 && scrollY <= 35328){
             hzportElement.style.display = "block";
         } else {
             hzportElement.style.display = "none";
@@ -35,10 +35,10 @@ export default function Item_portfolio() {
 
         let progress, leftPosition;
 
-        if (scrollY >= 17010 && scrollY <= 19484) {
-            progress = (scrollY - 17010) / (19484 - 17010);
+        if (scrollY >= 16736 && scrollY <= 17346) {
+            progress = (scrollY - 16736) / (17346 - 16736);
             leftPosition = 100 - progress * 100;
-        } else if (scrollY > 19484 && scrollY <= 21328) {
+        } else if (scrollY > 17346 && scrollY <= 21328) {
             progress = 0;
             leftPosition = 0;
         } else if (scrollY > 21328 && scrollY <= 22328) {
