@@ -676,7 +676,7 @@ body {
   position: relative;
   /* display: flex; */
   height: 16092px;
-  background: black;
+  /* background: black; */
 }
 
 .port_wrap1{
@@ -851,9 +851,147 @@ body {
 
 .contact {
   width: 100vw;
-  height: 100vh;
+  height: 10000px;
   background-color: white;
 }
+
+.cont {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.cont_tt1 {
+  display: none;
+  position: fixed;
+  top: 45%;
+  font-family: 'SF Pro KR';
+  font-size: 10vh;
+  line-height: 1em;
+  /* padding-top: 6vh; */
+  color: rgba(0, 0, 0, 0.9);
+  font-weight: 100;
+}
+
+.cont_tt2 {
+  display: none;
+}
+
+.cont_tt3 {
+  display: none;
+}
+
+.contsc_wrap {
+  position: relative;
+}
+
+.cont_wrap_l {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 100;
+}
+
+.cont_wrap_r {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 10;
+}
+
+.contsc_l {
+  width: 54vw;
+}
+
+.contsc_r {
+  width: 58vw;
+}
+
+.cont_tt2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.cont_tt2 h4{
+  position: fixed;
+  top: 50%;
+  font-family: "SF Pro KR";
+  font-size: 4vh;
+  line-height: 1em;
+  color: rgba(0, 0, 0, 0.9);
+  font-weight: 100;
+  display: none;
+}
+
+.cont_tt3 {
+  display: none;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+
+.cont_tt3_wrap1 {
+  position: relative;
+}
+
+.cont_tt3_t1{
+  position: fixed;
+    top: 30%;
+    /* left: 50%; */
+    display: flex;
+    font-family: "SF Pro KR";
+    font-weight: 100;
+    font-size: 30px;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+}
+
+.cont_tt3_p1 {
+  position: fixed;
+    top: 35%;
+    display: flex;
+    font-family: "SF Pro KR";
+    font-weight: 100;
+    font-size: 15px;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+}
+
+.cont_tt3_wrap2 {
+  position: relative;
+}
+
+.cont_tt3_t2 {
+  position: fixed;
+    top: 58%;
+    display: flex;
+    font-family: "SF Pro KR";
+    font-weight: 100;
+    font-size: 30px;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+}
+
+.cont_tt3_p2 {
+  position: fixed;
+    top: 63%;
+    display: flex;
+    font-family: "SF Pro KR";
+    font-weight: 100;
+    font-size: 15px;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+}
+
 
 /* footer */
 

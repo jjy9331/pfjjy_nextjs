@@ -214,7 +214,7 @@ export default function Item_introduce() {
                 <h4 ref={sub1Ref} className="intro_sub1">안녕하세요</h4>
             </div>
             <div className="sub2_wrap">
-            <h4 ref={sub2Ref} className="intro_sub2">당사와 달릴 준비가 된 정지용입니다</h4>
+                <h4 ref={sub2Ref} className="intro_sub2">당사와 달릴 준비가 된 정지용입니다</h4>
             </div>
         </div>
     )
