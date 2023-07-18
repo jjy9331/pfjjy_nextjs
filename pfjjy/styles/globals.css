@@ -901,7 +901,7 @@ body {
   z-index: 10;
 }
 
-.contsc_l {
+.contsc {
   width: 100vw;
   height: 100vh;
   object-fit: cover;

@@ -168,7 +168,7 @@ export default function Item_contact() {
                                 return (
                                     <img
                                         key={index}
-                                        className="contsc_l"
+                                        className="contsc"
                                         src={frame.src} 
                                         style={{ display: currentFrame === index ? "block" : "none" }}
                                         alt="contact_scroll_ani" 
