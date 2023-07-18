@@ -4,8 +4,8 @@ export default function Item_contact() {
     const [scrollY, setScrollY] = useState(0);
     const [currentFrame, setCurrentFrame] = useState(0);
     const [display, setDisplay] = useState("none");
-    const [imageFrames1, setImageFrames1] = useState([]);
-    const [imageFrames2, setImageFrames2] = useState([]);
+    const [imageFrames, setImageFrames1] = useState([]);
+    
 
     const cont = useRef(null);
     const cont_t1Ref = useRef(null);
@@ -15,8 +15,7 @@ export default function Item_contact() {
     const cont_tt3 = useRef(null);
     
 
-    const [imageLoaded1, setImageLoaded1] = useState(Array(64).fill(true));
-    const [imageLoaded2, setImageLoaded2] = useState(Array(64).fill(true));
+    const [imageLoaded, setImageLoaded1] = useState(Array(64).fill(true));
 
     useEffect(() => {
         const handleScroll = () => {
@@ -52,18 +51,18 @@ export default function Item_contact() {
         const endScrollY = 39828;
         if (scrollY >= startScrollY && scrollY <= endScrollY) {
             const progress = (scrollY - startScrollY) / (endScrollY - startScrollY);
-            const frame1 = Math.round(startFrame + progress * (endFrame - startFrame));
-            setCurrentFrame(frame1);
+            const frame = Math.round(startFrame + progress * (endFrame - startFrame));
+            setCurrentFrame(frame);
             setDisplay("block");
         } else {
             setDisplay("none");
         }
     },[scrollY]) 
 
-    const handleImageLoad1 = (index1) => {
+    const handleImageLoad = (index) => {
         setImageLoaded1((prevLoaded) => {
             const loaded1 = [...prevLoaded];
-            loaded1[index1] = true;
+            loaded1[index] = true;
             return loaded1;
         });
     };
@@ -74,7 +73,7 @@ export default function Item_contact() {
         const loadImageFrames1 = async () => {
             const frames = await Promise.all(
                 Array.from({ length: 64 }, async (_, index) => {
-                    const response = await fetch(`/contact_left/${index.toString().padStart(3, "0")}.png`);
+                    const response = await fetch(`/contact_ani/${index.toString().padStart(3, "0")}.svg`);
                     const src = URL.createObjectURL(await response.blob());
                     return { src, loaded: true };
                 })
@@ -85,28 +84,7 @@ export default function Item_contact() {
         loadImageFrames1();
     }, []);
 
-    const handleImageLoad2 = (index2) => {
-        setImageLoaded2((prevLoaded) => {
-            const loaded2 = [...prevLoaded];
-            loaded2[index2] = true;
-            return loaded2;
-        });
-    };
 
-    useEffect(() => {
-        const loadImageFrames2 = async () => {
-            const frames = await Promise.all(
-                Array.from({ length: 64 }, async (_, index) => {
-                    const response = await fetch(`/contact_right/${index.toString().padStart(3, "0")}.png`);
-                    const src = URL.createObjectURL(await response.blob());
-                    return { src, loaded: true };
-                })
-            );
-            setImageFrames2(frames);
-        };
-
-        loadImageFrames2();
-    }, []);
 
     useEffect(() => {
         const { current: cont_tt2Element } = cont_tt2;
@@ -185,32 +163,16 @@ export default function Item_contact() {
                     <div className="contsc_wrap" style={{ display }}>
                         {/* <div className="cont_wrap_l" ref={cont_ani_l}> */}
                         <div className="cont_wrap_l">
-                            {imageFrames1.map((frame1, index1) => {
-                                if (!imageLoaded1[index1]) return null;
+                            {imageFrames.map((frame, index) => {
+                                if (!imageLoaded[index]) return null;
                                 return (
                                     <img
-                                        key={index1}
+                                        key={index}
                                         className="contsc_l"
-                                        src={frame1.src} 
-                                        style={{ display: currentFrame === index1 ? "block" : "none" }}
-                                        alt="contact_scroll_ani_left" 
-                                        onLoad={() => handleImageLoad1(index1)}
-                                    />
-                                );
-                            })}
-                        </div>
-                        {/* <div className="cont_wrap_r" ref={cont_ani_r}> */}
-                        <div className="cont_wrap_r">
-                            {imageFrames2.map((frame2, index2) => {
-                                if (!imageLoaded2[index2]) return null;
-                                return (
-                                    <img
-                                        key={index2}
-                                        className="contsc_r"
-                                        src={frame2.src} 
-                                        style={{ display: currentFrame === index2 ? "block" : "none" }}
-                                        alt="contact_scroll_ani_right" 
-                                        onLoad={() => handleImageLoad2(index2)}
+                                        src={frame.src} 
+                                        style={{ display: currentFrame === index ? "block" : "none" }}
+                                        alt="contact_scroll_ani" 
+                                        onLoad={() => handleImageLoad(index)}
                                     />
                                 );
                             })}

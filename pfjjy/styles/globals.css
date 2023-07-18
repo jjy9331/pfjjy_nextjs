@@ -902,7 +902,9 @@ body {
 }
 
 .contsc_l {
-  width: 54vw;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
 }
 
 .contsc_r {
