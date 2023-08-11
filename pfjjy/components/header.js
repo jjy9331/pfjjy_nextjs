@@ -1,6 +1,26 @@
 
+import { useEffect } from 'react';
 
 export default function Header() {
+    useEffect(() => {
+        const logoLink = document.querySelector('.logo');
+
+        const scrollToTop = () => {
+            window.scrollTo({
+                top: 0,
+                // behavior: 'smooth' // 부드러운 스크롤
+            });
+        };
+
+        if (logoLink) {
+            logoLink.addEventListener('click', scrollToTop);
+
+            return () => {
+                logoLink.removeEventListener('click', scrollToTop);
+            };
+        }
+    }, []);
+
     return (
         <div className="header">
             <div className="inner">

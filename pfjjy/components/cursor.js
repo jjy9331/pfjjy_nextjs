@@ -68,14 +68,14 @@ export default function CustomCursor() {
 
     const handleLinkHoverEvents = () => {
         const elements = document.querySelectorAll("a, button, li");
-
+    
         elements.forEach((el) => {
-            el.addEventListener("mouseover", () => {
+            el.addEventListener("mouseenter", () => {
                 setClicked(false);
                 setLinkHovered(true);
             });
-
-            el.addEventListener("mouseout", () => {
+    
+            el.addEventListener("mouseleave", () => {
                 setLinkHovered(false);
             });
         });
