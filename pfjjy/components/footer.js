@@ -10,7 +10,7 @@ export default function Footer() {
         const handleScroll = () => {
             const scrollY = window.scrollY;
 
-            if (scrollY >= 17899 && scrollY <= 32812) {
+            if (scrollY >= 17668 && scrollY <= 32812) {
                 setDisplayNav(true);
                 setDisplayCopyRight(false);
             } else {

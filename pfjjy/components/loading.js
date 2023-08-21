@@ -14,7 +14,7 @@ const Loading = ({ onImagesLoaded }) => {
             throw new Error(`Failed to fetch image ${index}: ${response.status} ${response.statusText}`);
           }
           const src = URL.createObjectURL(await response.blob());
-          // console.log(`Loaded image frame ${index}: ${src}`);
+          console.log(`Loaded image frame ${index}: ${src}`);
           return { src, loaded: false }; // 이미지 로드 상태를 false로 초기화
         })
       );
@@ -39,7 +39,7 @@ const Loading = ({ onImagesLoaded }) => {
         const totalImages = contactAniFrames.length + introduceAniFrames.length + imgPaths.length;
         let loadedImages = 0;
 
-        console.log("totalImages: "+ totalImages);
+        // console.log("totalImages: "+ totalImages);
 
         const loadImage = (url) =>
           new Promise((resolve, reject) => {
@@ -57,12 +57,12 @@ const Loading = ({ onImagesLoaded }) => {
 
         const updateProgress = () => {
           loadedImages++;
-          console.log("loadedImages: "+ loadedImages);
+          // console.log("loadedImages: "+ loadedImages);
           const progress = Math.floor((loadedImages / totalImages) * 100);
           
           setLoadingProgress(progress);
 
-          console.log("progress: "+ progress);
+          // console.log("progress: "+ progress);
           if (loadedImages === totalImages) {
             setLoadingProgress(100);
             setImagesLoaded(true);
@@ -90,7 +90,7 @@ const Loading = ({ onImagesLoaded }) => {
         onImagesLoaded(); // 이미지 로딩 완료를 부모 컴포넌트에 알림
         setImagesLoaded(true);
       } catch (error) {
-        // console.error('Image loading error:', error);
+        console.error('Image loading error:', error);
       }
     };
 
@@ -99,7 +99,7 @@ const Loading = ({ onImagesLoaded }) => {
     }
   }, []); // 처음 로딩 시에만 실행
 
-  console.log('loadingProgress:', loadingProgress);
+  // console.log('loadingProgress:', loadingProgress);
 
   return (
     <div className="loading-container">
