@@ -14,7 +14,7 @@ const Loading = ({ onImagesLoaded }) => {
             throw new Error(`Failed to fetch image ${index}: ${response.status} ${response.statusText}`);
           }
           const src = URL.createObjectURL(await response.blob());
-          console.log(`Loaded image frame ${index}: ${src}`);
+          // console.log(`Loaded image frame ${index}: ${src}`);
           return { src, loaded: false }; // 이미지 로드 상태를 false로 초기화
         })
       );
