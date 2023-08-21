@@ -137,7 +137,7 @@ body {
   height: 3px;
   border-radius: 3px;
   background: black;
-  visibility: hidden; 
+  /* visibility: hidden;  */
 }
 .header ul li:nth-child(2) { position: relative; padding-right:55px}
 .header ul li:nth-child(2) .hr_d2 { 
@@ -148,7 +148,7 @@ body {
   height: 3px;
   border-radius: 3px;
   background: black;
-  visibility: hidden; 
+  /* visibility: hidden;  */
 }
 
 .header ul li:nth-child(2) .hr_d3 { 
@@ -159,7 +159,7 @@ body {
   height: 3px;
   border-radius: 3px;
   background: black;
-  visibility: hidden; 
+  /* visibility: hidden;  */
 }
 .header ul li:nth-child(2) .hr_d4 { 
   position: absolute;
@@ -169,7 +169,7 @@ body {
   height: 3px;
   border-radius: 3px;
   background: black;
-  visibility: hidden; 
+  /* visibility: hidden;  */
 }
 .header ul li:nth-child(2) .hr_d5 { 
   position: absolute;
@@ -179,7 +179,7 @@ body {
   height: 3px;
   border-radius: 3px;
   background: black;
-  visibility: hidden; 
+  /* visibility: hidden;  */
 }
 .header ul li:nth-child(3) { position: relative; padding-right:55px}
 .header ul li:nth-child(3) .hr_d6 { 
@@ -190,7 +190,7 @@ body {
   height: 3px;
   border-radius: 3px;
   background: black;
-  visibility: hidden; 
+  /* visibility: hidden;  */
 }
 
 .header ul li:nth-child(3) .hr_d7 { 
@@ -201,7 +201,7 @@ body {
   height: 3px;
   border-radius: 3px;
   background: black;
-  visibility: hidden; 
+  /* visibility: hidden;  */
 }
 .header ul li:nth-child(3) .hr_d8 { 
   position: absolute;
@@ -211,7 +211,7 @@ body {
   height: 3px;
   border-radius: 3px;
   background: black;
-  visibility: hidden; 
+  /* visibility: hidden;  */
 }
 .header ul li:nth-child(3) .hr_d9 { 
   position: absolute;
@@ -221,7 +221,7 @@ body {
   height: 3px;
   border-radius: 3px;
   background: black;
-  visibility: hidden; 
+  /* visibility: hidden;  */
 }
 .header ul li:nth-child(3) .hr_d10 { 
   position: absolute;
@@ -231,7 +231,7 @@ body {
   height: 3px;
   border-radius: 3px;
   background: black;
-  visibility: hidden; 
+  /* visibility: hidden;  */
 }
 
 .header ul li:nth-child(4) { position: relative;}
@@ -243,7 +243,7 @@ body {
   height: 3px;
   border-radius: 3px;
   background: black;
-  visibility: hidden; 
+  /* visibility: hidden;  */
 }
 
 .header ul li:nth-child(4) .hr_d12 { 
@@ -254,7 +254,7 @@ body {
   height: 3px;
   border-radius: 3px;
   background: black;
-  visibility: hidden; 
+  /* visibility: hidden;  */
 }
 .header ul li:nth-child(4) .hr_d13 { 
   position: absolute;
@@ -264,7 +264,7 @@ body {
   height: 3px;
   border-radius: 3px;
   background: black;
-  visibility: hidden; 
+  /* visibility: hidden;  */
 }
 
 
