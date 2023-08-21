@@ -1,16 +1,83 @@
-import React, { useState, useRef, useEffect } from 'react'
+import React, { useState, useRef, useEffect } from 'react';
 
 export default function Footer() {
-    const [toggle, setToggle] = useState(false)
+    const [toggle, setToggle] = useState(false);
+    const [displayNav, setDisplayNav] = useState(false);
+    const [displayCopyRight, setDisplayCopyRight] = useState(true);
     const listRef = useRef(null);
 
     useEffect(() => {
-        const handleClickOutside = (event) => {
-            if (listRef.current && !listRef.current.contains(event.target)) {
-                setToggle(false);
+        const handleScroll = () => {
+            const scrollY = window.scrollY;
+
+            if (scrollY >= 17899 && scrollY <= 32812) {
+                setDisplayNav(true);
+                setDisplayCopyRight(false);
+            } else {
+                setDisplayNav(false);
+                setDisplayCopyRight(true);
+            }
+
+            const sections = [
+                { id: 'gebiscon', start: 22338, end: 23278 },
+                { id: 'zerolab', start: 24419, end: 25323 },
+                { id: 'mohenic', start: 26480, end: 27231 },
+                { id: 'happysocks', start: 28462, end: 29209 },
+                { id: 'volvo', start: 30343, end: 31291 },
+                { id: 'more', start: 32331, end: 33325 }
+            ];
+
+            sections.forEach(section => {
+                const elem = document.querySelector(`.${section.id} .pf-nav-sb`);
+                if (elem) {
+                    if (scrollY >= section.start && scrollY < section.end) {
+                        elem.classList.add('pf_nav_active');
+                    } else {
+                        elem.classList.remove('pf_nav_active');
+                    }
+                }
+            });
+        };
+
+        const portLinks = document.querySelectorAll('.pf-nav-sb');
+
+        const scrollToSection = (event) => {
+            if (displayNav) {
+                const targetValue = event.currentTarget.getAttribute('data-value');
+                console.log("pf-nav-sb: " + targetValue);
+                if (targetValue) {
+                    window.scrollTo({
+                        top: targetValue,
+                        behavior: 'smooth',
+                    });
+                }
             }
         };
 
+        window.addEventListener('scroll', handleScroll);
+        handleScroll();
+
+        if (portLinks) {
+            portLinks.forEach(link => {
+                link.addEventListener('click', scrollToSection);
+            });
+
+            return () => {
+                window.removeEventListener('scroll', handleScroll);
+                portLinks.forEach(link => {
+                    link.removeEventListener('click', scrollToSection);
+                });
+            };
+        }
+    }, [displayNav]);
+
+    const handleClickOutside = (event) => {
+        if (listRef.current && !listRef.current.contains(event.target)) {
+            setToggle(false);
+        }
+    };
+
+    useEffect(() => {
         document.addEventListener('click', handleClickOutside);
 
         return () => {
@@ -21,34 +88,40 @@ export default function Footer() {
     return (
         <div className="footer">
             <div className="inner">
-                <p>Copyright &copy; my portfolio, all right reserved</p>
-                <div id="pf-nav" className="pf-nav">
-                    <ul>
-                        <li data-descr="gebiscon" >
-                            <span className="pf-nav0" data-value="86420"></span>
-                        </li>
-                        <li data-descr="zerolab" >
-                            <span className="pf-nav1" data-value="107499"></span>
-                        </li>
-                        <li data-descr="mohenic" >
-                            <span className="pf-nav2" data-value="137370"></span>
-                        </li>
-                        <li data-descr="happysocks" >
-                            <span className="pf-nav3" data-value="163483"></span>
-                        </li>
-                        <li data-descr="volvo" >
-                            <span className="pf-nav4" data-value="186503"></span>
-                        </li>
-                        <li data-descr="more" >
-                            <span className="pf-nav5" data-value="204717"></span>
-                        </li>
-                    </ul>
-                </div>
+                {displayCopyRight && (
+                    <p style={{ display: displayCopyRight ? 'block' : 'none' }}>
+                        Copyright &copy; my portfolio, all right reserved
+                    </p>
+                )}
+                {displayNav && (
+                    <div id="pf-nav" className="pf-nav">
+                        <ul>
+                            <li className="gebiscon" data-descr="gebiscon">
+                                <span className="pf-nav-sb" data-value="22527"></span>
+                            </li>
+                            <li className="zerolab" data-descr="zerolab">
+                                <span className="pf-nav-sb" data-value="24594"></span>
+                            </li>
+                            <li className="mohenic" data-descr="mohenic">
+                                <span className="pf-nav-sb" data-value="26701"></span>
+                            </li>
+                            <li className="happysocks" data-descr="happysocks">
+                                <span className="pf-nav-sb" data-value="28680"></span>
+                            </li>
+                            <li className="volvo" data-descr="volvo">
+                                <span className="pf-nav-sb" data-value="30557"></span>
+                            </li>
+                            <li className="more" data-descr="more">
+                                <span className="pf-nav-sb" data-value="32520"></span>
+                            </li>
+                        </ul>
+                    </div>
+                )}
                 <button className="hfm_btn" onClick={(event) => {
                     event.stopPropagation();
                     setToggle(!toggle);
                 }}>
-                    <div  className="hfm_wrap">
+                    <div className="hfm_wrap">
                         ●&nbsp;●&nbsp;●
                     </div>
                 </button>
@@ -62,5 +135,5 @@ export default function Footer() {
                 )}
             </div>
         </div>
-    )
+    );
 }

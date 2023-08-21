@@ -1030,6 +1030,7 @@ body {
 
 #pf-nav {
   position: absolute;
+  top: 0px;
   left: 9px;
   padding-left: 1%;
 }
