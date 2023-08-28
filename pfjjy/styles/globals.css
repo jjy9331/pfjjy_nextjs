@@ -1110,14 +1110,14 @@ body {
   /* display: none; */
   position: fixed;
   bottom: 10%;
-  right: 1.5vw;
+  right: 38px;
   text-align: right;
 }
 
 
 .hfm_list li {
   font-family: 'Noto Sans KR';
-  font-size: 0.5em;
+  font-size: 0.8em;
   font-weight: 500;
   padding-bottom: 0.6vh;
   padding-top: 0.6vh;
