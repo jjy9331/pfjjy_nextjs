@@ -12,6 +12,7 @@ import Loading from '@/components/loading.js';
 
 
 
+
 export default function Home() {
 
   const [isLoading, setIsLoading] = useState(true);

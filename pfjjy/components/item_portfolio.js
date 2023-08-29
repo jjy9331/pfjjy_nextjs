@@ -2,6 +2,7 @@ import React, { useRef, useEffect, useState } from "react";
 
 export default function Item_portfolio() {
     const [scrollY, setScrollY] = useState(0);
+    const [isHovering, setIsHovering] = useState(false);
     const portRef = useRef(null);
     const hzportRef = useRef(null);
     const portpmRef = useRef(null);
@@ -105,6 +106,14 @@ export default function Item_portfolio() {
 
     },[scrollY])
 
+    const handleMouseEnter = () => {
+        setIsHovering(true);
+    };
+
+    const handleMouseLeave = () => {
+        setIsHovering(false);
+    };
+
     return (
         <div>
             <div className='portfolio'>
@@ -114,7 +123,13 @@ export default function Item_portfolio() {
                             <h3 className='port_tt'>포트폴리오</h3>
                         </div>
                         <div className='port'>
-                            <img className='port_1' src="/img/port1.png" alt="UI,UX_mindset" />
+                        <img 
+                            className='port_1'
+                            src={isHovering ? "/img/port1.gif" : "/img/port1.png"}
+                            alt="UI,UX_mindset"
+                            onMouseEnter={handleMouseEnter}
+                            onMouseLeave={handleMouseLeave}
+                        />
                         </div>
                         <div className='port'>
                             <img className='port_pc' src="/img/monitor.webp" alt="zerolab" />
