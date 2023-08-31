@@ -758,7 +758,8 @@ body {
 
 .port_2 {
   position: absolute;
-  top: 23.5%;
+  /* top: 0%; */
+  margin-bottom: 5%;
   width: 35vw;
   height: 20vw;
   transform: scale(1);
