@@ -106,7 +106,7 @@ export default function Item_portfolio() {
 
     },[scrollY])
 
-    // port 1 hover
+    // port 1 hover ani
 
     const handleMouseEnter = () => {
         setIsHovering(true);
@@ -116,7 +116,7 @@ export default function Item_portfolio() {
         setIsHovering(false);
     };
 
-    // port 2 hover
+    // port 2 hover ani
 
     const handleMouseEnterPort2 = () => {
         const port2Element = document.querySelector('.port_2');
@@ -132,6 +132,40 @@ export default function Item_portfolio() {
         pf2EyeElement.style.bottom = '-54%';
         pf2EyeElement.style.left = '-36%';
         pf2EyeElement.style.transition = '0.3s ease-in-out';
+    };
+
+    // port 4 hover ani
+
+    const handleMouseEnterPort4 = () => {
+        const port4Element = document.querySelector('.port_4');
+        const pf4yph1 = port4Element.querySelector('.ypaint_hide1');
+        const pf4yph2 = port4Element.querySelector('.ypaint_hide2');
+        const smile = port4Element.querySelector('.smile');
+        const smile2p = port4Element.querySelector('.cls-3');
+        const smile2 = port4Element.querySelector('#smile2');
+        pf4yph1.style.marginLeft = "23%";
+        pf4yph2.style.marginLeft = "23%";
+        smile.style.marginBottom = "7%";
+        pf4yph1.style.transition = '0.35s ease-out 0.28s';
+        pf4yph2.style.transition = '0.6s ease-out 0.4s';
+        smile.style.transition = "0.5s ease-out 0.38s";
+        smile2.style.animation = "growsmile 1.5s ease-in-out";
+    };
+
+        const handleMouseLeavePort4 = () => {
+        const port4Element = document.querySelector('.port_4');
+        const pf4yph1 = port4Element.querySelector('.ypaint_hide1');
+        const pf4yph2 = port4Element.querySelector('.ypaint_hide2');
+        const smile = port4Element.querySelector('.smile');
+        const smile2p = port4Element.querySelector('.cls-3');
+        const smile2 = port4Element.querySelector('#smile2');
+        pf4yph1.style.marginLeft = "0%";
+        pf4yph2.style.marginLeft = "0%";
+        smile.style.marginBottom = "0%";
+        pf4yph1.style.transition = '0.35s ease-out 0.28s';
+        pf4yph2.style.transition = '0.6s ease-out 0.4s';
+        smile.style.transition = "0.5s ease-out 0.38s";
+        smile2.style.animation = "backsmile 0.9s ease-in-out";
     };
 
     return (
@@ -179,7 +213,13 @@ export default function Item_portfolio() {
                             </div>
                         </div>
                         <div className='port'>
-                            <img className='port_ph' src="/img/iphone.webp" alt="happysocks" />
+                            <img 
+                                className='port_ph' 
+                                src="/img/iphone.webp" 
+                                alt="happysocks" 
+                                onMouseEnter={handleMouseEnterPort4}
+                                onMouseLeave={handleMouseLeavePort4} 
+                            />
                             <div className='port_4'>
                                 <img src="/img/hss_log.svg" alt="happy_socks_logo" className="hss_logo" loading="lazy" />
                                 <p className="pf4_subp">모바일 리디자인</p>

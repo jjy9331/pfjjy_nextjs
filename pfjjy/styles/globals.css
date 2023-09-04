@@ -471,15 +471,16 @@ body {
 
 .pf4_subp {
   position: absolute;
-    bottom: 43%;
-    /* left: 36%; */
-    font-family: 'Black Han Sans', sans-serif;
-    font-family: 'Noto Sans KR';
-    /* font-family: 'OTEnjoystoriesBA'; */
-    font-size: 0.7vw;
-    opacity: 35%;
-    z-index: 5;
-    font-weight: 400;
+  margin-top: 6%;
+  /* bottom: 43%; */
+  /* left: 36%; */
+  /* font-family: 'Black Han Sans', sans-serif; */
+  font-family: 'Noto Sans KR';
+  /* font-family: 'OTEnjoystoriesBA'; */
+  font-size: 0.1vw;
+  opacity: 35%;
+  z-index: 5;
+  font-weight: 400;
 }
 
 .ypaint_hide1 {
@@ -495,9 +496,10 @@ body {
 
 .ypaint_hide2 {
   position: absolute;
-  bottom: 42%;
+  /* bottom: 42%; */
+  margin-top: 6%;
   /* left: 16%; */
-  width: 6vw;
+  width: 9vw;
   height: 4vh;
   z-index: 4;
   background-color: white;
@@ -517,27 +519,29 @@ body {
 
 .pf4bg {
   position: absolute;
-    top: 12%;
-    left: 5%;
-    width: 13.5vw;
-    height: 24vw;
-    background-color: white;
-    z-index: 0;
+  /* top: 12%; */
+  /* left: 5%; */
+  width: 13.5vw;
+  height: 24vw;
+  background-color: white;
+  z-index: -10;
 }
 
 .pf4_ypaint1 {
   position: absolute;
-  top: 53%;
-  left: 45.1%;
-  width: 10vw;
+  /* top: 53%; */
+  /* left: 45.1%; */
+  width: 14vw;
   z-index: 2;
 }
 
 .pf4_ypaint2 {
   position: absolute;
-  bottom: 43.8%;
-  left: 42%;
-  width: 17vw;
+  margin-top: 6%;
+  margin-left: 0.5%;
+  /* bottom: 43.8%; */
+  /* left: 42%; */
+  width: 11vw;
   z-index: 2;
   transform: scaleY(-1);
 }
@@ -550,11 +554,33 @@ body {
     /* left: 44%; */
 }
 
+#smile2 {
+    position: absolute;
+    z-index: 1;
+    cursor: none;
+    transform-origin: 16px 25px;
+    /* transform: scale(0); */
+    /* visibility: hidden; */
+}
+
 .cls-1{fill:#ffe422;}
 .blind{fill:#ffe422;}
 .cls-2{fill:#000;}
 
 
+@keyframes growsmile {
+    0% { transform: scale(0); }
+    75% { transform: scale(0); }
+    100% { transform: scale(1); }
+}
+
+@keyframes backsmile {
+    0% { transform: scale(1); }
+    25% { transform: scale(0); }
+    50% { transform: scale(0); }
+    75% { transform: scale(0); }
+    100% { transform: scale(0); }
+}
 
 
 
@@ -724,6 +750,7 @@ body {
 
 .port_ph {
   width: 23vw;
+  z-index: 10;
 }
 
 
@@ -818,9 +845,9 @@ body {
 
 .pf2_eye {
   position: absolute;
-  bottom: -44%;
-  left: -26%;
-  width: 30%;
+  bottom: -54%;
+  left: -36%;
+  width: 50%;
   z-index: 2;
 }
 
