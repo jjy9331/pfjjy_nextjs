@@ -6,6 +6,10 @@ export default function Item_portfolio() {
     const portRef = useRef(null);
     const hzportRef = useRef(null);
     const portpmRef = useRef(null);
+    const [currentFrame, setCurrentFrame] = useState(0);
+    const [imageFrames_p3, setImageFrames_p3] = useState([]);
+    const [imageLoaded, setImageLoaded_p3] = useState(Array(60).fill(true));
+    const [currentImage, setCurrentImage] = useState(null);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -134,6 +138,71 @@ export default function Item_portfolio() {
         pf2EyeElement.style.transition = '0.3s ease-in-out';
     };
 
+    // port 3 hover ani _ mohenic
+
+    let frameAnimationId = null;
+    const startFrame = 0;
+    const endFrame = 59;
+    // let frame_go = startFrame + 1;
+    // let frame_back = endFrame - 1;
+    const handleMouseEnterPort3 = () => {
+        let frame_go = startFrame;
+
+        const animate = () => {
+            if (frame_go < endFrame) {
+                setCurrentFrame(frame_go);
+                frame_go++;
+                frameAnimationId = requestAnimationFrame(animate);
+            }
+        };
+
+        animate();
+    };
+
+    
+    const handleMouseLeavePort3 = () => {
+        cancelAnimationFrame(frameAnimationId);
+        frameAnimationId = null;
+
+        let frame_back = endFrame;
+
+        const animateBack = () => {
+            if (frame_back > startFrame) {
+                setCurrentFrame(frame_back);
+                frame_back--;
+                if (frame_back >= startFrame) {
+                    frameAnimationId = requestAnimationFrame(animateBack);
+                }
+            }
+        };
+
+        animateBack();
+    };
+
+
+    const handleImageLoad_p3 = (index) => {
+        setImageLoaded_p3((prevLoaded) => {
+            const loaded_p3 = [...prevLoaded];
+            loaded_p3[index] = true;
+            return loaded_p3;
+        });
+    };
+
+    useEffect(() => {
+        const loadImageFrames_port3 = async () => {
+            const frames = await Promise.all(
+                Array.from({ length: 59 }, async (_, index) => {
+                    const response = await fetch(`/mohenic_crop_intro_ani/${( index + 1 ).toString().padStart(3, "0")}.jpg`);
+                    const src = URL.createObjectURL(await response.blob());
+                    return { src, loaded: true };
+                })
+            );
+            setImageFrames_p3(frames);
+        };
+
+        loadImageFrames_port3();
+    }, []);
+
     // port 4 hover ani
 
     const handleMouseEnterPort4 = () => {
@@ -143,13 +212,16 @@ export default function Item_portfolio() {
         const smile = port4Element.querySelector('.smile');
         const smile2p = port4Element.querySelector('.cls-3');
         const smile2 = port4Element.querySelector('#smile2');
+        const pf4subp = port4Element.querySelector('.pf4_subp');
         pf4yph1.style.marginLeft = "23%";
         pf4yph2.style.marginLeft = "23%";
         smile.style.marginBottom = "7%";
+        pf4subp.style.opacity = '0.7';
         pf4yph1.style.transition = '0.35s ease-out 0.28s';
         pf4yph2.style.transition = '0.6s ease-out 0.4s';
         smile.style.transition = "0.5s ease-out 0.38s";
         smile2.style.animation = "growsmile 1.5s ease-in-out";
+        pf4subp.style.transition = "0.6s ease-out 0.38s";
     };
 
         const handleMouseLeavePort4 = () => {
@@ -159,13 +231,16 @@ export default function Item_portfolio() {
         const smile = port4Element.querySelector('.smile');
         const smile2p = port4Element.querySelector('.cls-3');
         const smile2 = port4Element.querySelector('#smile2');
+        const pf4subp = port4Element.querySelector('.pf4_subp');
         pf4yph1.style.marginLeft = "0%";
         pf4yph2.style.marginLeft = "0%";
         smile.style.marginBottom = "0%";
+        pf4subp.style.opacity = '0.3';
         pf4yph1.style.transition = '0.35s ease-out 0.28s';
         pf4yph2.style.transition = '0.6s ease-out 0.4s';
         smile.style.transition = "0.5s ease-out 0.38s";
         smile2.style.animation = "backsmile 0.9s ease-in-out";
+        pf4subp.style.transition = "0.6s ease-out 0.38s";
     };
 
     return (
@@ -206,9 +281,32 @@ export default function Item_portfolio() {
                         </div>
                         <div className='port'>
                             <div className='p_wrap'>
-                            <img className='port_pc' src="/img/monitor.webp" alt="mohenic" />
-                            <div className="lottie_ani">
-                                <lottie-interactive  lottie-interactive path="/data/mohenic_ani.json" interaction="morph"></lottie-interactive>
+                            <img 
+                                className='port_pc' 
+                                src="/img/monitor.webp" 
+                                alt="mohenic" 
+                                onMouseEnter={handleMouseEnterPort3}
+                                onMouseLeave={handleMouseLeavePort3}
+                            />
+                            <div className="port_3">
+                                {imageFrames_p3.map((frame, index) => {
+                                    if (!imageLoaded[index]) return null;
+                                    return (
+                                        <img
+                                            key={index}
+                                            className="mohenic_intro"
+                                            src={frame.src} 
+                                            style={{ 
+                                                display: currentFrame === index ? "block" : "none",
+                                                transform: 'scale(1)',
+                                                width: '34vw',
+                                                // height: '20vh',
+                                            }}
+                                            alt="mohenic_intro_ani" 
+                                            onLoad={() => handleImageLoad_p3(index)}
+                                        />
+                                    );
+                                })}
                             </div>
                             </div>
                         </div>
@@ -240,7 +338,7 @@ export default function Item_portfolio() {
                         <div className='port'>
                             <div className='p_wrap'>
                             <img className='port_pc' src="/img/monitor.webp" alt="volvo" />
-                            <div className='lottie_ani'>
+                            <div className='port_5'>
                                 <lottie-interactive  lottie-interactive path="/data/volvo_ani.json" interaction="morph"></lottie-interactive>
                             </div>
                             </div>

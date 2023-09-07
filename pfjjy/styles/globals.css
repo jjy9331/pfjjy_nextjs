@@ -478,7 +478,7 @@ body {
   font-family: 'Noto Sans KR';
   /* font-family: 'OTEnjoystoriesBA'; */
   font-size: 0.1vw;
-  opacity: 35%;
+  opacity: 0.3;
   z-index: 5;
   font-weight: 400;
 }
@@ -777,11 +777,7 @@ body {
   position: relative;
 }
 
-.lottie_ani {
-  position: absolute;
-  width: 71vh;
-  top: 22.8%;
-}
+
 
 .port_2 {
   position: absolute;
@@ -873,6 +869,19 @@ body {
   background: white;
   width: 12vw;
   height: 45vh;
+}
+
+.port_3 {
+  position: absolute;
+  width: 71vh;
+  top: 22.8%;
+  z-index: -1;
+}
+
+.port_5 {
+  position: absolute;
+  width: 71vh;
+  top: 22.8%;
 }
 
 /* contact */
