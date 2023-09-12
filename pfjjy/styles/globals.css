@@ -873,15 +873,16 @@ body {
 
 .port_3 {
   position: absolute;
-  width: 71vh;
+  /* width: 71vh; */
   top: 22.8%;
   z-index: -1;
 }
 
 .port_5 {
   position: absolute;
-  width: 71vh;
+  /* width: 71vh; */
   top: 22.8%;
+  z-index: -1;
 }
 
 /* contact */

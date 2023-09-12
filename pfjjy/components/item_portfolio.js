@@ -8,7 +8,9 @@ export default function Item_portfolio() {
     const portpmRef = useRef(null);
     const [currentFrame, setCurrentFrame] = useState(0);
     const [imageFrames_p3, setImageFrames_p3] = useState([]);
-    const [imageLoaded, setImageLoaded_p3] = useState(Array(60).fill(true));
+    const [imageFrames_p5, setImageFrames_p5] = useState([]);
+    const [imageLoaded_p3, setImageLoaded_p3] = useState(Array(60).fill(true));
+    const [imageLoaded_p5, setImageLoaded_p5] = useState(Array(45).fill(true));
     const [currentImage, setCurrentImage] = useState(null);
 
     useEffect(() => {
@@ -140,19 +142,19 @@ export default function Item_portfolio() {
 
     // port 3 hover ani _ mohenic
 
-    let frameAnimationId = null;
-    const startFrame = 0;
-    const endFrame = 59;
-    // let frame_go = startFrame + 1;
-    // let frame_back = endFrame - 1;
+    let frameAnimationId_p3 = null;
+    const startFrame_p3 = 0;
+    const endFrame_p3 = 59;
+    // let frame_go = startFrame_p3 + 1;
+    // let frame_back = endFrame_p3 - 1;
     const handleMouseEnterPort3 = () => {
-        let frame_go = startFrame;
+        let frame_go = startFrame_p3;
 
         const animate = () => {
-            if (frame_go < endFrame) {
+            if (frame_go < endFrame_p3) {
                 setCurrentFrame(frame_go);
                 frame_go++;
-                frameAnimationId = requestAnimationFrame(animate);
+                frameAnimationId_p3 = requestAnimationFrame(animate);
             }
         };
 
@@ -161,17 +163,17 @@ export default function Item_portfolio() {
 
     
     const handleMouseLeavePort3 = () => {
-        cancelAnimationFrame(frameAnimationId);
-        frameAnimationId = null;
+        cancelAnimationFrame(frameAnimationId_p3);
+        frameAnimationId_p3 = null;
 
-        let frame_back = endFrame;
+        let frame_back = endFrame_p3;
 
         const animateBack = () => {
-            if (frame_back > startFrame) {
+            if (frame_back > startFrame_p3) {
                 setCurrentFrame(frame_back);
                 frame_back--;
-                if (frame_back >= startFrame) {
-                    frameAnimationId = requestAnimationFrame(animateBack);
+                if (frame_back >= startFrame_p3) {
+                    frameAnimationId_p3 = requestAnimationFrame(animateBack);
                 }
             }
         };
@@ -180,10 +182,10 @@ export default function Item_portfolio() {
     };
 
 
-    const handleImageLoad_p3 = (index) => {
+    const handleImageLoad_p3 = (index_p3) => {
         setImageLoaded_p3((prevLoaded) => {
             const loaded_p3 = [...prevLoaded];
-            loaded_p3[index] = true;
+            loaded_p3[index_p3] = true;
             return loaded_p3;
         });
     };
@@ -191,8 +193,8 @@ export default function Item_portfolio() {
     useEffect(() => {
         const loadImageFrames_port3 = async () => {
             const frames = await Promise.all(
-                Array.from({ length: 59 }, async (_, index) => {
-                    const response = await fetch(`/mohenic_crop_intro_ani/${( index + 1 ).toString().padStart(3, "0")}.jpg`);
+                Array.from({ length: 59 }, async (_, index_p3) => {
+                    const response = await fetch(`/mohenic_crop_intro_ani/${( index_p3 + 1 ).toString().padStart(3, "0")}.jpg`);
                     const src = URL.createObjectURL(await response.blob());
                     return { src, loaded: true };
                 })
@@ -243,6 +245,70 @@ export default function Item_portfolio() {
         pf4subp.style.transition = "0.6s ease-out 0.38s";
     };
 
+
+    // port 5 hover ani _volvo
+
+    let frameAnimationId_p5 = null;
+    const startFrame_p5 = 0;
+    const endFrame_p5 = 44;
+
+    const handleMouseEnterPort5 = () => {
+        let frame_go = startFrame_p5;
+
+        const animate = () => {
+            if (frame_go < endFrame_p5) {
+                setCurrentFrame(frame_go);
+                frame_go++;
+                frameAnimationId_p5 = requestAnimationFrame(animate);
+            }
+        };
+
+        animate();
+    };
+
+    const handleMouseLeavePort5 = () => {
+        cancelAnimationFrame(frameAnimationId_p5);
+        frameAnimationId_p5 = null;
+
+        let frame_back = endFrame_p5;
+
+        const animateBack = () => {
+            if (frame_back > startFrame_p5) {
+                setCurrentFrame(frame_back);
+                frame_back--;
+                if (frame_back >= startFrame_p5) {
+                    frameAnimationId_p5 = requestAnimationFrame(animateBack);
+                }
+            }
+        };
+
+        animateBack();
+    };
+
+
+    const handleImageLoad_p5 = (index_p5) => {
+        setImageLoaded_p5((prevLoaded) => {
+            const loaded_p5 = [...prevLoaded];
+            loaded_p5[index_p5] = true;
+            return loaded_p5;
+        });
+    };
+
+    useEffect(() => {
+        const loadImageFrames_port5 = async () => {
+            const frames = await Promise.all(
+                Array.from({ length: 44 }, async (_, index_p5) => {
+                    const response = await fetch(`/volvo_crop_intro_ani/${( index_p5 + 1 ).toString().padStart(3, "0")}.jpg`);
+                    const src = URL.createObjectURL(await response.blob());
+                    return { src, loaded: true };
+                })
+            );
+            setImageFrames_p5(frames);
+        };
+
+        loadImageFrames_port5();
+    }, []);
+
     return (
         <div>
             <div className='portfolio'>
@@ -290,7 +356,7 @@ export default function Item_portfolio() {
                             />
                             <div className="port_3">
                                 {imageFrames_p3.map((frame, index) => {
-                                    if (!imageLoaded[index]) return null;
+                                    if (!imageLoaded_p3[index]) return null;
                                     return (
                                         <img
                                             key={index}
@@ -337,9 +403,32 @@ export default function Item_portfolio() {
                         </div>
                         <div className='port'>
                             <div className='p_wrap'>
-                            <img className='port_pc' src="/img/monitor.webp" alt="volvo" />
+                            <img 
+                                className='port_pc' 
+                                src="/img/monitor.webp" 
+                                alt="volvo" 
+                                onMouseEnter={handleMouseEnterPort5}
+                                onMouseLeave={handleMouseLeavePort5}
+                            />
                             <div className='port_5'>
-                                <lottie-interactive  lottie-interactive path="/data/volvo_ani.json" interaction="morph"></lottie-interactive>
+                                {imageFrames_p5.map((frame, index) => {
+                                        if (!imageLoaded_p5[index]) return null;
+                                        return (
+                                            <img
+                                                key={index}
+                                                className="volvo_intro"
+                                                src={frame.src} 
+                                                style={{ 
+                                                    display: currentFrame === index ? "block" : "none",
+                                                    transform: 'scale(1)',
+                                                    width: '34vw',
+                                                    // height: '20vh',
+                                                }}
+                                                alt="volvo_intro_ani" 
+                                                onLoad={() => handleImageLoad_p5(index)}
+                                            />
+                                        );
+                                })}
                             </div>
                             </div>
                         </div>
