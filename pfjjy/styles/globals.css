@@ -866,9 +866,12 @@ body {
 .pfmore_bg {
   position: absolute;
   z-index: -1;
-  background: white;
-  width: 12vw;
-  height: 45vh;
+  background: #fff;
+  /* width: 12vw; */
+  /* height: 45vh; */
+  width: 13.5vw;
+  height: 24vw;
+  z-index: -3;
 }
 
 .port_3 {
