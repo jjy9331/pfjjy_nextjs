@@ -10,6 +10,24 @@ export default function Footer() {
         const handleScroll = () => {
             const scrollY = window.scrollY;
 
+            // Apply styles to hfm_list and its children
+            const hfmList = document.querySelector('.hfm_list');
+            const hfmItems = document.querySelectorAll('.hfm_list li');
+
+            // Check if scrollY is within the specified range
+            if (hfmList && hfmItems) {
+                hfmItems.forEach((item, index) => {
+                    const startY = 8339 + 81 * (3 - index); // Calculate startY for each li item
+                    const endY = 16742;
+                    
+                    if (scrollY >= startY && scrollY <= endY) {
+                        item.style.color = toggle ? 'white' : 'black'; // Toggle color based on toggle state
+                    } else {
+                        item.style.color = 'black';
+                    }
+                });
+            }
+
             if (scrollY >= 17668 && scrollY <= 34395) {
                 setDisplayNav(true);
                 setDisplayCopyRight(false);
@@ -17,6 +35,10 @@ export default function Footer() {
                 setDisplayNav(false);
                 setDisplayCopyRight(true);
             }
+
+                        
+
+
 
             const sections = [
                 { id: 'gebiscon', start: 22338, end: 23278 },
@@ -69,7 +91,7 @@ export default function Footer() {
                 });
             };
         }
-    }, [displayNav]);
+    }, [displayNav, toggle]);
 
     const handleClickOutside = (event) => {
         if (listRef.current && !listRef.current.contains(event.target)) {
