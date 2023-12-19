@@ -477,10 +477,22 @@ body {
   /* font-family: 'Black Han Sans', sans-serif; */
   font-family: 'Noto Sans KR';
   /* font-family: 'OTEnjoystoriesBA'; */
-  font-size: 0.1vw;
-  opacity: 0.3;
+  font-size: 0.7vw;
+  visibility: hidden;
   z-index: 5;
   font-weight: 400;
+}
+
+@keyframes pf4sp1 {
+  0% { visibility: hidden; }
+  25% { visibility: hidden; }
+  50% { visibility: hidden; }
+  100% { visibility: visible; }
+}
+
+@keyframes pf4sp2 {
+  0% { visibility: visible; }
+  100% { visibility: hidden; }
 }
 
 .ypaint_hide1 {

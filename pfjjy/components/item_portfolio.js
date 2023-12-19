@@ -218,12 +218,14 @@ export default function Item_portfolio() {
         pf4yph1.style.marginLeft = "23%";
         pf4yph2.style.marginLeft = "23%";
         smile.style.marginBottom = "7%";
-        pf4subp.style.opacity = '0.7';
+        // pf4subp.style.opacity = '0.7';
+        pf4subp.style.visibility = "visible";
         pf4yph1.style.transition = '0.35s ease-out 0.28s';
         pf4yph2.style.transition = '0.6s ease-out 0.4s';
         smile.style.transition = "0.5s ease-out 0.38s";
         smile2.style.animation = "growsmile 1.5s ease-in-out";
-        pf4subp.style.transition = "0.6s ease-out 0.38s";
+        // pf4subp.style.transition = "0.6s ease-out 0.1s";
+        pf4subp.style.animation = "pf4sp1 2.5s ease-out";
     };
 
         const handleMouseLeavePort4 = () => {
@@ -237,12 +239,14 @@ export default function Item_portfolio() {
         pf4yph1.style.marginLeft = "0%";
         pf4yph2.style.marginLeft = "0%";
         smile.style.marginBottom = "0%";
-        pf4subp.style.opacity = '0.3';
+        // pf4subp.style.opacity = '0';
+        pf4subp.style.visibility = "hidden";
         pf4yph1.style.transition = '0.35s ease-out 0.28s';
         pf4yph2.style.transition = '0.6s ease-out 0.4s';
         smile.style.transition = "0.5s ease-out 0.38s";
         smile2.style.animation = "backsmile 0.9s ease-in-out";
-        pf4subp.style.transition = "0.6s ease-out 0.38s";
+        // pf4subp.style.transition = "0.6s ease-out 0.1s";
+        pf4subp.style.animation = "pf4sp2 0.5s ease-in-out";
     };
 
 
