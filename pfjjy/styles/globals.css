@@ -915,6 +915,36 @@ body {
   z-index: -1;
 }
 
+.pf5_lg {
+  position: absolute;
+  z-index: 3;
+  margin-bottom: 21.8vw;
+  margin-right: 27.6vw;
+  width: 5.5vw;
+}
+
+.pf5_tt1 {
+  position: absolute;
+  color: white;
+  z-index: 3;
+  margin-bottom: 19.2vw;
+  margin-right: 24.3vw;
+  font-family: 'Noto Sans KR';
+  font-size: 0.75vw;
+  font-weight: 400;
+}
+
+.pf5_tt2 {
+  position: absolute;
+  color: white;
+  z-index: 3;
+  margin-bottom: 17vw;
+  margin-right: 25.1vw;
+  font-family: 'Noto Sans KR';
+  font-size: 0.75vw;
+  font-weight: 400;
+}
+
 /* contact */
 
 .contact {

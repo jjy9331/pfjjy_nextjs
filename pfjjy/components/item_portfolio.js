@@ -414,33 +414,41 @@ export default function Item_portfolio() {
                         </div>
                         <div className='port'>
                             <div className='p_wrap'>
-                            <img 
-                                className='port_pc' 
-                                src="/img/monitor.webp" 
-                                alt="volvo" 
-                                onMouseEnter={handleMouseEnterPort5}
-                                onMouseLeave={handleMouseLeavePort5}
-                            />
-                            <div className='port_5'>
-                                {imageFrames_p5.map((frame, index) => {
-                                        if (!imageLoaded_p5[index]) return null;
-                                        return (
-                                            <img
-                                                key={index}
-                                                className="volvo_intro"
-                                                src={frame.src} 
-                                                style={{ 
-                                                    display: currentFrame === index ? "block" : "none",
-                                                    transform: 'scale(1)',
-                                                    width: '34vw',
-                                                    // height: '20vh',
-                                                }}
-                                                alt="volvo_intro_ani" 
-                                                onLoad={() => handleImageLoad_p5(index)}
-                                            />
-                                        );
-                                })}
-                            </div>
+                                <img 
+                                    className='port_pc' 
+                                    src="/img/monitor.webp" 
+                                    alt="volvo" 
+                                    onMouseEnter={handleMouseEnterPort5}
+                                    onMouseLeave={handleMouseLeavePort5}
+                                />
+                                <img 
+                                    src="/img/pf5_lg.png" 
+                                    alt="pf5_logo" 
+                                    className="pf5_lg" 
+                                    loading="lazy" 
+                                />
+                                <p className="pf5_tt1">보전형 소비자를 위한</p>
+                                <p className="pf5_tt2">메인사이트 리뉴얼</p>
+                                <div className='port_5'>
+                                    {imageFrames_p5.map((frame, index) => {
+                                            if (!imageLoaded_p5[index]) return null;
+                                            return (
+                                                <img
+                                                    key={index}
+                                                    className="volvo_intro"
+                                                    src={frame.src} 
+                                                    style={{ 
+                                                        display: currentFrame === index ? "block" : "none",
+                                                        transform: 'scale(1)',
+                                                        width: '34vw',
+                                                        // height: '20vh',
+                                                    }}
+                                                    alt="volvo_intro_ani" 
+                                                    onLoad={() => handleImageLoad_p5(index)}
+                                                />
+                                            );
+                                    })}
+                                </div>
                             </div>
                         </div>
                         <div className='port' ref={portpmRef}>
