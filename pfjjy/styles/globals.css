@@ -893,6 +893,21 @@ body {
   z-index: -1;
 }
 
+.pf3_mt {
+  z-index: 3;
+  position: absolute;
+  width: 20vw;
+  margin-top: 1vw;
+}
+
+.pf3_st {
+  color: white;
+  font-size: 0.7vw;
+  position: absolute;
+  margin-top: 6vw;
+  opacity: 0.9;
+}
+
 .port_5 {
   position: absolute;
   /* width: 71vh; */

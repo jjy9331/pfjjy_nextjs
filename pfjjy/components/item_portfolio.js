@@ -351,33 +351,40 @@ export default function Item_portfolio() {
                         </div>
                         <div className='port'>
                             <div className='p_wrap'>
-                            <img 
-                                className='port_pc' 
-                                src="/img/monitor.webp" 
-                                alt="mohenic" 
-                                onMouseEnter={handleMouseEnterPort3}
-                                onMouseLeave={handleMouseLeavePort3}
-                            />
-                            <div className="port_3">
-                                {imageFrames_p3.map((frame, index) => {
-                                    if (!imageLoaded_p3[index]) return null;
-                                    return (
-                                        <img
-                                            key={index}
-                                            className="mohenic_intro"
-                                            src={frame.src} 
-                                            style={{ 
-                                                display: currentFrame === index ? "block" : "none",
-                                                transform: 'scale(1)',
-                                                width: '34vw',
-                                                // height: '20vh',
-                                            }}
-                                            alt="mohenic_intro_ani" 
-                                            onLoad={() => handleImageLoad_p3(index)}
-                                        />
-                                    );
-                                })}
-                            </div>
+                                <img 
+                                    className='port_pc' 
+                                    src="/img/monitor.webp" 
+                                    alt="mohenic" 
+                                    onMouseEnter={handleMouseEnterPort3}
+                                    onMouseLeave={handleMouseLeavePort3}
+                                />
+                                <img 
+                                    src="/img/pf3_mt.png" 
+                                    alt="pf3_main_title" 
+                                    className="pf3_mt" 
+                                    loading="lazy" 
+                                />
+                                <p className="pf3_st">리디자인 & 퍼블리싱</p>
+                                <div className="port_3">
+                                    {imageFrames_p3.map((frame, index) => {
+                                        if (!imageLoaded_p3[index]) return null;
+                                        return (
+                                            <img
+                                                key={index}
+                                                className="mohenic_intro"
+                                                src={frame.src} 
+                                                style={{ 
+                                                    display: currentFrame === index ? "block" : "none",
+                                                    transform: 'scale(1)',
+                                                    width: '34vw',
+                                                    // height: '20vh',
+                                                }}
+                                                alt="mohenic_intro_ani" 
+                                                onLoad={() => handleImageLoad_p3(index)}
+                                            />
+                                        );
+                                    })}
+                                </div>
                             </div>
                         </div>
                         <div className='port'>
