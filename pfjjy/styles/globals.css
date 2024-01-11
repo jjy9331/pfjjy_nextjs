@@ -859,6 +859,13 @@ body {
   z-index: 2;
 }
 
+.pf_more {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .port_more {
   position: absolute;
   display: flex;
@@ -871,7 +878,7 @@ body {
 }
 
 .hover_runner {
-  z-index: -2;
+  z-index: -4;
   width: 22vw;
 }
 
