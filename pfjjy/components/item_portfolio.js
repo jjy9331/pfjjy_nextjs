@@ -1,4 +1,5 @@
 import React, { useRef, useEffect, useState } from "react";
+import Link from 'next/link';
 
 export default function Item_portfolio() {
     const [scrollY, setScrollY] = useState(0);
@@ -342,13 +343,17 @@ export default function Item_portfolio() {
                             <h3 className='port_tt'>포트폴리오</h3>
                         </div>
                         <div className='port'>
-                        <img 
-                            className='port_1'
-                            src={isHovering ? "/img/port1.gif" : "/img/port1.png"}
-                            alt="UI,UX_mindset"
-                            onMouseEnter={handleMouseEnter}
-                            onMouseLeave={handleMouseLeave}
-                        />
+                                <div>
+                                    <Link href="/gebiscon"> 
+                                        <img 
+                                            className='port_1'
+                                            src={isHovering ? "/img/port1.gif" : "/img/port1.png"}
+                                            alt="UI,UX_mindset"
+                                            onMouseEnter={handleMouseEnter}
+                                            onMouseLeave={handleMouseLeave}
+                                        />
+                                    </Link>
+                                </div>
                         </div>
                         <div className='port'>
                             <img 
