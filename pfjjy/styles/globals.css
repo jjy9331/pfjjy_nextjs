@@ -752,9 +752,7 @@ body {
   transform: scale(0.6);
 }
 
-.port_1 {
-  width: 85vw;
-}
+
 
 .port_pc{
   width: 60vw;
@@ -789,6 +787,125 @@ body {
   position: relative;
 }
 
+/* popup */
+
+/* pop_header */
+.pop_h {
+  position: fixed; 
+  left: 0px; top: 0px; background: rgba(255, 255, 255, 1); 
+  width: 100%;
+  height: 6%;
+  /* height: 120px;  */
+  border-bottom: 2px solid rgba(0,0,0,0.4);
+  z-index: 1000;
+  /* visibility: hidden; */
+}
+
+.pop_h_inner{
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+}
+
+.pop_h_inner a {
+  padding-left: 2%;
+}
+
+.pop_h_inner a h3{
+  font-size: 1.05vw;
+  font-weight: 300;
+  /* cursor: pointer; */
+}
+
+.close { 
+  /* position: absolute; */
+  /* right: 0%; */
+  /* top: 26%; */
+  padding-right: 2%;
+  color: black;
+  /* cursor: pointer; */
+  font-size: 0.9vw;
+  font-weight: 300;
+}
+
+/* pop_footer */
+
+.pop_f {
+  position: relative;
+  position: fixed;
+  bottom: 0px;
+  border-top: 2px solid rgba(0,0,0,0.4);
+  /* background: rgba(0, 0, 0, 0);  */
+  background: rgba(255, 255, 255, 1);
+  width: 100%; 
+  height: 6%;
+  /* visibility: hidden; */
+  z-index: 1000
+}
+.pop_f_inner{
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+  padding-left: 2%;
+  padding-right: 2%;
+  font-size: 0.05vw;
+  font-weight: 300;
+}
+
+.pop_f_inner p {
+  font-family: 'Noto Sans KR';
+  color: rgba(0, 0, 0, 1);
+  font-size: 8px;
+  font-weight: 300;
+}
+
+.pop_fnc {
+  display: flex;
+  align-items: center;
+  padding-top: 0.5vh;
+}
+
+.pop_fnc a:nth-child(1) {
+  padding-right: 2vw;
+  display: flex;
+}
+.pop_fnc a:nth-child(2) {
+  padding-right: 2vw;
+  display: flex;
+}
+.pop_fnc a:nth-child(3) {
+  display: flex;
+}
+
+.pop_fnc a:nth-child(1) img {
+  width: 1vw;
+}
+
+.pop_fnc a:nth-child(2) img {
+  width: 1vw;
+  transform: scale(2);
+}
+.pop_fnc a:nth-child(3) img {
+  width: 1vw;
+  transform: scale(1.4);
+}
+
+
+
+
+/* port_1 gebiscon */
+
+.port_1 {
+  width: 85vw;
+}
+
+
+
+/* port_2 */
 
 
 .port_2 {
