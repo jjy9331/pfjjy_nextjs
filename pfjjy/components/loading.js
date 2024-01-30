@@ -45,6 +45,8 @@ const Loading = ({ onImagesLoaded }) => {
           '/img/pf2_eye.webp',
           '/img/port1.png',
           '/img/ypaint.webp',
+          '/img/port1.gif',
+          '/img/port1.png',
           // 다른 이미지 경로들도 여기에 추가
         ];
         const totalImages = contactAniFrames.length + introduceAniFrames.length + homeAniFrames.length + imgPaths.length;
