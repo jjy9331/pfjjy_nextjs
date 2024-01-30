@@ -191,15 +191,27 @@ export default function Item_portfolio() {
         });
     };
 
+    // useEffect(() => {
+    //     const loadImageFrames_port3 = async () => {
+    //         const frames = await Promise.all(
+    //             Array.from({ length: 59 }, async (_, index_p3) => {
+    //                 const response = await fetch(`/mohenic_crop_intro_ani/${( index_p3 + 1 ).toString().padStart(3, "0")}.jpg`);
+    //                 const src = URL.createObjectURL(await response.blob());
+    //                 return { src, loaded: true };
+    //             })
+    //         );
+    //         setImageFrames_p3(frames);
+    //     };
+
+    //     loadImageFrames_port3();
+    // }, []);
+
     useEffect(() => {
         const loadImageFrames_port3 = async () => {
-            const frames = await Promise.all(
-                Array.from({ length: 59 }, async (_, index_p3) => {
-                    const response = await fetch(`/mohenic_crop_intro_ani/${( index_p3 + 1 ).toString().padStart(3, "0")}.jpg`);
-                    const src = URL.createObjectURL(await response.blob());
-                    return { src, loaded: true };
-                })
-            );
+            const frames = Array.from({ length: 59 }, (_, index_p3) => {
+                const src = `/mohenic_crop_intro_ani/${(index_p3 + 1).toString().padStart(3, "0")}.jpg`; // 이미 로드한 이미지 URL
+                return { src, loaded: true };
+            });
             setImageFrames_p3(frames);
         };
 
@@ -299,18 +311,30 @@ export default function Item_portfolio() {
         });
     };
 
+    // useEffect(() => {
+    //     const loadImageFrames_port5 = async () => {
+    //         const frames = await Promise.all(
+    //             Array.from({ length: 44 }, async (_, index_p5) => {
+    //                 const response = await fetch(`/volvo_crop_intro_ani/${( index_p5 + 1 ).toString().padStart(3, "0")}.jpg`);
+    //                 const src = URL.createObjectURL(await response.blob());
+    //                 return { src, loaded: true };
+    //             })
+    //         );
+    //         setImageFrames_p5(frames);
+    //     };
+
+    //     loadImageFrames_port5();
+    // }, []);
+
     useEffect(() => {
         const loadImageFrames_port5 = async () => {
-            const frames = await Promise.all(
-                Array.from({ length: 44 }, async (_, index_p5) => {
-                    const response = await fetch(`/volvo_crop_intro_ani/${( index_p5 + 1 ).toString().padStart(3, "0")}.jpg`);
-                    const src = URL.createObjectURL(await response.blob());
-                    return { src, loaded: true };
-                })
-            );
+            const frames = Array.from({ length: 44 }, (_, index_p5) => {
+                const src = `/volvo_crop_intro_ani/${(index_p5 + 1).toString().padStart(3, "0")}.jpg`; // 이미 로드한 이미지 URL
+                return { src, loaded: true };
+            });
             setImageFrames_p5(frames);
         };
-
+    
         loadImageFrames_port5();
     }, []);
 
@@ -344,7 +368,7 @@ export default function Item_portfolio() {
                         </div>
                         <div className='port'>
                                 <div>
-                                    <Link href="/gebiscon"> 
+                                    <Link href="/gebiscon" passHref> 
                                         <img 
                                             className='port_1'
                                             src={isHovering ? "/img/port1.gif" : "/img/port1.png"}

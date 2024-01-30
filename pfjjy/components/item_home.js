@@ -108,20 +108,43 @@ export default function Item_home() {
 
     // home_seq_webworker
 
-    useEffect(() => {
-        const loadImageFrames1 = async () => {
-            const frames = await Promise.all(
-                Array.from({ length: 32 }, async (_, index) => {
-                    const response = await fetch(`/team_runner_ani/${( index + 1 ).toString()}.svg`);
-                    const src = URL.createObjectURL(await response.blob());
-                    return { src, loaded: true };
-                })
-            );
-            setImageFrames1(frames);
-        };
+    // useEffect(() => {
+    //     const loadImageFrames1 = async () => {
+    //         const frames = await Promise.all(
+    //             Array.from({ length: 32 }, async (_, index) => {
+    //                 const response = await fetch(`/team_runner_ani/${( index + 1 ).toString()}.svg`);
+    //                 const src = URL.createObjectURL(await response.blob());
+    //                 return { src, loaded: true };
+    //             })
+    //         );
+    //         setImageFrames1(frames);
+    //     };
 
-        loadImageFrames1();
-    }, []);
+    //     loadImageFrames1();
+    // }, []);
+
+    useEffect(() => {
+        // const loadImageFrames1 = async () => {
+        //     const frames = Array.from({ length: 32 }, (_, index) => {
+        //         const src = `/team_runner_ani/${(index + 1).toString()}.svg`; // 이미 로드한 이미지 URL
+        //         return { src, loaded: true };
+        //     });
+        //     setImageFrames1(frames);
+        //     };
+
+        //     loadImageFrames1();
+            const loadImageFrames1 = async () => {
+                const frames = Array.from({ length: 32 }, (_, index) => {
+                    const paddedIndex = (index + 1).toString().padStart(3, '0'); // 3자리수로 만들어주고, 빈 자리는 '0'으로 채움
+                    const src = `/team_runner_ani/${paddedIndex}.svg`; // 이미 로드한 이미지 URL
+                    return { src, loaded: true };
+                });
+                setImageFrames1(frames);
+            };
+            loadImageFrames1();
+
+        }, []);
+
 
     // sec2 animation 
 

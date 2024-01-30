@@ -11,7 +11,7 @@ export default function Gebiscon() {
         <div>
             <CustomCursor />
             <Sctracker />
-            <Pop_h title="UI UX mindset"/>
+            <Pop_h title="UI UX mindset" dataValue={22527}/>
             <Pop_f/>
         </div>
     )

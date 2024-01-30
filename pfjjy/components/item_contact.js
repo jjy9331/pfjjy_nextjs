@@ -69,21 +69,31 @@ export default function Item_contact() {
 
     // contact_seq_webworker
 
+    // useEffect(() => {
+    //     const loadImageFrames1 = async () => {
+    //         const frames = await Promise.all(
+    //             Array.from({ length: 64 }, async (_, index) => {
+    //                 const response = await fetch(`/contact_ani/${index.toString().padStart(3, "0")}.svg`);
+    //                 const src = URL.createObjectURL(await response.blob());
+    //                 return { src, loaded: true };
+    //             })
+    //         );
+    //         setImageFrames1(frames);
+    //     };
+
+    //     loadImageFrames1();
+    // }, []);
+
     useEffect(() => {
         const loadImageFrames1 = async () => {
-            const frames = await Promise.all(
-                Array.from({ length: 64 }, async (_, index) => {
-                    const response = await fetch(`/contact_ani/${index.toString().padStart(3, "0")}.svg`);
-                    const src = URL.createObjectURL(await response.blob());
-                    return { src, loaded: true };
-                })
-            );
+            const frames = Array.from({ length: 64 }, (_, index) => {
+                const src = `/contact_ani/${index.toString().padStart(3, "0")}.svg`; // 이미 로드한 이미지 URL
+                return { src, loaded: true };
+            });
             setImageFrames1(frames);
         };
-
-        loadImageFrames1();
+            loadImageFrames1();
     }, []);
-
 
 
     useEffect(() => {

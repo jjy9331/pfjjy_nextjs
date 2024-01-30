@@ -164,18 +164,29 @@ export default function Item_introduce() {
 
     // intro_seq_webworker
 
+    // useEffect(() => {
+    //     const loadImageFrames = async () => {
+    //         const frames = await Promise.all(
+    //             Array.from({ length: 153 }, async (_, index) => {
+    //                 const response = await fetch(`/introduce_ani/${index.toString().padStart(3, "0")}.png`);
+    //                 const src = URL.createObjectURL(await response.blob());
+    //                 return { src, loaded: true };
+    //             })
+    //         );
+    //         setImageFrames(frames);
+    //     };
+
+    //     loadImageFrames();
+    // }, []);
+
     useEffect(() => {
         const loadImageFrames = async () => {
-            const frames = await Promise.all(
-                Array.from({ length: 153 }, async (_, index) => {
-                    const response = await fetch(`/introduce_ani/${index.toString().padStart(3, "0")}.png`);
-                    const src = URL.createObjectURL(await response.blob());
-                    return { src, loaded: true };
-                })
-            );
+            const frames = Array.from({ length: 153 }, (_, index) => {
+                const src = `/introduce_ani/${index.toString().padStart(3, "0")}.png`; // 이미 로드한 이미지 URL
+                return { src, loaded: true };
+            });
             setImageFrames(frames);
         };
-
         loadImageFrames();
     }, []);
 

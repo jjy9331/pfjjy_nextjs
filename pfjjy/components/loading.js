@@ -5,19 +5,29 @@ const Loading = ({ onImagesLoaded }) => {
   const [imagesLoaded, setImagesLoaded] = useState(false);
 
   useEffect(() => {
+    // const loadImageFrames = async (directory, numFrames, extension) => {
+    //   const frames = await Promise.all(
+    //     Array.from({ length: numFrames }, async (_, index) => {
+    //       const paddedIndex = index.toString().padStart(3, '0');
+    //       const response = await fetch(`/${directory}/${paddedIndex}.${extension}`);
+    //       if (!response.ok) {
+    //         throw new Error(`Failed to fetch image ${index}: ${response.status} ${response.statusText}`);
+    //       }
+    //       const src = URL.createObjectURL(await response.blob());
+    //       // console.log(`Loaded image frame ${index}: ${src}`);
+    //       return { src, loaded: false }; // 이미지 로드 상태를 false로 초기화
+    //     })
+    //   );
+    //   return frames;
+    // };
+
     const loadImageFrames = async (directory, numFrames, extension) => {
-      const frames = await Promise.all(
-        Array.from({ length: numFrames }, async (_, index) => {
-          const paddedIndex = index.toString().padStart(3, '0');
-          const response = await fetch(`/${directory}/${paddedIndex}.${extension}`);
-          if (!response.ok) {
-            throw new Error(`Failed to fetch image ${index}: ${response.status} ${response.statusText}`);
-          }
-          const src = URL.createObjectURL(await response.blob());
-          // console.log(`Loaded image frame ${index}: ${src}`);
-          return { src, loaded: false }; // 이미지 로드 상태를 false로 초기화
-        })
-      );
+      const frames = Array.from({ length: numFrames }, (_, index) => {
+        const paddedIndex = index.toString().padStart(3, '0');
+        const src = `/${directory}/${paddedIndex}.${extension}`; // 이미 로드한 이미지 URL
+        return { src, loaded: true }; // 이미지 로드 상태를 true로 변경
+      });
+  
       return frames;
     };
 
@@ -25,6 +35,7 @@ const Loading = ({ onImagesLoaded }) => {
       try {
         const contactAniFrames = await loadImageFrames('contact_ani', 64, 'svg');
         const introduceAniFrames = await loadImageFrames('introduce_ani', 153, 'png');
+        const homeAniFrames = await loadImageFrames('team_runner_ani', 32, 'svg');
         const imgPaths = [
           '/img/hover_runner.gif',
           '/img/hss_log.svg',
@@ -36,7 +47,7 @@ const Loading = ({ onImagesLoaded }) => {
           '/img/ypaint.webp',
           // 다른 이미지 경로들도 여기에 추가
         ];
-        const totalImages = contactAniFrames.length + introduceAniFrames.length + imgPaths.length;
+        const totalImages = contactAniFrames.length + introduceAniFrames.length + homeAniFrames.length + imgPaths.length;
         let loadedImages = 0;
 
         // console.log("totalImages: "+ totalImages);
@@ -82,6 +93,12 @@ const Loading = ({ onImagesLoaded }) => {
               updateProgress();
             });
           }),
+          ...homeAniFrames.map((frame) => {
+            return loadImage(frame.src).then(() => {
+              frame.loaded = true; // 이미지 로드 상태를 업데이트
+              updateProgress();
+            });
+          }),
           ...imgPaths.map((url) => loadImage(url).then(updateProgress)),
         ];
 
@@ -97,7 +114,7 @@ const Loading = ({ onImagesLoaded }) => {
     if (!imagesLoaded) {
       loadImages();
     }
-  }, []); // 처음 로딩 시에만 실행
+  }, [imagesLoaded]); // 처음 로딩 시에만 실행
 
   // console.log('loadingProgress:', loadingProgress);
 
