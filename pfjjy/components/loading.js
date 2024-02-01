@@ -5,22 +5,6 @@ const Loading = ({ onImagesLoaded }) => {
   const [imagesLoaded, setImagesLoaded] = useState(false);
 
   useEffect(() => {
-    // const loadImageFrames = async (directory, numFrames, extension) => {
-    //   const frames = await Promise.all(
-    //     Array.from({ length: numFrames }, async (_, index) => {
-    //       const paddedIndex = index.toString().padStart(3, '0');
-    //       const response = await fetch(`/${directory}/${paddedIndex}.${extension}`);
-    //       if (!response.ok) {
-    //         throw new Error(`Failed to fetch image ${index}: ${response.status} ${response.statusText}`);
-    //       }
-    //       const src = URL.createObjectURL(await response.blob());
-    //       // console.log(`Loaded image frame ${index}: ${src}`);
-    //       return { src, loaded: false }; // 이미지 로드 상태를 false로 초기화
-    //     })
-    //   );
-    //   return frames;
-    // };
-
     const loadImageFrames = async (directory, numFrames, extension) => {
       const frames = Array.from({ length: numFrames }, (_, index) => {
         const paddedIndex = index.toString().padStart(3, '0');

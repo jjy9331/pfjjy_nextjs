@@ -22,61 +22,6 @@ export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
 
   const dataValue = useSelector(state => state.dataValue);
-  
-  // useEffect(() => {
-  //   console.log(dataValue); // dataValue의 현재 값을 콘솔에 출력
-  //   window.onload = () => {
-  //     window.scrollTo(0, dataValue);
-  //   };
-  // }, [dataValue]);
-
-
-  // useEffect(() => {
-  //   const handleRouteChange = () => {
-  //     console.log(dataValue); // dataValue의 현재 값을 콘솔에 출력
-  //     window.scrollTo(0, dataValue);
-  //   };
-
-  //   router.events.on('routeChangeComplete', handleRouteChange);
-
-  //   // Clean up the subscription on unmount
-  //   return () => {
-  //     router.events.off('routeChangeComplete', handleRouteChange);
-  //   };
-  // }, [dataValue, router.events]);
-
-  // useLayoutEffect(() => {
-  //   console.log(dataValue); // dataValue의 현재 값을 콘솔에 출력
-  //   window.scrollTo(0, dataValue);
-  // }, [dataValue]);
-
-  // useEffect(() => {
-  //   const handleImagesLoaded = () => {
-  //     setIsLoading(false); // 이미지 로딩 완료
-  //     setTimeout(() => {
-  //       // console.log(dataValue); // dataValue의 현재 값을 콘솔에 출력
-  //       window.scrollTo(0, dataValue); // 이미지 로딩이 완료된 후에만 스크롤 위치 조정
-  //     }, 100); // Adjust the timeout value as needed
-  //   };
-    
-  //   if (isLoading) {
-  //     return <Loading onImagesLoaded={handleImagesLoaded} />;
-  //   }
-  // }, [isLoading, dataValue]);
-
-  // useEffect(() => {
-  //   // Simulate some delay to show the loading page (optional)
-  //   setTimeout(() => {
-  //     setIsLoading(false);
-  //   }, 1000); // Adjust the duration as needed
-  // }, []);
-
-  // const handleImagesLoaded = () => {
-  //   setIsLoading(false); // 이미지 로딩 완료
-  //   setTimeout(() => {
-  //     window.scrollTo(0, dataValue);
-  //   }, 100); // Adjust the timeout value as needed
-  // };
 
   const handleImagesLoaded = useCallback(() => {
     setIsLoading(false); // 이미지 로딩 완료

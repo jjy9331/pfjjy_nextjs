@@ -164,21 +164,6 @@ export default function Item_introduce() {
 
     // intro_seq_webworker
 
-    // useEffect(() => {
-    //     const loadImageFrames = async () => {
-    //         const frames = await Promise.all(
-    //             Array.from({ length: 153 }, async (_, index) => {
-    //                 const response = await fetch(`/introduce_ani/${index.toString().padStart(3, "0")}.png`);
-    //                 const src = URL.createObjectURL(await response.blob());
-    //                 return { src, loaded: true };
-    //             })
-    //         );
-    //         setImageFrames(frames);
-    //     };
-
-    //     loadImageFrames();
-    // }, []);
-
     useEffect(() => {
         const loadImageFrames = async () => {
             const frames = Array.from({ length: 153 }, (_, index) => {

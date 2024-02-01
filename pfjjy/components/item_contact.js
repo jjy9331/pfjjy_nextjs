@@ -66,24 +66,7 @@ export default function Item_contact() {
             return loaded1;
         });
     };
-
-    // contact_seq_webworker
-
-    // useEffect(() => {
-    //     const loadImageFrames1 = async () => {
-    //         const frames = await Promise.all(
-    //             Array.from({ length: 64 }, async (_, index) => {
-    //                 const response = await fetch(`/contact_ani/${index.toString().padStart(3, "0")}.svg`);
-    //                 const src = URL.createObjectURL(await response.blob());
-    //                 return { src, loaded: true };
-    //             })
-    //         );
-    //         setImageFrames1(frames);
-    //     };
-
-    //     loadImageFrames1();
-    // }, []);
-
+    
     useEffect(() => {
         const loadImageFrames1 = async () => {
             const frames = Array.from({ length: 64 }, (_, index) => {
@@ -119,44 +102,6 @@ export default function Item_contact() {
             cont_tt3Element.style.display = "none";
         }
     },[scrollY])
-
-    // // contact background
-    // useEffect(() => {
-    //     const { current: contElement } = cont;
-        
-    //     if (scrollY >= 0 && scrollY <= 36732){
-    //         contElement.style.background = "white";
-    //     } else if (scrollY > 36732 && scrollY <= 39828) {
-    //         contElement.style.background = "black";
-    //     } else {
-    //         contElement.style.background = "white";
-    //     }
-    // },[scrollY])
-
-    // useEffect(() => {
-    //     const { current: cont_aniLElement } = cont_ani_l;
-        
-    //     if (scrollY >= 0 && scrollY <= 36732){
-    //         cont_aniLElement.style.filter = "invert(0)";
-    //     } else if (scrollY > 36732 && scrollY <= 39828) {
-    //         cont_aniLElement.style.filter = "invert(100)";
-    //     } else {
-    //         cont_aniLElement.style.filter = "invert(0)";
-    //     }
-    // },[scrollY])
-
-    //     // contact ani right
-    //     useEffect(() => {
-    //         const { current: cont_aniRElement } = cont_ani_r;
-            
-    //         if (scrollY >= 0 && scrollY <= 36732){
-    //             cont_aniRElement.style.filter = "invert(0)";
-    //         } else if (scrollY > 36732 && scrollY <= 39828) {
-    //             cont_aniRElement.style.filter = "invert(100)";
-    //         } else {
-    //             cont_aniRElement.style.filter = "invert(0)";
-    //         }
-    //     },[scrollY])
 
     return (
         <div>
