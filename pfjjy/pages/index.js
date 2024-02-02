@@ -1,6 +1,5 @@
 import React, { useEffect, useState, useLayoutEffect, useCallback } from 'react';
-import { useSelector } from 'react-redux';
-// import { useRouter } from 'next/router';
+import GebisconModal from '../pages/gebiscon.js';
 
 import CustomCursor from '../components/cursor.js'
 import Header from '../components/header.js'
@@ -17,25 +16,32 @@ import Loading from '@/components/loading.js';
 
 export default function Home() {
 
-  // const router = useRouter();
-
   const [isLoading, setIsLoading] = useState(true);
-
-  const dataValue = useSelector(state => state.dataValue);
 
   const handleImagesLoaded = useCallback(() => {
     setIsLoading(false); // 이미지 로딩 완료
-    setTimeout(() => {
-      window.scrollTo(0, dataValue);
-    }, 10); // Adjust the timeout value as needed
-  }, [dataValue]);
+  }, []);
 
   useEffect(() => {
     // isLoading이 변경될 때마다 handleImagesLoaded 함수를 재설정합니다.
     if (isLoading) {
       handleImagesLoaded();
     }
-  }, [isLoading, dataValue, handleImagesLoaded]);
+  }, [isLoading, handleImagesLoaded]);
+
+  // modal popup
+
+  const [isModalOpen, setIsModalOpen] = useState({ port1: false, port2: false, port3: false, port4: false, port5: false });
+
+  const handlePortClick = (port) => {
+      setIsModalOpen((prev) => ({ ...prev, [port]: true }));
+      document.body.style.overflow = 'hidden';
+  };
+
+  const handleCloseClick = (port) => {
+      setIsModalOpen((prev) => ({ ...prev, [port]: false }));
+      document.body.style.overflow = 'auto';
+  };
 
   // isLoading 상태에 따라 적절한 컴포넌트를 렌더링합니다.
   if (isLoading) {
@@ -48,7 +54,8 @@ export default function Home() {
         <Header />
         <Item_home />
         <Item_introduce />
-        <Item_portfolio />
+        <Item_portfolio onPortClick={handlePortClick} />
+        {isModalOpen.port1 && <GebisconModal onClose={() => handleCloseClick('port1')} />}
         <Item_contact />
         <Footer />
       </div>

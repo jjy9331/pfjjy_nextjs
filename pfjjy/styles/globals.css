@@ -16,6 +16,25 @@ body {
   background: white;
 }
 
+/* popup */
+
+.port_pop{
+  position: fixed;
+  left: 0%;
+  top: 0%;
+  width: 100vw;
+  height: 100vh;
+  background: white;
+  z-index: 1200;
+  overflow: auto;
+}
+
+.pop_test {
+  border: black 1px dotted;
+  width: 100vw;
+  height: 100vh;
+}
+
 /* scrollY tracker */
 #sctk {
     position: fixed;
@@ -797,7 +816,7 @@ body {
   height: 6%;
   /* height: 120px;  */
   border-bottom: 2px solid rgba(0,0,0,0.4);
-  z-index: 1000;
+  z-index: 1200;
   /* visibility: hidden; */
 }
 
@@ -842,7 +861,7 @@ body {
   width: 100%; 
   height: 6%;
   /* visibility: hidden; */
-  z-index: 1000
+  z-index: 1200
 }
 .pop_f_inner{
   height: 100%;

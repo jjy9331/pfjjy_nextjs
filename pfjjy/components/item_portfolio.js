@@ -1,7 +1,6 @@
 import React, { useRef, useEffect, useState } from "react";
-import Link from 'next/link';
 
-export default function Item_portfolio() {
+export default function Item_portfolio({onPortClick}) {
     const [scrollY, setScrollY] = useState(0);
     const [isHovering, setIsHovering] = useState(false);
     const portRef = useRef(null);
@@ -13,6 +12,8 @@ export default function Item_portfolio() {
     const [imageLoaded_p3, setImageLoaded_p3] = useState(Array(60).fill(true));
     const [imageLoaded_p5, setImageLoaded_p5] = useState(Array(45).fill(true));
     const [currentImage, setCurrentImage] = useState(null);
+    const [isOpen, setIsOpen] = useState(false);
+
 
     useEffect(() => {
         const handleScroll = () => {
@@ -338,15 +339,15 @@ export default function Item_portfolio() {
                         </div>
                         <div className='port'>
                                 <div>
-                                    <Link href="/gebiscon" passHref> 
+
                                         <img 
                                             className='port_1'
                                             src={isHovering ? "/img/port1.gif" : "/img/port1.png"}
                                             alt="UI,UX_mindset"
                                             onMouseEnter={handleMouseEnter}
                                             onMouseLeave={handleMouseLeave}
+                                            onClick={() => onPortClick('port1')}
                                         />
-                                    </Link>
                                 </div>
                         </div>
                         <div className='port'>
