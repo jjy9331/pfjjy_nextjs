@@ -27,12 +27,14 @@ body {
   background: white;
   z-index: 1200;
   overflow: auto;
+  scroll-snap-type: y mandatory;
 }
 
 .pop_test {
   border: black 1px dotted;
   width: 100vw;
   height: 100vh;
+  scroll-snap-align: center;
 }
 
 /* scrollY tracker */
