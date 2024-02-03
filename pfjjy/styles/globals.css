@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200');
 
 /*Eric mayor reset*/
 
@@ -36,6 +36,8 @@ body {
   height: 100vh;
   scroll-snap-align: center;
 }
+
+
 
 /* scrollY tracker */
 #sctk {
@@ -807,6 +809,115 @@ body {
   justify-content: center;
   position: relative;
 }
+
+/* portfolio scroll move */
+
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 100,
+  'GRAD' 0,
+  'opsz' 48
+}
+
+#pf1back {
+    position: absolute;
+    top: 48%;
+    left: 11%;
+    /* visibility: hidden; */
+    /* cursor: pointer; */
+}
+
+#pf1next { 
+    position: absolute;    
+    top: 48%;
+    right: 11%;
+    /* visibility: hidden; */
+    /* cursor: pointer; */
+}
+
+#pf2back {
+    position: absolute;
+    top: 48%;
+    left: -40%;
+    visibility: hidden;
+    z-index: 6;
+    /* cursor: pointer; */
+}
+
+#pf2next {
+    position: absolute;    
+    top: 48%;
+    right: -40%;
+    visibility: hidden;
+    /* cursor: pointer; */
+}
+
+#pf3back {
+    position: absolute;
+    top: 48%;
+    left: -40%;
+    visibility: hidden;
+    /* cursor: pointer; */
+}
+
+#pf3next {
+    position: absolute;    
+    top: 48%;
+    right: -40%;
+    visibility: hidden;
+    /* cursor: pointer; */
+}
+#pf4back {
+    position: absolute;
+    top: 48%;
+    left: -128%;
+    visibility: hidden;
+    /* cursor: pointer; */
+}
+
+#pf4next {
+    position: absolute;    
+    top: 48%;
+    right: -128%;
+    visibility: hidden;
+    /* cursor: pointer; */
+}
+#pf5back {
+    position: absolute;
+    top: 48%;
+    left: -40%;
+    visibility: hidden;
+    /* cursor: pointer; */
+}
+
+#pf5next {
+    position: absolute;    
+    top: 48%;
+    right: -40%;
+    visibility: hidden;
+    /* cursor: pointer; */
+}
+
+#pf6back {
+    position: absolute;
+    top: 48%;
+    left: -128%;
+    visibility: hidden;
+    /* cursor: pointer; */
+}
+
+#pf6next {
+    position: absolute;    
+    top: 48%;
+    right: -128%;
+    visibility: hidden;
+    /* cursor: pointer; */
+}
+
+
+
 
 /* popup */
 
