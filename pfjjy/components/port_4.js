@@ -1,5 +1,8 @@
 import React, {useState, useEffect} from "react";
 
+import Pfback from './pfback';
+import Pfnext from './pfnext';
+
 export default function Port_4({ }) {
     
     // port 4 hover ani
@@ -46,11 +49,11 @@ export default function Port_4({ }) {
         pf4subp.style.animation = "pf4sp2 0.5s ease-in-out";
     };
 
-
-
-
     return (
         <div className='port'>
+            <div id="pf4back">
+                <Pfback scrollYValue={26701} />
+            </div>
             <img 
                 className='port_ph' 
                 src="/img/iphone.webp" 
@@ -73,6 +76,9 @@ export default function Port_4({ }) {
                             <path className="cls-3" d="M1216.67,463.09h0a.49.49,0,0,0-.58.36,1.49,1.49,0,0,1-2.9,0,.64.64,0,0,0,0-.07.48.48,0,1,0-.92.3,2.46,2.46,0,0,0,1.89,1.81,9.15,9.15,0,0,1-18.29,0,2.45,2.45,0,0,0,1.89-1.8h0a.47.47,0,0,0-.35-.58h0a.5.5,0,0,0-.59.36,1.49,1.49,0,0,1-2.9,0s0-.05,0-.07a.49.49,0,0,0-.61-.31.49.49,0,0,0-.31.61,2.44,2.44,0,0,0,1.91,1.81,10.12,10.12,0,0,0,20.23,0,2.47,2.47,0,0,0,1.92-1.81h0A.49.49,0,0,0,1216.67,463.09Z" transform="translate(-1189.16 -449.4)"/>
                         </g>
                 </svg>
+            </div>
+            <div id="pf4next">
+                <Pfnext scrollYValue={30557} />
             </div>
         </div>
     );

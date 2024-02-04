@@ -1,5 +1,8 @@
 import React, {useState} from "react";
 
+import Pfback from './pfback';
+import Pfnext from './pfnext';
+
 export default function Port_2({ }) {
 
 
@@ -24,6 +27,9 @@ export default function Port_2({ }) {
 
     return (
         <div className='port'>
+            <div id="pf2back">
+                <Pfback scrollYValue={22527} />
+            </div>
             <img 
                 className='port_pc' src="/img/monitor.webp" alt="zerolab" 
                 onMouseEnter={handleMouseEnterPort2}
@@ -40,6 +46,9 @@ export default function Port_2({ }) {
                     className="pf2_eye" 
                     loading="lazy" 
                 />
+            </div>
+            <div id="pf2next">
+                <Pfnext scrollYValue={26701} />
             </div>
         </div>
     );

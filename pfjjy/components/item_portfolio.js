@@ -41,7 +41,7 @@ export default function Item_portfolio({onPortClick}) {
     useEffect(()=>{
         const { current: portElement } = portRef;
 
-        let progress, leftPosition;
+        let progress, leftPosition ;
 
         if (scrollY >= 16736 && scrollY <= 17346) {
             progress = (scrollY - 16736) / (17346 - 16736);
@@ -52,42 +52,88 @@ export default function Item_portfolio({onPortClick}) {
         } else if (scrollY > 21328 && scrollY <= 22328) {
             progress = (scrollY - 21328) / (22328 - 21328);
             leftPosition = -progress * 100;
+            document.getElementById("pf1back").style.visibility = "hidden";
+            document.getElementById("pf1next").style.visibility = "hidden";
         } else if (scrollY > 22328 && scrollY <= 23328) {
             progress = 0;
             leftPosition = -100;
+            document.getElementById("pf1back").style.visibility = "visible";
+            document.getElementById("pf1next").style.visibility = "visible";
         } else if (scrollY > 23328 && scrollY <= 24328) {
             progress = (scrollY - 23328) / (24328 - 23328);
             leftPosition = -100 - progress * 100;
+            document.getElementById("pf1back").style.visibility = "hidden";
+            document.getElementById("pf1next").style.visibility = "hidden";
+            document.getElementById("pf2back").style.visibility = "hidden";
+            document.getElementById("pf2next").style.visibility = "hidden";
         } else if (scrollY > 24328 && scrollY <= 25328) {
             progress = 0;
             leftPosition = -200;
+            document.getElementById("pf2back").style.visibility = "visible";
+            document.getElementById("pf2next").style.visibility = "visible";
         } else if (scrollY > 25328 && scrollY <= 26328) {
             progress = (scrollY - 25328) / (26328 - 25328);
             leftPosition = -200 - progress * 100;
+            document.getElementById("pf2back").style.visibility = "hidden";
+            document.getElementById("pf2next").style.visibility = "hidden";
+            document.getElementById("pf3back").style.visibility = "hidden";
+            document.getElementById("pf3next").style.visibility = "hidden";
         } else if (scrollY > 26328 && scrollY <= 27328) {
             progress = 0;
             leftPosition = -300;
+            document.getElementById("pf3back").style.visibility = "visible";
+            document.getElementById("pf3next").style.visibility = "visible";
         } else if (scrollY > 27328 && scrollY <= 28328) {
             progress = (scrollY - 27328) / (28328 - 27328);
             leftPosition = -300 - progress * 100;
+            document.getElementById("pf3back").style.visibility = "hidden";
+            document.getElementById("pf3next").style.visibility = "hidden";
+            document.getElementById("pf4back").style.visibility = "hidden";
+            document.getElementById("pf4next").style.visibility = "hidden";
         } else if (scrollY > 28328 && scrollY <= 29328) {
             progress = 0;
             leftPosition = -400;
+            document.getElementById("pf4back").style.visibility = "visible";
+            document.getElementById("pf4next").style.visibility = "visible";
         } else if (scrollY > 29328 && scrollY <= 30328) {
             progress = (scrollY - 29328) / (30328 - 29328);
             leftPosition = -400 - progress * 100;
+            document.getElementById("pf4back").style.visibility = "hidden";
+            document.getElementById("pf4next").style.visibility = "hidden";
+            document.getElementById("pf5back").style.visibility = "hidden";
+            document.getElementById("pf5next").style.visibility = "hidden";
         } else if (scrollY > 30328 && scrollY <= 31328) {
             progress = 0;
             leftPosition = -500;
+            document.getElementById("pf5back").style.visibility = "visible";
+            document.getElementById("pf5next").style.visibility = "visible";
         } else if (scrollY > 31328 && scrollY <= 32328) {
             progress = (scrollY - 31328) / (32328 - 31328);
             leftPosition = -500 - progress * 100;
+            document.getElementById("pf5back").style.visibility = "hidden";
+            document.getElementById("pf5next").style.visibility = "hidden";
+            document.getElementById("pf6back").style.visibility = "hidden";
+            document.getElementById("pf6next").style.visibility = "hidden";
         } else if (scrollY > 32328 && scrollY <= 33328) {
             progress = 0;
             leftPosition = -600;
+            document.getElementById("pf6back").style.visibility = "visible";
+            document.getElementById("pf6next").style.visibility = "visible";
         } else {
             progress = 0;
             leftPosition = -600;
+            document.getElementById("pf1back").style.visibility = "hidden";
+            document.getElementById("pf1next").style.visibility = "hidden";
+            document.getElementById("pf2back").style.visibility = "hidden";
+            document.getElementById("pf2next").style.visibility = "hidden";
+            document.getElementById("pf3back").style.visibility = "hidden";
+            document.getElementById("pf3next").style.visibility = "hidden";
+            document.getElementById("pf4back").style.visibility = "hidden";
+            document.getElementById("pf4next").style.visibility = "hidden";
+            document.getElementById("pf5back").style.visibility = "hidden";
+            document.getElementById("pf5next").style.visibility = "hidden";
+            document.getElementById("pf6back").style.visibility = "hidden";
+            document.getElementById("pf6next").style.visibility = "hidden";
         } 
         
         portElement.style.left = `${leftPosition}%`;

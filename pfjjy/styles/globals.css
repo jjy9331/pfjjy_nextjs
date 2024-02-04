@@ -825,22 +825,22 @@ body {
     position: absolute;
     top: 48%;
     left: 11%;
-    /* visibility: hidden; */
+    visibility: hidden;
     /* cursor: pointer; */
 }
 
 #pf1next { 
     position: absolute;    
     top: 48%;
-    right: 11%;
-    /* visibility: hidden; */
+    right: 11.5%;
+    visibility: hidden;
     /* cursor: pointer; */
 }
 
 #pf2back {
     position: absolute;
     top: 48%;
-    left: -40%;
+    left: 15%;
     visibility: hidden;
     z-index: 6;
     /* cursor: pointer; */
@@ -849,7 +849,7 @@ body {
 #pf2next {
     position: absolute;    
     top: 48%;
-    right: -40%;
+    right: 15%;
     visibility: hidden;
     /* cursor: pointer; */
 }
@@ -857,7 +857,7 @@ body {
 #pf3back {
     position: absolute;
     top: 48%;
-    left: -40%;
+    left: -9%;
     visibility: hidden;
     /* cursor: pointer; */
 }
@@ -865,29 +865,30 @@ body {
 #pf3next {
     position: absolute;    
     top: 48%;
-    right: -40%;
+    right: -9%;
     visibility: hidden;
     /* cursor: pointer; */
 }
 #pf4back {
     position: absolute;
     top: 48%;
-    left: -128%;
+    left: 21%;
     visibility: hidden;
+    z-index: 100;
     /* cursor: pointer; */
 }
 
 #pf4next {
     position: absolute;    
     top: 48%;
-    right: -128%;
+    right: 21%;
     visibility: hidden;
     /* cursor: pointer; */
 }
 #pf5back {
     position: absolute;
     top: 48%;
-    left: -40%;
+    left: -7%;
     visibility: hidden;
     /* cursor: pointer; */
 }
@@ -895,7 +896,7 @@ body {
 #pf5next {
     position: absolute;    
     top: 48%;
-    right: -40%;
+    right: 15%;
     visibility: hidden;
     /* cursor: pointer; */
 }
@@ -903,7 +904,7 @@ body {
 #pf6back {
     position: absolute;
     top: 48%;
-    left: -128%;
+    left: 21%;
     visibility: hidden;
     /* cursor: pointer; */
 }
@@ -911,7 +912,7 @@ body {
 #pf6next {
     position: absolute;    
     top: 48%;
-    right: -128%;
+    right: 21%;
     visibility: hidden;
     /* cursor: pointer; */
 }

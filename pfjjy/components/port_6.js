@@ -1,5 +1,8 @@
 import React, {useState, useEffect, useRef} from "react";
 
+import Pfback from './pfback';
+import Pfnext from './pfnext';
+
 export default function Port_6({ }) {
 
     const portpmRef = useRef(null);
@@ -43,6 +46,9 @@ export default function Port_6({ }) {
 
     return (
         <div className='port' ref={portpmRef}>
+            <div id="pf6back">
+                <Pfback scrollYValue={30557} />
+            </div>
             <div className='pf_more'>
                 <img 
                     className='port_ph' 
@@ -56,6 +62,9 @@ export default function Port_6({ }) {
                 <img src="/img/more_bg.svg" className="pf_more_img" alt="pf_more" loading="lazy"/>
                 <img src="/img/hover_runner.gif" className="hover_runner" alt="hover_runner" loading="lazy"/>
                 <div className="pfmore_bg"></div>
+            </div>
+            <div id="pf6next">
+                <Pfnext scrollYValue={34736} />
             </div>
         </div>
     );

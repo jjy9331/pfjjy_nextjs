@@ -1,5 +1,8 @@
 import React, {useState, useEffect} from "react";
 
+import Pfback from './pfback';
+import Pfnext from './pfnext';
+
 export default function Port_5({ }) {
     
     const [currentFrame, setCurrentFrame] = useState(0);
@@ -71,6 +74,9 @@ export default function Port_5({ }) {
     return (
         <div className='port'>
             <div className='p_wrap'>
+                <div id="pf5back">
+                    <Pfback scrollYValue={28680} />
+                </div>
                 <img 
                     className='port_pc' 
                     src="/img/monitor.webp" 
@@ -106,6 +112,9 @@ export default function Port_5({ }) {
                             );
                     })}
                 </div>
+            </div>
+            <div id="pf5next">
+                <Pfnext scrollYValue={32520} />
             </div>
         </div>
     );

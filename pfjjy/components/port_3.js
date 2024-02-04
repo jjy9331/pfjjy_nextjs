@@ -1,5 +1,8 @@
 import React, {useState, useEffect} from "react";
 
+import Pfback from './pfback';
+import Pfnext from './pfnext';
+
 export default function Port_3({ }) {
 
     const [currentFrame, setCurrentFrame] = useState(0);
@@ -72,6 +75,9 @@ export default function Port_3({ }) {
     return (
         <div className='port'>
             <div className='p_wrap'>
+                <div id="pf3back">
+                    <Pfback scrollYValue={24594} />
+                </div>
                 <img 
                     className='port_pc' 
                     src="/img/monitor.webp" 
@@ -105,6 +111,9 @@ export default function Port_3({ }) {
                             />
                         );
                     })}
+                </div>
+                <div id="pf3next">
+                    <Pfnext scrollYValue={28675} />
                 </div>
             </div>
         </div>
