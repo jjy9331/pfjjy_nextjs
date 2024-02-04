@@ -46,7 +46,7 @@ export default function Port_6({ }) {
 
     return (
         <div className='port' ref={portpmRef}>
-            <div id="pf6back">
+            <div className="pf6back pfbn_mv">
                 <Pfback scrollYValue={30557} />
             </div>
             <div className='pf_more'>
@@ -63,7 +63,7 @@ export default function Port_6({ }) {
                 <img src="/img/hover_runner.gif" className="hover_runner" alt="hover_runner" loading="lazy"/>
                 <div className="pfmore_bg"></div>
             </div>
-            <div id="pf6next">
+            <div className="pf6next pfbn_mv">
                 <Pfnext scrollYValue={34736} />
             </div>
         </div>

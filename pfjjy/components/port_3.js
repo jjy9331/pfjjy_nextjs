@@ -75,7 +75,7 @@ export default function Port_3({ }) {
     return (
         <div className='port'>
             <div className='p_wrap'>
-                <div id="pf3back">
+                <div className="pf3back pfbn_mv">
                     <Pfback scrollYValue={24594} />
                 </div>
                 <img 
@@ -112,7 +112,7 @@ export default function Port_3({ }) {
                         );
                     })}
                 </div>
-                <div id="pf3next">
+                <div className="pf3next pfbn_mv">
                     <Pfnext scrollYValue={28675} />
                 </div>
             </div>

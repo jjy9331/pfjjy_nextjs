@@ -27,7 +27,7 @@ export default function Port_2({ }) {
 
     return (
         <div className='port'>
-            <div id="pf2back">
+            <div className="pf2back pfbn_mv">
                 <Pfback scrollYValue={22527} />
             </div>
             <img 
@@ -47,7 +47,7 @@ export default function Port_2({ }) {
                     loading="lazy" 
                 />
             </div>
-            <div id="pf2next">
+            <div className="pf2next pfbn_mv">
                 <Pfnext scrollYValue={26701} />
             </div>
         </div>

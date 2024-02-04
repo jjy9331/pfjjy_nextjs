@@ -18,7 +18,7 @@ export default function Port_1({onPortClick}) {
 
     return (
         <div className='port'>
-                    <div id="pf1back">
+                    <div className="pf1back pfbn_mv">
                         <Pfback scrollYValue={17899} />
                     </div>
                                 <img 
@@ -29,7 +29,7 @@ export default function Port_1({onPortClick}) {
                                     onMouseLeave={handleMouseLeave}
                                     onClick={() => onPortClick('port1')}
                                 />
-                    <div id="pf1next">
+                    <div className="pf1next pfbn_mv">
                         <Pfnext scrollYValue={24594} />
                     </div>
         </div>

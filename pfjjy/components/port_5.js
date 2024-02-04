@@ -74,7 +74,7 @@ export default function Port_5({ }) {
     return (
         <div className='port'>
             <div className='p_wrap'>
-                <div id="pf5back">
+                <div className="pf5back pfbn_mv">
                     <Pfback scrollYValue={28680} />
                 </div>
                 <img 
@@ -113,7 +113,7 @@ export default function Port_5({ }) {
                     })}
                 </div>
             </div>
-            <div id="pf5next">
+            <div className="pf5next pfbn_mv">
                 <Pfnext scrollYValue={32520} />
             </div>
         </div>

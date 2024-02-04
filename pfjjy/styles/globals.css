@@ -821,99 +821,103 @@ body {
   'opsz' 48
 }
 
-#pf1back {
+.pfbn_mv {
+  visibility: hidden;
+}
+
+.pf1back {
     position: absolute;
     top: 48%;
     left: 11%;
-    visibility: hidden;
+    /* visibility: hidden; */
     /* cursor: pointer; */
 }
 
-#pf1next { 
+.pf1next { 
     position: absolute;    
     top: 48%;
     right: 11.5%;
-    visibility: hidden;
+    /* visibility: hidden; */
     /* cursor: pointer; */
 }
 
-#pf2back {
+.pf2back {
     position: absolute;
     top: 48%;
     left: 15%;
-    visibility: hidden;
+    /* visibility: hidden; */
     z-index: 6;
     /* cursor: pointer; */
 }
 
-#pf2next {
+.pf2next {
     position: absolute;    
     top: 48%;
     right: 15%;
-    visibility: hidden;
+    /* visibility: hidden; */
     /* cursor: pointer; */
 }
 
-#pf3back {
+.pf3back {
     position: absolute;
     top: 48%;
     left: -9%;
-    visibility: hidden;
+    /* visibility: hidden; */
     /* cursor: pointer; */
 }
 
-#pf3next {
+.pf3next {
     position: absolute;    
     top: 48%;
     right: -9%;
-    visibility: hidden;
+    /* visibility: hidden; */
     /* cursor: pointer; */
 }
-#pf4back {
+.pf4back {
     position: absolute;
     top: 48%;
     left: 21%;
-    visibility: hidden;
+    /* visibility: hidden; */
     z-index: 100;
     /* cursor: pointer; */
 }
 
-#pf4next {
+.pf4next {
     position: absolute;    
     top: 48%;
     right: 21%;
-    visibility: hidden;
+    /* visibility: hidden; */
     /* cursor: pointer; */
 }
-#pf5back {
+.pf5back {
     position: absolute;
     top: 48%;
     left: -7%;
-    visibility: hidden;
+    /* visibility: hidden; */
     /* cursor: pointer; */
 }
 
-#pf5next {
+.pf5next {
     position: absolute;    
     top: 48%;
     right: 15%;
-    visibility: hidden;
+    /* visibility: hidden; */
     /* cursor: pointer; */
 }
 
-#pf6back {
+.pf6back {
     position: absolute;
     top: 48%;
     left: 21%;
-    visibility: hidden;
+    /* visibility: hidden; */
     /* cursor: pointer; */
 }
 
-#pf6next {
+.pf6next {
     position: absolute;    
     top: 48%;
     right: 21%;
-    visibility: hidden;
+    /* visibility: hidden; */
     /* cursor: pointer; */
 }
 
@@ -1090,13 +1094,13 @@ body {
 
 .eye_hide2 {
   position: absolute;
-    bottom: -44%;
-    left: -29%;
-    width: 10vw;
-    height: 38vw;
-    z-index: 4;
-    background-color: white;
-    cursor: none;
+  bottom: -44%;
+  left: -29%;
+  width: 10vw;
+  height: 38vw;
+  z-index: 4;
+  background-color: white;
+  cursor: none;
 }
 
 
