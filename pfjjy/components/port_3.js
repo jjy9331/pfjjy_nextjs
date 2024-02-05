@@ -8,22 +8,23 @@ export default function Port_3({ }) {
     const [currentFrame, setCurrentFrame] = useState(0);
     const [imageFrames_p3, setImageFrames_p3] = useState([]);
     const [imageLoaded_p3, setImageLoaded_p3] = useState(Array(60).fill(true));
+    const [frameAnimationId_p3, setFrameAnimationId_p3] = useState(null); // frameAnimationId_p3 상태 추가
 
     // port 3 hover ani _ mohenic
 
-    let frameAnimationId_p3 = null;
     const startFrame_p3 = 0;
     const endFrame_p3 = 59;
-    // let frame_go = startFrame_p3 + 1;
-    // let frame_back = endFrame_p3 - 1;
+
     const handleMouseEnterPort3 = () => {
-        let frame_go = startFrame_p3;
+        
+        let frame = startFrame_p3; // frame 변수 선언 및 초기화
 
         const animate = () => {
-            if (frame_go < endFrame_p3) {
-                setCurrentFrame(frame_go);
-                frame_go++;
-                frameAnimationId_p3 = requestAnimationFrame(animate);
+            if (frame <  endFrame_p3) {
+                setCurrentFrame(frame);
+                frame++;
+                // console.log("mouse_enter: "+ frame)
+                setFrameAnimationId_p3(requestAnimationFrame(animate)); // frameAnimationId_p3 업데이트
             }
         };
 
@@ -33,16 +34,17 @@ export default function Port_3({ }) {
     
     const handleMouseLeavePort3 = () => {
         cancelAnimationFrame(frameAnimationId_p3);
-        frameAnimationId_p3 = null;
+        setFrameAnimationId_p3(null);
 
-        let frame_back = endFrame_p3;
+        let frame = currentFrame; // 현재 프레임 값 가져오기
 
         const animateBack = () => {
-            if (frame_back > startFrame_p3) {
-                setCurrentFrame(frame_back);
-                frame_back--;
-                if (frame_back >= startFrame_p3) {
-                    frameAnimationId_p3 = requestAnimationFrame(animateBack);
+            if (frame > startFrame_p3) {
+                setCurrentFrame(frame);
+                frame--;
+                // console.log("mouse_leave: "+ frame)
+                if (frame >= 0) {
+                    setFrameAnimationId_p3(requestAnimationFrame(animateBack)); // frameAnimationId_p3 업데이트
                 }
             }
         };

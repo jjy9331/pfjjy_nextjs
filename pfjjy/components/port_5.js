@@ -8,21 +8,21 @@ export default function Port_5({ }) {
     const [currentFrame, setCurrentFrame] = useState(0);
     const [imageFrames_p5, setImageFrames_p5] = useState([]);
     const [imageLoaded_p5, setImageLoaded_p5] = useState(Array(45).fill(true));
+    const [frameAnimationId_p5, setFrameAnimationId_p5] = useState(null); 
 
     // port 5 hover ani _volvo
 
-    let frameAnimationId_p5 = null;
     const startFrame_p5 = 0;
     const endFrame_p5 = 44;
 
     const handleMouseEnterPort5 = () => {
-        let frame_go = startFrame_p5;
+        let frame = startFrame_p5;
 
         const animate = () => {
-            if (frame_go < endFrame_p5) {
-                setCurrentFrame(frame_go);
-                frame_go++;
-                frameAnimationId_p5 = requestAnimationFrame(animate);
+            if (frame < endFrame_p5) {
+                setCurrentFrame(frame);
+                frame++;
+                setFrameAnimationId_p5(requestAnimationFrame(animate)); // frameAnimationId_p5 업데이트
             }
         };
 
@@ -31,16 +31,16 @@ export default function Port_5({ }) {
 
     const handleMouseLeavePort5 = () => {
         cancelAnimationFrame(frameAnimationId_p5);
-        frameAnimationId_p5 = null;
+        setFrameAnimationId_p5(null);
 
-        let frame_back = endFrame_p5;
+        let frame = currentFrame; // 현재 프레임 값 가져오기
 
         const animateBack = () => {
-            if (frame_back > startFrame_p5) {
-                setCurrentFrame(frame_back);
-                frame_back--;
-                if (frame_back >= startFrame_p5) {
-                    frameAnimationId_p5 = requestAnimationFrame(animateBack);
+            if (frame > startFrame_p5) {
+                setCurrentFrame(frame);
+                frame--;
+                if (frame >= startFrame_p5) {
+                    setFrameAnimationId_p5(requestAnimationFrame(animateBack)); // frameAnimationId_p5 업데이트
                 }
             }
         };
