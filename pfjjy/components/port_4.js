@@ -4,10 +4,13 @@ import Pfback from './pfback';
 import Pfnext from './pfnext';
 
 export default function Port_4({ }) {
+
+    let enterTime, leaveTime;
     
     // port 4 hover ani
 
     const handleMouseEnterPort4 = () => {
+        enterTime = new Date(); // 마우스가 요소 위에 올라간 시간(특정시간_순차적 카우트X)을 기록
         const port4Element = document.querySelector('.port_4');
         const pf4yph1 = port4Element.querySelector('.ypaint_hide1');
         const pf4yph2 = port4Element.querySelector('.ypaint_hide2');
@@ -18,17 +21,17 @@ export default function Port_4({ }) {
         pf4yph1.style.marginLeft = "23%";
         pf4yph2.style.marginLeft = "23%";
         smile.style.marginBottom = "7%";
-        // pf4subp.style.opacity = '0.7';
         pf4subp.style.visibility = "visible";
         pf4yph1.style.transition = '0.35s ease-out 0.28s';
         pf4yph2.style.transition = '0.6s ease-out 0.4s';
         smile.style.transition = "0.5s ease-out 0.38s";
         smile2.style.animation = "growsmile 1.5s ease-in-out";
-        // pf4subp.style.transition = "0.6s ease-out 0.1s";
         pf4subp.style.animation = "pf4sp1 2.5s ease-out";
     };
 
-        const handleMouseLeavePort4 = () => {
+    const handleMouseLeavePort4 = () => {
+        leaveTime = new Date(); // 마우스가 요소에서 떠난 시간을 기록
+        const stayTime = leaveTime - enterTime; // 마우스가 요소 위에 머무른 시간 계산
         const port4Element = document.querySelector('.port_4');
         const pf4yph1 = port4Element.querySelector('.ypaint_hide1');
         const pf4yph2 = port4Element.querySelector('.ypaint_hide2');
@@ -39,15 +42,22 @@ export default function Port_4({ }) {
         pf4yph1.style.marginLeft = "0%";
         pf4yph2.style.marginLeft = "0%";
         smile.style.marginBottom = "0%";
-        // pf4subp.style.opacity = '0';
         pf4subp.style.visibility = "hidden";
         pf4yph1.style.transition = '0.35s ease-out 0.28s';
         pf4yph2.style.transition = '0.6s ease-out 0.4s';
         smile.style.transition = "0.5s ease-out 0.38s";
         smile2.style.animation = "backsmile 0.9s ease-in-out";
-        // pf4subp.style.transition = "0.6s ease-out 0.1s";
-        pf4subp.style.animation = "pf4sp2 0.5s ease-in-out";
+
+        if (stayTime >= 2000) { // 마우스가 요소 위에 2초 이상 머물렀을 경우
+            pf4subp.style.animation = "pf4sp2 0.5s ease-in-out";
+        } else { // 마우스가 요소 위에 2초 미만으로 머무른 경우
+            pf4subp.style.visibility = "hidden";
+        }
+        // 마우스가 요소를 떠날 때마다 animation 속성을 초기화
+        pf4subp.style.animation = "";
+
     };
+
 
     return (
         <div className='port'>
