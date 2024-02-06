@@ -4,20 +4,47 @@ import { animateScroll as scroll } from 'react-scroll';
 import CustomCursor from '../components/cursor.js'
 import Pop_h from '@/components/pop_h.js';
 import Pop_f from '@/components/pop_f.js';
-import Sctracker from '../components/sctracker.js'
+
 
 export default function Gebiscon({onClose}) {
 
     const modalRef = useRef();
+    
+    // smooth scrollTop solution about scrollsnap
+    const handleWheel = (e) => {
+        const portPop = modalRef.current;
+        if (portPop) {
+            if (e.deltaY > 0 || e.deltaY < 0) {
+                portPop.style.scrollSnapType = 'y mandatory';
+            }
+        }
+    };
+
+    useEffect(() => {
+        const portPop = modalRef.current;
+        if (portPop) {
+            portPop.addEventListener('wheel', handleWheel);
+
+            return () => {
+                portPop.removeEventListener('wheel', handleWheel);
+            };
+        }
+    }, []);
+
 
     const handlePpTClick = (event) => {
         event.preventDefault();
+
         // 모달 팝업 요소의 스크롤 위치를 부드럽게 맨 위로 설정
         if (modalRef.current) {
+            const portPop = modalRef.current;
+            portPop.style.scrollSnapType = 'none';
+
             scroll.scrollToTop({
                 containerId: modalRef.current.id,
-                duration: 500,  // 스크롤 애니메이션 시간(ms)
-                smooth: "easeInOutQuart",  // 애니메이션 종류
+                duration: 1000,  
+                delay: 100, 
+                smooth: "easeInOutQuart",  
             });
         }
     };

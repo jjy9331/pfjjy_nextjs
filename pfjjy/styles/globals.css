@@ -27,7 +27,7 @@ body {
   background: white;
   z-index: 1200;
   overflow: auto;
-  scroll-snap-type: y mandatory;
+  /* scroll-snap-type: y mandatory; */
 }
 
 .sheet {
