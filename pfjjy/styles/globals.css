@@ -30,11 +30,23 @@ body {
   scroll-snap-type: y mandatory;
 }
 
-.pop_test {
-  border: black 1px dotted;
+.sheet {
+  /* border: black 1px dotted; */
   width: 100vw;
-  height: 100vh;
+  /* height: 100vh; */
   scroll-snap-align: center;
+}
+
+.sc_al {
+  display: none;
+  height: 100vh;
+  width: 100vw;
+}
+
+.sc_w {
+  width: 100%;
+  height: 100%;
+  transform: scale(1.2);
 }
 
 
@@ -1036,9 +1048,96 @@ body {
 
 /* port_1 gebiscon */
 
+.sheet img {
+  margin: 0 auto;
+  box-sizing: border-box;
+  width: 157.5vh;
+}
+
 .port_1 {
   width: 85vw;
 }
+
+.s1 {
+  text-align: center;
+  margin-top: 3%;
+}
+
+.sheet .s1_left{ 
+  position: absolute;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background-color: rgb(49, 144, 219);
+  z-index: -1;
+  border-bottom: 0.01px rgb(49, 144, 219) solid;
+  /* margin-top: 0.1%; */
+}
+
+.sheet .s1_right{ 
+  position: absolute;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  background-color: rgb(226, 27, 39);
+  z-index: -1;
+  border-bottom: 0.01px rgb(226, 27, 39) solid;
+  /* margin-top: 0.1%; */
+}
+
+.sheet .s1_img {
+  box-shadow: 0px 0px 20px 0px rgb(0 0 0 / 13%);
+}
+
+.s2 {
+  text-align: center;
+  background: white;
+}
+
+.s3 {
+  text-align: center;
+  background: rgb(33, 33, 33);
+}
+
+.s4 {
+  text-align: center;
+  background: white;
+}
+
+.s5 {
+  text-align: center;
+  background: rgb(33, 33, 33);
+}
+
+.s6 {
+  text-align: center;
+  margin-bottom: 3%;
+}
+
+.s6_left{ 
+  position: absolute;
+  left: 0;
+  width: 50%;
+  height: 89%;
+  background-color: rgb(49, 144, 219);
+  z-index: -1;
+  /* margin-top: 0.1%; */
+}
+.s6_right{ 
+  position: absolute;
+  right: 0;
+  width: 50%;
+  height: 89%;
+  background-color: rgb(226, 27, 39);
+  z-index: -1;
+  /* margin-top: 0.1%; */
+}
+
+
+.sheet .s6_img {
+  box-shadow: 0px 0px 20px 0px rgb(0 0 0 / 13%);
+}
+
 
 
 
@@ -1531,12 +1630,12 @@ body {
 
 @media all and (max-aspect-ratio:12/7.64) {  
   /* body {zoom:0.55} */
-  .pop .inner .sc_al {
+  .port_pop .sc_al {
       display: block;
       visibility: visible;
       transform: scale(0.8);
   }
-  .pop .inner .sheet {
+  .port_pop .sheet {
       display: none;
   }
   .hfm_list {bottom: 13%;}
