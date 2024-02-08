@@ -20,6 +20,7 @@ const Loading = ({ onImagesLoaded }) => {
         const contactAniFrames = await loadImageFrames('contact_ani', 64, 'svg');
         const introduceAniFrames = await loadImageFrames('introduce_ani', 153, 'png');
         const homeAniFrames = await loadImageFrames('team_runner_ani', 32, 'svg');
+
         const imgPaths = [
           '/img/hover_runner.gif',
           '/img/hss_log.svg',
@@ -31,7 +32,13 @@ const Loading = ({ onImagesLoaded }) => {
           '/img/ypaint.webp',
           '/img/port1.gif',
           '/img/port1.png',
-          // 다른 이미지 경로들도 여기에 추가
+          '/img/port_1/screen_size_control.svg',
+          '/img/port_1/sec1.webp',
+          '/img/port_1/sec2.webp',
+          '/img/port_1/sec3.webp',
+          '/img/port_1/sec4.webp',
+          '/img/port_1/sec5.webp',
+          '/img/port_1/sec6.gif',
         ];
         const totalImages = contactAniFrames.length + introduceAniFrames.length + homeAniFrames.length + imgPaths.length;
         let loadedImages = 0;

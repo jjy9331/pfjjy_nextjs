@@ -52,7 +52,8 @@ export default function Home() {
         <Item_home />
         <Item_introduce />
         <Item_portfolio onPortClick={handlePortClick} />
-        {isModalOpen.port1 && <GebisconModal onClose={() => handleCloseClick('port1')} />}
+        {/* {isModalOpen.port1 && <GebisconModal onClose={() => handleCloseClick('port1')} />} */}
+        {<GebisconModal onClose={() => handleCloseClick('port1')} isVisible={isModalOpen.port1} />}
         <Item_contact />
         <Footer />
       </div>

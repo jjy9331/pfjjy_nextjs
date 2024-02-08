@@ -6,9 +6,9 @@ import Pop_h from '@/components/pop_h.js';
 import Pop_f from '@/components/pop_f.js';
 
 
-export default function Gebiscon({onClose}) {
+export default function Gebiscon({onClose, isVisible}) {
 
-    const modalRef = useRef();
+    const modalRef = useRef(); 
     
     // smooth scrollTop solution about scrollsnap
     const handleWheel = (e) => {
@@ -50,7 +50,7 @@ export default function Gebiscon({onClose}) {
     };
 
     return (
-        <div id='port_pop' className='port_pop' ref={modalRef} >
+        <div id='port_pop' className='port_pop' ref={modalRef} style={{ visibility: isVisible ? 'visible' : 'hidden' }}>
             <Pop_h title="UI UX mindset" onClose={onClose} onPpTClick={handlePpTClick} />
             <div className='sc_al'>
                 <img className="sc_w" src="/img/port_1/screen_size_control.svg" alt="interactive_screen_alert" loading="lazy"/>
