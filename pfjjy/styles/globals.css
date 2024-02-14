@@ -38,15 +38,17 @@ body {
 }
 
 .sc_al {
-  display: none;
+  /* display: none; */
   height: 100vh;
   width: 100vw;
+  /* visibility: hidden; */
 }
 
 .sc_w {
   width: 100%;
   height: 100%;
   transform: scale(1.2);
+  /* display: none; */
 }
 
 
@@ -1632,7 +1634,7 @@ body {
   /* body {zoom:0.55} */
   .port_pop .sc_al {
       display: block;
-      visibility: visible;
+      /* visibility: visible; */
       transform: scale(0.8);
   }
   .port_pop .sheet {

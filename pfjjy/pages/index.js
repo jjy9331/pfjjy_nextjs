@@ -20,7 +20,7 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
-    // isLoading이 변경될 때마다 handleImagesLoaded 함수를 재설정합니다.
+    // isLoading이 변경될 때마다 handleImagesLoaded 함수를 재설정
     if (isLoading) {
       handleImagesLoaded();
     }
@@ -31,13 +31,17 @@ export default function Home() {
   const [isModalOpen, setIsModalOpen] = useState({ port1: false, port2: false, port3: false, port4: false, port5: false });
 
   const handlePortClick = (port) => {
-      setIsModalOpen((prev) => ({ ...prev, [port]: true }));
-      document.body.style.overflow = 'hidden';
+    const sc_alElement = document.querySelector('.sc_al');
+    setIsModalOpen((prev) => ({ ...prev, [port]: true }));
+    document.body.style.overflow = 'hidden';
+    sc_alElement.style.visibility = "visible"; // 12/7.64 screen ratio view
   };
 
   const handleCloseClick = (port) => {
+      const sc_alElement = document.querySelector('.sc_al');
       setIsModalOpen((prev) => ({ ...prev, [port]: false }));
       document.body.style.overflow = 'auto';
+      sc_alElement.style.visibility = "hidden"; // 12/7.64 screen ratio hidden
   };
 
   // isLoading 상태에 따라 적절한 컴포넌트를 렌더링합니다.
@@ -52,7 +56,6 @@ export default function Home() {
         <Item_home />
         <Item_introduce />
         <Item_portfolio onPortClick={handlePortClick} />
-        {/* {isModalOpen.port1 && <GebisconModal onClose={() => handleCloseClick('port1')} />} */}
         {<GebisconModal onClose={() => handleCloseClick('port1')} isVisible={isModalOpen.port1} />}
         <Item_contact />
         <Footer />
