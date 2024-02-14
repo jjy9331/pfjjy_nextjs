@@ -27,6 +27,7 @@ body {
   background: white;
   z-index: 1200;
   overflow: auto;
+  display: none;
   /* scroll-snap-type: y mandatory; */
 }
 
@@ -38,10 +39,10 @@ body {
 }
 
 .sc_al {
-  /* display: none; */
+  display: none;
   height: 100vh;
   width: 100vw;
-  /* visibility: hidden; */
+  visibility: hidden;
 }
 
 .sc_w {
@@ -1634,7 +1635,7 @@ body {
   /* body {zoom:0.55} */
   .port_pop .sc_al {
       display: block;
-      /* visibility: visible; */
+      visibility: visible;
       transform: scale(0.8);
   }
   .port_pop .sheet {
