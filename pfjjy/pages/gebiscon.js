@@ -20,6 +20,20 @@ export default function Gebiscon({onClose, isVisible}) {
         }
     };
 
+    // pop_h close scrolltop move
+    const handleCloseClick = () => {
+        if (modalRef.current) {
+            const portPop = modalRef.current;
+            portPop.style.scrollSnapType = 'none';
+    
+            portPop.scrollTo({
+                top: 0,
+                behavior: 'instant'
+            });
+              onClose(); // 팝업창 닫기 동작 수행
+        }
+    };
+
     useEffect(() => {
         const portPop = modalRef.current;
         if (portPop) {
@@ -51,7 +65,7 @@ export default function Gebiscon({onClose, isVisible}) {
 
     return (
         <div id='port_pop' className='port_pop' ref={modalRef} style={{ visibility: isVisible ? 'visible' : 'hidden' }}>
-            <Pop_h title="UI UX mindset" onClose={onClose} onPpTClick={handlePpTClick} />
+            <Pop_h title="UI UX mindset" onClose={handleCloseClick} onPpTClick={handlePpTClick} />
             <div className='sc_al'>
                 <img className="sc_w" src="/img/port_1/screen_size_control.svg" alt="interactive_screen_alert" loading="lazy"/>
             </div>

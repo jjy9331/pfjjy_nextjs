@@ -42,6 +42,7 @@ export default function Home() {
     document.body.style.overflow = 'auto';
     const ppElement = document.querySelector('.port_pop');
     ppElement.style.display = 'none';
+
   };
 
   // isLoading 상태에 따라 적절한 컴포넌트를 렌더링합니다.
