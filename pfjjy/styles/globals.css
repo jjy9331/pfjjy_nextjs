@@ -53,7 +53,6 @@ body {
 }
 
 
-
 /* scrollY tracker */
 #sctk {
     position: fixed;
@@ -1016,6 +1015,13 @@ body {
 }
 
 .pop_fnc {
+  position: absolute;
+  right: 0px;
+  /* bottom: 25px; */
+  margin-right: 1.5%;
+  /* cursor: pointer; */
+  /* background: transparent; */
+  border: 0px px;
   display: flex;
   align-items: center;
   padding-top: 0.5vh;
@@ -1044,6 +1050,51 @@ body {
 .pop_fnc a:nth-child(3) img {
   width: 1vw;
   transform: scale(1.4);
+}
+
+
+/* popup sheet nav */
+
+.pf-nav {
+  position: absolute;
+  /* top: 0px; */
+  left: 0px;
+  padding-left: 1%;
+}
+.pf-nav-wrap {
+  margin: 0;
+  padding: 0;
+  /* width: 88px; */
+  /* height: 70px; */
+  display: flex;
+  align-items: center;
+}
+
+.pf-nav-wrap li {
+  display: block;
+    width: 14px;
+    height: 13px;
+    margin: 4px;
+    position: relative;
+}
+
+.pp-nav-sb {
+  border-radius: 100%;
+  position: absolute;
+  z-index: 100;
+  height: 5px;
+  width: 5px;
+  border: 0;
+  background: #333;
+  left: 50%;
+  top: 50%;
+  /* margin: -2px 0 0 -2px; */
+  -webkit-transition: all .1s ease-in-out;
+  -moz-transition: all .1s ease-in-out;
+  -o-transition: all .1s ease-in-out;
+  transition: all .1s ease-in-out;
+
+  transform-origin: center;
 }
 
 
@@ -1495,6 +1546,8 @@ body {
   left: 9px;
   padding-left: 1%;
 }
+
+
 
 #pf-nav ul {
   margin: 0;
