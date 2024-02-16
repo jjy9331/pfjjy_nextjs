@@ -165,7 +165,7 @@ body {
   line-height: 1em;
 }
 
-.header ul li:nth-child(1) { position: relative; padding-right:55px}
+.header ul li:nth-child(1) { position: relative; padding-right:45px}
 .header ul li:nth-child(1) .hr_d1 { 
   position: absolute;
     top: -5px;
@@ -176,7 +176,7 @@ body {
     background: black;
     /* visibility: hidden; */
 }
-.header ul li:nth-child(2) { position: relative; padding-right:55px}
+.header ul li:nth-child(2) { position: relative; padding-right:45px}
 
 .header ul li:nth-child(2) .hr_d4 { 
   position: absolute;
@@ -189,7 +189,7 @@ body {
   /* visibility: hidden;  */
 }
 
-.header ul li:nth-child(3) { position: relative; padding-right:55px}
+.header ul li:nth-child(3) { position: relative; padding-right:45px}
 
 .header ul li:nth-child(3) .hr_d8 { 
   position: absolute;
