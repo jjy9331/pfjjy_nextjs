@@ -118,11 +118,11 @@ export default function Gebiscon({onClose, isVisible}) {
 
             if (spanRefs.current[i].current) {  
                 if (scrollTop >= top && scrollTop < bottom) {
-                    spanRefs.current[i].current.classList.add('pf_nav_active');
+                    spanRefs.current[i].current.classList.add('pp_nav_active');
                     // console.log(`Sheet ${i} is active`);
                     
                 } else {
-                    spanRefs.current[i].current.classList.remove('pf_nav_active');
+                    spanRefs.current[i].current.classList.remove('pp_nav_active');
                 }
             }
         });
