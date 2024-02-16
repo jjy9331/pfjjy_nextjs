@@ -110,7 +110,7 @@ export default function Item_contact() {
                 <div className="cont_wrap1">
                     <div className="cont_wrap2">
                         <div className="cont">
-                            <h3 ref={cont_t1Ref} className="cont_tt1">컨텍트</h3>
+                            <h3 ref={cont_t1Ref} className="cont_tt1">CONTACT</h3>
                         </div>
                     </div>
                 </div>

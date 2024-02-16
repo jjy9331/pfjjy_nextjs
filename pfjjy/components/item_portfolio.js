@@ -121,7 +121,7 @@ export default function Item_portfolio({onPortClick}) {
                 <div ref={hzportRef} className="port_wrap1">
                     <div ref={portRef} className='port_wrap2'>
                         <div className='port'>
-                            <h3 className='port_tt'>포트폴리오</h3>
+                            <h3 className='port_tt'>PORTFOLIO</h3>
                         </div>
                         <Port_1 onPortClick={onPortClick} />
                         <Port_2/>

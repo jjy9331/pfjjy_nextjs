@@ -182,7 +182,7 @@ export default function Item_introduce() {
             <div className="bkbox" ref={bkRef}></div>
             <div className="intro">
                 <h3 ref={introRef} className="intro_tt">
-                    자기소개
+                    INTRODUCE
                 </h3>
             </div>
             <div className="intro_sc">

@@ -60,30 +60,20 @@ export default function Header() {
                 </div>
                 <ul>
                     <li>
-                        <a className={`h_btn ${isHomeVisible ? 'active' : ''}`} data-value="0">홈</a>
+                        <a className={`h_btn ${isHomeVisible ? 'active' : ''}`} data-value="0">Home</a>
                         <HiddenDiv visible={isHomeVisible} className="hr_d1"></HiddenDiv>
                     </li>
                     <li>
-                        <a className={`h_btn ${isIntroductionVisible ? 'active' : ''}`} data-value="11186">자기소개</a>
-                        <HiddenDiv visible={isIntroductionVisible} className="hr_d2"></HiddenDiv>
-                        <HiddenDiv visible={isIntroductionVisible} className="hr_d3"></HiddenDiv>
+                        <a className={`h_btn ${isIntroductionVisible ? 'active' : ''}`} data-value="11186">Introduce</a>
                         <HiddenDiv visible={isIntroductionVisible} className="hr_d4"></HiddenDiv>
-                        <HiddenDiv visible={isIntroductionVisible} className="hr_d5"></HiddenDiv>
                     </li>
                     <li>
-                        <a className={`h_btn ${isPortfolioVisible ? 'active' : ''}`} data-value="17899">포트폴리오</a>
-                        <HiddenDiv visible={isPortfolioVisible} className="hr_d6"></HiddenDiv>
-                        <HiddenDiv visible={isPortfolioVisible} className="hr_d7"></HiddenDiv>
+                        <a className={`h_btn ${isPortfolioVisible ? 'active' : ''}`} data-value="17899">Portfolio</a>
                         <HiddenDiv visible={isPortfolioVisible} className="hr_d8"></HiddenDiv>
-                        <HiddenDiv visible={isPortfolioVisible} className="hr_d9"></HiddenDiv>
-                        <HiddenDiv visible={isPortfolioVisible} className="hr_d10"></HiddenDiv>
                     </li>
                     <li>
-                        <a className={`h_btn ${isContactVisible ? 'active' : ''}`} data-value="34736">컨텍트</a>
-                        <HiddenDiv visible={isContactVisible} className="hr_d11"></HiddenDiv>
-                        <HiddenDiv visible={isContactVisible} className="hr_d12"></HiddenDiv>
+                        <a className={`h_btn ${isContactVisible ? 'active' : ''}`} data-value="34736">Contact</a>
                         <HiddenDiv visible={isContactVisible} className="hr_d13"></HiddenDiv>
-                        <HiddenDiv visible={isContactVisible} className="hr_d14"></HiddenDiv>
                     </li>
                 </ul>
             </div>
