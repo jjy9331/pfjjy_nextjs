@@ -228,7 +228,7 @@ body {
 
 .pl_sd {
   position: fixed;
-  font-family: 'SF Pro';
+  font-family: 'Noto Sans KR';
   font-size: 4vh;
   color: black;
   font-weight: 100;
@@ -270,7 +270,7 @@ body {
 }
 
 .sec1 .typo1 .tw_1 { 
-  font-family: 'SF Pro KR';
+  font-family: 'Noto Sans KR';
   font-size: 4vh;
   line-height: 1em;
   margin-top: -14px;
@@ -279,7 +279,7 @@ body {
   font-weight: 100;
 }
 .sec1 .typo1 .tw_2 {
-  font-family: 'SF Pro KR';
+  font-family: 'Noto Sans KR';
   font-size: 2.2vh;
   font-weight: 100;
   line-height: 1em;
@@ -317,7 +317,7 @@ body {
 }
 
 .sec2 .typo2 h3{
-    font-family: 'SF Pro KR';
+    font-family: 'Noto Sans KR';
     line-height: 1em;
     margin-top: -14px;
     font-size: 4vh;
@@ -326,7 +326,7 @@ body {
 }
 
 .sec2 .typo2 p {
-  font-family: 'SF Pro KR';
+  font-family: 'Noto Sans KR';
   font-size: 2.3vh;
   font-weight: 100;
   line-height: 1em;
@@ -571,7 +571,7 @@ body {
   display: none;
   position: fixed;
   top: 46%;
-  font-family: 'SF Pro KR';
+  font-family: 'Noto Sans KR';
   font-size: 6vh;
   line-height: 1em;
   /* padding-top: 6vh; */
@@ -579,6 +579,7 @@ body {
   font-weight: lighter;
   letter-spacing: 7px;
   margin-left: 3%;
+  font-weight: 300;
 }
 
 
@@ -611,7 +612,7 @@ body {
 }
 
 .Typewriter {
-  font-family: 'SF Pro KR';
+  font-family: 'Noto Sans KR';
   position: fixed;
   color: white;
   font-size: 3vw;
@@ -631,7 +632,7 @@ body {
   display: none;
   color: white;
   font-size: 3vw;
-  font-family: 'SF Pro KR';
+  font-family: 'Noto Sans KR';
   font-weight: 100;
 }
 
@@ -649,7 +650,7 @@ body {
   display: none;
   color: white;
   font-size: 23px;
-  font-family: 'SF Pro KR';
+  font-family: 'Noto Sans KR';
   font-weight: 100;
   height: 0vh;
   text-align: center;
@@ -721,12 +722,12 @@ body {
 
 
 .port_tt {
-  font-family: 'SF Pro KR';
-  font-size: 6vh;
+  font-family: 'Noto Sans KR';
+  font-size: 6.5vh;
   line-height: 1em;
   /* padding-top: 6vh; */
-  color: black;
-  font-weight: 100;
+  color: #000000d1;
+  font-weight: 300;
   letter-spacing: 3px;
   margin-bottom: 0%;
   margin-left: 3%;
@@ -881,9 +882,10 @@ body {
 }
 
 .pop_h_inner a h3{
-  font-size: 1.05vw;
-  font-weight: 300;
+  font-size: 1.01vw;
+  font-weight: 100;
   /* cursor: pointer; */
+  font-family: 'Noto Sans KR';
 }
 
 .close { 
@@ -895,6 +897,7 @@ body {
   /* cursor: pointer; */
   font-size: 0.9vw;
   font-weight: 300;
+  font-family: 'Noto Sans KR';
 }
 
 /* pop_footer */
@@ -966,6 +969,18 @@ body {
 .pop_fnc a:nth-child(3) img {
   width: 1vw;
   transform: scale(1.4);
+}
+
+.pf-nav ul li:hover span {
+  /* transform: scale(2); */
+  border-radius: 100%;
+  transform-origin: center;
+  border: 0.1px solid #000000e0;
+  /* background: #333; */
+  height: 10px;
+  width: 10px;
+  top: 31.5%;
+  left: 25%;
 }
 
 
@@ -1249,6 +1264,7 @@ body {
   position: absolute;
   margin-top: 6vw;
   opacity: 0.9;
+  font-family: 'Noto Sans KR';
 }
 
 .port_5 {
@@ -1308,14 +1324,15 @@ body {
   display: none;
   position: fixed;
   top: 47%;
-  font-family: 'SF Pro KR';
+  font-family: 'Noto Sans KR';
   font-size: 6.5vh;
   line-height: 1em;
   /* padding-top: 6vh; */
-  color: black;
+  color: #000000d1;
   font-weight: 100;
   letter-spacing: 3px;
   margin-left: 2%;
+  font-weight: 300;
 }
 
 .cont_tt2 {
@@ -1365,7 +1382,7 @@ body {
 .cont_tt2 h4{
   position: fixed;
   top: 49%;
-  font-family: "SF Pro KR";
+  font-family: 'Noto Sans KR';
   font-size: 3.5vh;
   line-height: 1em;
   color: rgba(0, 0, 0, 0.9);
@@ -1390,7 +1407,7 @@ body {
     top: 30%;
     /* left: 50%; */
     display: flex;
-    font-family: "SF Pro KR";
+    font-family: 'Noto Sans KR';
     font-weight: 100;
     font-size: 30px;
     width: 100vw;
@@ -1402,7 +1419,7 @@ body {
   position: fixed;
     top: 35%;
     display: flex;
-    font-family: "SF Pro KR";
+    font-family: 'Noto Sans KR';
     font-weight: 100;
     font-size: 15px;
     width: 100vw;
@@ -1418,7 +1435,7 @@ body {
   position: fixed;
     top: 58%;
     display: flex;
-    font-family: "SF Pro KR";
+    font-family: 'Noto Sans KR';
     font-weight: 100;
     font-size: 30px;
     width: 100vw;
@@ -1430,7 +1447,7 @@ body {
   position: fixed;
     top: 63%;
     display: flex;
-    font-family: "SF Pro KR";
+    font-family: 'Noto Sans KR';
     font-weight: 100;
     font-size: 15px;
     width: 100vw;
