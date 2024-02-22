@@ -139,11 +139,15 @@ export default function Item_contact() {
                 </div>
                 <div className="cont_tt3" ref={cont_tt3}>
                     <div className="cont_tt3_wrap1">
-                        <h5 className="cont_tt3_t1">Mail</h5>
+                        <span class="material-symbols-outlined">
+                        mail
+                        </span>
                         <p className="cont_tt3_p1">jjy9331@naver.com</p>
                     </div>
                     <div className="cont_tt3_wrap2">
-                        <h5 className="cont_tt3_t2">H.P</h5>
+                        <span class="material-symbols-outlined">
+                        smartphone
+                        </span>
                         <p className="cont_tt3_p2">010-4414-3031</p>
                     </div>
                 </div>

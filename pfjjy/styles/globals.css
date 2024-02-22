@@ -726,7 +726,7 @@ body {
   font-size: 6.5vh;
   line-height: 1em;
   /* padding-top: 6vh; */
-  color: #000000d1;
+  color: #000000b5;
   font-weight: 300;
   letter-spacing: 3px;
   margin-bottom: 0%;
@@ -1328,7 +1328,7 @@ body {
   font-size: 6.5vh;
   line-height: 1em;
   /* padding-top: 6vh; */
-  color: #000000d1;
+  color: #000000b5;
   font-weight: 100;
   letter-spacing: 3px;
   margin-left: 2%;
@@ -1402,57 +1402,59 @@ body {
   position: relative;
 }
 
-.cont_tt3_t1{
+
+.cont_tt3_wrap1 span{
   position: fixed;
-    top: 30%;
-    /* left: 50%; */
-    display: flex;
-    font-family: 'Noto Sans KR';
-    font-weight: 100;
-    font-size: 30px;
-    width: 100vw;
-    height: 100vh;
-    justify-content: center;
+  top: 28%;
+  display: flex;
+  /* font-family: 'Noto Sans KR'; */
+  font-weight: 100;
+  font-size: 50px;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
 }
 
 .cont_tt3_p1 {
   position: fixed;
-    top: 35%;
-    display: flex;
-    font-family: 'Noto Sans KR';
-    font-weight: 100;
-    font-size: 15px;
-    width: 100vw;
-    height: 100vh;
-    justify-content: center;
+  top: 37%;
+  display: flex;
+  font-family: 'Noto Sans KR';
+  font-weight: 100;
+  font-size: 15px;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  letter-spacing: 1px;
 }
 
 .cont_tt3_wrap2 {
   position: relative;
 }
 
-.cont_tt3_t2 {
+
+.cont_tt3_wrap2 span {
   position: fixed;
-    top: 58%;
-    display: flex;
-    font-family: 'Noto Sans KR';
-    font-weight: 100;
-    font-size: 30px;
-    width: 100vw;
-    height: 100vh;
-    justify-content: center;
+  top: 57%;
+  display: flex;
+  font-weight: 100;
+  font-size: 54px;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
 }
 
 .cont_tt3_p2 {
   position: fixed;
-    top: 63%;
-    display: flex;
-    font-family: 'Noto Sans KR';
-    font-weight: 100;
-    font-size: 15px;
-    width: 100vw;
-    height: 100vh;
-    justify-content: center;
+  top: 68%;
+  display: flex;
+  font-family: 'Noto Sans KR';
+  font-weight: 100;
+  font-size: 15px;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  letter-spacing: 1px;
 }
 
 
