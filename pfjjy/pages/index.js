@@ -34,7 +34,7 @@ export default function Home() {
   const handlePortClick = (port) => {
     setIsModalOpen((prev) => ({ ...prev, [port]: true }));
     document.body.style.overflow = 'hidden';
-    const ppElements = document.querySelectorAll('.port_pop');
+    const ppElements = document.querySelectorAll('.port_pop'); // 멀티 모달 팝업창 구현
     ppElements.forEach((el) => {
       el.style.display = 'block';
     });
@@ -43,7 +43,7 @@ export default function Home() {
   const handleCloseClick = (port) => {
     setIsModalOpen((prev) => ({ ...prev, [port]: false }));
     document.body.style.overflow = 'auto';
-    const ppElements = document.querySelectorAll('.port_pop');
+    const ppElements = document.querySelectorAll('.port_pop'); 
     ppElements.forEach((el) => {
       el.style.display = 'none';
     });

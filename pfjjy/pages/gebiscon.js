@@ -74,8 +74,6 @@ export default function Gebiscon({onClose, isVisible}) {
     const handleScroll = () => {
         const scrollTop = modalRef.current.scrollTop + 30;
         // console.log(`ScrollTop: ${scrollTop}`);
-    
-
     };
 
     useEffect(() => {
@@ -88,7 +86,7 @@ export default function Gebiscon({onClose, isVisible}) {
     }, []);
 
     return (
-        <div id='port_pop' className='port_pop' ref={modalRef} style={{ visibility: isVisible ? 'visible' : 'hidden' }}>
+        <div id='port_pop1' className='port_pop' ref={modalRef} style={{ visibility: isVisible ? 'visible' : 'hidden' }}>
             <Pop_h title="UI UX mindset" onClose={handleCloseClick} onPpTClick={handlePpTClick} />
             <div className='sc_al'>
                 <img className="sc_w" src="/img/port_1/screen_size_control.svg" alt="interactive_screen_alert" loading="lazy"/>

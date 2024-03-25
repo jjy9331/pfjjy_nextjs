@@ -7,15 +7,7 @@ import Pop_f from '@/components/pop_f.js';
 
 export default function Zerolab({onClose, isVisible}) {
     const modalRef = useRef();
-    const [showCopyright, setShowCopyright] = useState(true); 
     const [isScrolling, setIsScrolling] = useState(false);
-    const [sheetCount, setSheetCount] = useState(0);
-
-    const sheetRefs = useRef([]);
-    const spanRefs = useRef([]); 
-
-    sheetRefs.current = Array(sheetCount).fill().map((_, i) => sheetRefs.current[i] || createRef());
-    spanRefs.current = Array(sheetCount).fill().map((_, i) => spanRefs.current[i] || createRef()); 
 
     // smooth scrollTop solution about scrollsnap
     const handleWheel = (e) => {
@@ -40,7 +32,6 @@ export default function Zerolab({onClose, isVisible}) {
             });
 
             onClose(); // 팝업창 닫기 동작 수행
-            setShowCopyright(true);
             setIsScrolling(false);
             
         }
@@ -50,12 +41,6 @@ export default function Zerolab({onClose, isVisible}) {
         const portPop = modalRef.current;
         if (portPop) {
             portPop.addEventListener('wheel', handleWheel);
-
-            // sheet 갯수를 세는 코드
-            const sheetElements = document.getElementsByClassName('sheet');
-            setSheetCount(sheetElements.length);
-
-            console.log("sheetCount: "+ sheetCount); 
 
             return () => {
                 if (portPop) {
@@ -80,48 +65,12 @@ export default function Zerolab({onClose, isVisible}) {
                 smooth: "easeInOutQuart",  
             });
         }
-
-        setShowCopyright(true); 
-    };
-
-    const handleSpanClick = index => {
-        const sheetRef = sheetRefs.current[index];
-        if (sheetRef.current) {
-            const portPop = modalRef.current;
-            portPop.style.scrollSnapType = 'none';
-
-            // portPop.scrollTop = sheetRef.current.offsetTop;
-
-            scroll.scrollTo(sheetRef.current.offsetTop - 42, {
-                containerId: modalRef.current.id,
-                duration: 1000,  
-                delay: 100, 
-                smooth: "easeInOutQuart",  
-            });
-        }
     };
 
     const handleScroll = () => {
         const scrollTop = modalRef.current.scrollTop + 30;
         // console.log(`ScrollTop: ${scrollTop}`);
     
-        sheetRefs.current.forEach((ref, i) => {
-            const top = ref.current.offsetTop - 36;
-            const bottom = top + ref.current.offsetHeight - 36;
-            // console.log(`Sheet ${i}: ${top} ~ ${bottom}`);
-    
-            // console.log(spanRefs.current[i].current)
-
-            if (spanRefs.current[i].current) {  
-                if (scrollTop >= top && scrollTop < bottom) {
-                    spanRefs.current[i].current.classList.add('pp_nav_active');
-                    // console.log(`Sheet ${i} is active`);
-                    
-                } else {
-                    spanRefs.current[i].current.classList.remove('pp_nav_active');
-                }
-            }
-        });
     };
 
     useEffect(() => {
@@ -134,19 +83,36 @@ export default function Zerolab({onClose, isVisible}) {
     }, []);
 
     return (
-        <div id='port_pop' className='port_pop' ref={modalRef} style={{ visibility: isVisible ? 'visible' : 'hidden' }}>
+        <div id='port_pop2' className='port_pop' ref={modalRef} style={{ visibility: isVisible ? 'visible' : 'hidden' }}>
             <Pop_h title="zerolab design renewal" onClose={handleCloseClick} onPpTClick={handlePpTClick} />
             <div className='sc_al'>
-                <img className="sc_w" src="/img/port_1/screen_size_control.svg" alt="interactive_screen_alert" loading="lazy"/>
+                <img className="sc_w" src="/img/port_1/screen_size_control.svg" alt="interactive_screen_alert"/>
             </div>
-            
-            <Pop_f 
-                copyrightDisplay={showCopyright ? "block" : "none"}
-                isScrolling={isScrolling} 
-                sheetCount={sheetCount}
-                onSpanClick={handleSpanClick}
-                spanRefs={spanRefs} 
-            />
+            <div className='sheet pf2_1'>
+                <img src="img/pf2_eye.webp" alt="pf2_1_eye" className="pf2_1_eye" />
+                <img src="/img/port_2/pop1.webp" alt="d1" className="pf2_1" />
+            </div>
+            <div className='sheet pf2_2'>
+                <img src="/img/port_2/pop2_b_01.webp" alt="d2_b" className="pf2_2_l" />
+                <img src="/img/port_2/pop2_b_01.webp" alt="d2_b" className="pf2_2_r" />
+                <img src="/img/port_2/pop2_1.webp" alt="d2_left" className="pf2_2_img" />
+                <img src="/img/port_2/pop2_2.webp" alt="d2_right" className="pf2_2_img" />
+            </div>
+            <div className='sheet pf2_3'>
+                <img src="/img/port_2/pop3_l.webp" alt="d3" className="pf2_3_d3_l" />
+                <img src="/img/port_2/pop3_r.webp" alt="d3" className="pf2_3_d3_r" />
+            </div>
+            <div className='sheet pf2_4'>
+                <img src="/img/port_2/pop4.webp" alt="d4" className="d4"/>
+            </div>
+            <div className='sheet pf2_5'>
+                <img src="/img/port_2/pop5_l.webp" alt="d5" className="pf2_5_d5_l" />
+                <img src="/img/port_2/pop5_r6.webp" alt="d5" className="pf2_5_d5_r" />
+            </div>
+            <div className='sheet pf2_6'>
+                <img src="/img/port_2/pop6.webp" alt="d6"/>
+            </div>
+            <Pop_f />
         </div>
     )
 }

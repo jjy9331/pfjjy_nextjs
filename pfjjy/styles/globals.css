@@ -1210,6 +1210,113 @@ body {
   z-index: 2;
 }
 
+/* port_2 zerolab */
+
+.pf2_1 { 
+  position: relative;
+  scroll-snap-align: center;
+  margin-top: 3%;
+  background: rgb(240 174 0);
+  z-index: 100;
+  text-align: right;
+}
+
+.pf2_1_eye{
+  position: absolute;
+  bottom: 0%;
+  left: 0%;
+  /* width: 88%; */
+  /* height: 100%; */
+  /* transform: scale(0.5); */
+  zoom: 0.5;
+  z-index: 101;
+  /* display: none;*/
+}
+
+
+
+.pf2_2 {position: relative; scroll-snap-align: center; display: flex; justify-content: center;}
+
+.pf2_2 .pf2_2_img {width: 78.5vh;}
+
+.pf2_2 .pf2_2_l {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.pf2_2 .pf2_2_r {
+  position: absolute;
+  top: 0%;
+  right: 0%;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.pf2_3 {
+  scroll-snap-align: center; 
+  justify-content: space-between;
+  background: rgb(43 82 125); 
+  text-align: right;
+  display: flex;
+}
+
+.pf2_3 .pf2_3_d3_l {margin-left: 0%; width: 78.5vh;  margin-right: 2%; display: none;}
+.pf2_3 .pf2_3_d3_r {width: 78.5vh;  margin-right: 2%;}
+
+.pf2_4 {
+  margin: 0 auto;
+  scroll-snap-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pf2_5 {
+  margin: 0 auto;
+  position: relative;
+  /* border: 3px blue dashed; */
+  max-width: 1920px;
+  scroll-snap-align: center;
+  background: rgb(240 174 0);
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  z-index: -2;
+}
+
+.pf2_5 .pf2_5_d5_l {
+  width: 78.5vh;
+  margin-left: 4%;
+}
+
+.pf2_5 .pf2_5_d5_r { 
+  /* position: absolute; */
+  /* right: 2%; */
+  width: 78.5vh;
+  margin-right: 0%;
+  display: none;
+}
+
+.pf2_5 .pf2_5_d5 {margin-left: 2%;}
+
+.pf2_6 {
+  margin-bottom: 3%;
+  background: rgb(255 255 255);
+  z-index: 100;
+  margin-top: 1%;
+  scroll-snap-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}   
+
+
+
 .pf_more {
   position: relative;
   display: flex;
