@@ -124,7 +124,7 @@ export default function Item_portfolio({onPortClick}) {
                             <h3 className='port_tt'>PORTFOLIO</h3>
                         </div>
                         <Port_1 onPortClick={onPortClick} />
-                        <Port_2/>
+                        <Port_2 onPortClick={onPortClick} />
                         <Port_3/>
                         <Port_4/>
                         <Port_5/>

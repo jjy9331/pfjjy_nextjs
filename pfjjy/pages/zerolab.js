@@ -1,16 +1,22 @@
 import React, { useEffect, useState, useRef, createRef } from 'react';
 import { animateScroll as scroll } from 'react-scroll';
 
-import CustomCursor from '../components/cursor.js'
 import Pop_h from '@/components/pop_h.js';
 import Pop_f from '@/components/pop_f.js';
 
 
-export default function Gebiscon({onClose, isVisible}) {
-
-    const modalRef = useRef(); 
+export default function Zerolab({onClose, isVisible}) {
+    const modalRef = useRef();
+    const [showCopyright, setShowCopyright] = useState(true); 
     const [isScrolling, setIsScrolling] = useState(false);
-    
+    const [sheetCount, setSheetCount] = useState(0);
+
+    const sheetRefs = useRef([]);
+    const spanRefs = useRef([]); 
+
+    sheetRefs.current = Array(sheetCount).fill().map((_, i) => sheetRefs.current[i] || createRef());
+    spanRefs.current = Array(sheetCount).fill().map((_, i) => spanRefs.current[i] || createRef()); 
+
     // smooth scrollTop solution about scrollsnap
     const handleWheel = (e) => {
         const portPop = modalRef.current;
@@ -34,6 +40,7 @@ export default function Gebiscon({onClose, isVisible}) {
             });
 
             onClose(); // 팝업창 닫기 동작 수행
+            setShowCopyright(true);
             setIsScrolling(false);
             
         }
@@ -44,6 +51,12 @@ export default function Gebiscon({onClose, isVisible}) {
         if (portPop) {
             portPop.addEventListener('wheel', handleWheel);
 
+            // sheet 갯수를 세는 코드
+            const sheetElements = document.getElementsByClassName('sheet');
+            setSheetCount(sheetElements.length);
+
+            console.log("sheetCount: "+ sheetCount); 
+
             return () => {
                 if (portPop) {
                     portPop.removeEventListener('wheel', handleWheel);
@@ -51,7 +64,6 @@ export default function Gebiscon({onClose, isVisible}) {
             };
         }
     }, []);
-
 
     const handlePpTClick = (event) => {
         event.preventDefault();
@@ -69,13 +81,47 @@ export default function Gebiscon({onClose, isVisible}) {
             });
         }
 
+        setShowCopyright(true); 
+    };
+
+    const handleSpanClick = index => {
+        const sheetRef = sheetRefs.current[index];
+        if (sheetRef.current) {
+            const portPop = modalRef.current;
+            portPop.style.scrollSnapType = 'none';
+
+            // portPop.scrollTop = sheetRef.current.offsetTop;
+
+            scroll.scrollTo(sheetRef.current.offsetTop - 42, {
+                containerId: modalRef.current.id,
+                duration: 1000,  
+                delay: 100, 
+                smooth: "easeInOutQuart",  
+            });
+        }
     };
 
     const handleScroll = () => {
         const scrollTop = modalRef.current.scrollTop + 30;
         // console.log(`ScrollTop: ${scrollTop}`);
     
+        sheetRefs.current.forEach((ref, i) => {
+            const top = ref.current.offsetTop - 36;
+            const bottom = top + ref.current.offsetHeight - 36;
+            // console.log(`Sheet ${i}: ${top} ~ ${bottom}`);
+    
+            // console.log(spanRefs.current[i].current)
 
+            if (spanRefs.current[i].current) {  
+                if (scrollTop >= top && scrollTop < bottom) {
+                    spanRefs.current[i].current.classList.add('pp_nav_active');
+                    // console.log(`Sheet ${i} is active`);
+                    
+                } else {
+                    spanRefs.current[i].current.classList.remove('pp_nav_active');
+                }
+            }
+        });
     };
 
     useEffect(() => {
@@ -89,33 +135,18 @@ export default function Gebiscon({onClose, isVisible}) {
 
     return (
         <div id='port_pop' className='port_pop' ref={modalRef} style={{ visibility: isVisible ? 'visible' : 'hidden' }}>
-            <Pop_h title="UI UX mindset" onClose={handleCloseClick} onPpTClick={handlePpTClick} />
+            <Pop_h title="zerolab design renewal" onClose={handleCloseClick} onPpTClick={handlePpTClick} />
             <div className='sc_al'>
                 <img className="sc_w" src="/img/port_1/screen_size_control.svg" alt="interactive_screen_alert" loading="lazy"/>
             </div>
-            <div className='sheet s1'>
-                <div className="s1_left"></div>
-                <div className="s1_right"></div>
-                <img className='s1_img' src="/img/port_1/sec1.webp" alt="sec1" />
-            </div>
-            <div className='sheet s2'>
-                <img src="/img/port_1/sec2.webp" alt="sec2" />
-            </div>
-            <div className='sheet s3'>
-                <img src="/img/port_1/sec3.webp" alt="sec3" />
-            </div>
-            <div className='sheet s4'>
-                <img src="/img/port_1/sec4.webp" alt="sec4" />
-            </div>
-            <div className='sheet s5'>
-                <img src="/img/port_1/sec5.webp" alt="sec5" />
-            </div>
-            <div className='sheet s6'>
-                <div className="s6_left"></div>
-                <div className="s6_right"></div>
-                <img className='s6_img' src="/img/port_1/sec6.gif" alt="sec6" />
-            </div>
-            <Pop_f/>
+            
+            <Pop_f 
+                copyrightDisplay={showCopyright ? "block" : "none"}
+                isScrolling={isScrolling} 
+                sheetCount={sheetCount}
+                onSpanClick={handleSpanClick}
+                spanRefs={spanRefs} 
+            />
         </div>
     )
 }

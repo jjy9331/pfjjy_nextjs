@@ -3,7 +3,7 @@ import React, {useState} from "react";
 import Pfback from './pfback';
 import Pfnext from './pfnext';
 
-export default function Port_2({ }) {
+export default function Port_2({onPortClick}) {
 
 
     // port 2 hover ani
@@ -33,7 +33,8 @@ export default function Port_2({ }) {
             <img 
                 className='port_pc' src="/img/monitor.webp" alt="zerolab" 
                 onMouseEnter={handleMouseEnterPort2}
-                onMouseLeave={handleMouseLeavePort2} 
+                onMouseLeave={handleMouseLeavePort2}
+                onClick={() => onPortClick('port2')} 
             />
             <div className='port_2'>
                 <h3>zero<span>lab</span></h3>

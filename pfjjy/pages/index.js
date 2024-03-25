@@ -1,5 +1,4 @@
 import React, { useEffect, useState, useLayoutEffect, useCallback } from 'react';
-import GebisconModal from '../pages/gebiscon.js';
 import CustomCursor from '../components/cursor.js';
 import Header from '../components/header.js';
 import Footer from '../components/footer.js';
@@ -9,6 +8,8 @@ import Item_introduce from '../components/item_introduce.js';
 import Item_portfolio from '@/components/item_portfolio.js';
 import Item_contact from '@/components/item_contact.js';
 import Loading from '@/components/loading.js';
+import GebisconModal from '../pages/gebiscon.js';
+import ZerolabModal from '../pages/zerolab.js';
 
 
 export default function Home() {
@@ -33,16 +34,19 @@ export default function Home() {
   const handlePortClick = (port) => {
     setIsModalOpen((prev) => ({ ...prev, [port]: true }));
     document.body.style.overflow = 'hidden';
-    const ppElement = document.querySelector('.port_pop');
-    ppElement.style.display = 'block';
+    const ppElements = document.querySelectorAll('.port_pop');
+    ppElements.forEach((el) => {
+      el.style.display = 'block';
+    });
   };
 
   const handleCloseClick = (port) => {
     setIsModalOpen((prev) => ({ ...prev, [port]: false }));
     document.body.style.overflow = 'auto';
-    const ppElement = document.querySelector('.port_pop');
-    ppElement.style.display = 'none';
-
+    const ppElements = document.querySelectorAll('.port_pop');
+    ppElements.forEach((el) => {
+      el.style.display = 'none';
+    });
   };
 
   // isLoading 상태에 따라 적절한 컴포넌트를 렌더링합니다.
@@ -58,6 +62,7 @@ export default function Home() {
         <Item_introduce />
         <Item_portfolio onPortClick={handlePortClick} />
         {<GebisconModal onClose={() => handleCloseClick('port1')} isVisible={isModalOpen.port1} />}
+        {<ZerolabModal onClose={() => handleCloseClick('port2')} isVisible={isModalOpen.port2} />}
         <Item_contact />
         <Footer />
       </div>
